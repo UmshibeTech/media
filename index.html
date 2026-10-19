@@ -1,0 +1,1631 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0b">
+
+  <title>Mshibe Wedding Film | Photography & Cinematic Films</title>
+  <meta name="description" content="Mshibe Wedding Film offers professional wedding photography, videography, drone coverage, digital invitations and event production in KwaZulu-Natal, South Africa.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #090909;
+      --dark: #111111;
+      --card: #171717;
+      --gold: #c9a45c;
+      --gold-light: #ead39c;
+      --white: #ffffff;
+      --muted: #b6b6b6;
+      --border: rgba(201,164,92,.25);
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: auto;
+    }
+
+    .gold {
+      color: var(--gold);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: .72rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 23px;
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid var(--gold);
+      transition: .25s ease;
+      cursor: pointer;
+    }
+
+    .btn-gold {
+      color: #111;
+      background: var(--gold);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--gold-light);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #111;
+    }
+
+    /* Navigation */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9,9,9,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .brand-tagline {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .55rem;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      list-style: none;
+    }
+
+    .nav-links > li > a,
+    .dropdown-toggle {
+      color: #eee;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      background: none;
+      border: none;
+      cursor: pointer;
+      letter-spacing: .5px;
+    }
+
+    .nav-links > li > a:hover,
+    .dropdown-toggle:hover {
+      color: var(--gold);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: -15px;
+      min-width: 230px;
+      padding: 12px 0;
+      background: #151515;
+      border: 1px solid var(--border);
+      list-style: none;
+      box-shadow: 0 15px 35px rgba(0,0,0,.35);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 11px 17px;
+      color: #eee;
+      font-size: .75rem;
+    }
+
+    .dropdown-menu a:hover {
+      color: var(--gold);
+      background: #202020;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu,
+    .dropdown.open .dropdown-menu {
+      display: block;
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--gold);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 7px 12px;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.91) 0%, rgba(0,0,0,.68) 48%, rgba(0,0,0,.25) 100%),
+        linear-gradient(0deg, rgba(0,0,0,.75), transparent 45%),
+        url('IBM_1350.jpg')
+        center 45% / cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 95px 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 8vw, 6.6rem);
+      line-height: .98;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+      display: block;
+      font-style: italic;
+    }
+
+    .hero-description {
+      color: #e1e1e1;
+      max-width: 560px;
+      margin-bottom: 32px;
+      font-size: .95rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-note {
+      color: #d3d3d3;
+      font-size: .7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 35px;
+    }
+
+    /* Intro strip */
+
+    .trust-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #101010;
+      padding: 25px 0;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .trust-grid div {
+      padding: 7px 10px;
+    }
+
+    .trust-grid strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--gold);
+      font-size: 1.5rem;
+    }
+
+    .trust-grid span {
+      color: var(--muted);
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 470px;
+      background:
+        linear-gradient(0deg, rgba(0,0,0,.15), rgba(0,0,0,.05)),
+        url('IBM_1343.jpg')
+        center / cover;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .about-image::after {
+      content: '';
+      position: absolute;
+      inset: 16px -16px -16px 16px;
+      border: 1px solid var(--gold);
+      z-index: -1;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin: 18px 0;
+    }
+
+    .about-copy .signature {
+      color: var(--gold-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-style: italic;
+    }
+
+    /* Services */
+
+    .services-section {
+      background: #101010;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 32px 26px;
+      background: var(--card);
+      border: 1px solid #292929;
+      transition: .25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 1.3rem;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    /* Packages */
+
+    .package-section {
+      border-top: 1px solid #1d1d1d;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .package-card {
+      display: flex;
+      flex-direction: column;
+      background: #141414;
+      border: 1px solid #303030;
+      padding: 32px 25px;
+      position: relative;
+    }
+
+    .package-card.featured {
+      border-color: var(--gold);
+      background: linear-gradient(160deg, #201b11, #131313 55%);
+    }
+
+    .package-label {
+      color: var(--gold);
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .package-card h3 {
+      font-size: 1.9rem;
+      margin: 12px 0 7px;
+    }
+
+    .package-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin: 12px 0 20px;
+    }
+
+    .package-price small {
+      display: block;
+      color: var(--muted);
+      font-size: .65rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .package-card ul {
+      list-style: none;
+      margin: 0 0 27px;
+      flex: 1;
+    }
+
+    .package-card li {
+      border-bottom: 1px solid #292929;
+      padding: 10px 0;
+      color: #d2d2d2;
+      font-size: .81rem;
+    }
+
+    .package-card li::before {
+      content: '✦';
+      color: var(--gold);
+      margin-right: 10px;
+    }
+
+    .package-card .btn {
+      width: 100%;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: .78rem;
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .subsection-title {
+      text-align: center;
+      margin: 75px 0 32px;
+    }
+
+    .subsection-title h3 {
+      font-size: 2.4rem;
+    }
+
+    .subsection-title p {
+      color: var(--muted);
+      font-size: .85rem;
+      margin-top: 8px;
+    }
+
+    /* Extras */
+
+    .extras-section {
+      background: #101010;
+    }
+
+    .extras-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .extra-item {
+      padding: 22px;
+      background: #171717;
+      border: 1px solid #292929;
+    }
+
+    .extra-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 7px;
+    }
+
+    .extra-item p {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .extra-price {
+      display: block;
+      color: var(--gold-light);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    /* Rules */
+
+    .rules-layout {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .rule {
+      padding: 22px 0;
+      border-bottom: 1px solid #2b2b2b;
+    }
+
+    .rule h3 {
+      font-size: 1.45rem;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .rule p {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    /* Contact */
+
+    .contact-section {
+      background:
+        linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.93)),
+        url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=85')
+        center / cover;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 55px;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+      margin: 15px 0 25px;
+    }
+
+    .contact-details {
+      list-style: none;
+    }
+
+    .contact-details li {
+      padding: 12px 0;
+      border-bottom: 1px solid #292929;
+      font-size: .84rem;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-details strong {
+      display: inline-block;
+      min-width: 100px;
+      color: var(--gold);
+    }
+
+    .contact-form {
+      padding: 30px;
+      background: rgba(17,17,17,.92);
+      border: 1px solid var(--border);
+    }
+
+    .contact-form h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      margin-bottom: 16px;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: .73rem;
+      color: #ddd;
+      margin-bottom: 7px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #383838;
+      background: #0c0c0c;
+      color: white;
+      font: inherit;
+      font-size: .82rem;
+      border-radius: 0;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: 1px solid var(--gold);
+      border-color: var(--gold);
+    }
+
+    .contact-form textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+    }
+
+    .form-note {
+      font-size: .68rem;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 35px 0;
+      background: #070707;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+    }
+
+    .social-links a {
+      color: var(--gold-light);
+      font-size: .75rem;
+    }
+
+    .social-links a:hover {
+      color: white;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      font-size: 1.65rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,.4);
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 1000px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links > li > a,
+      .dropdown-toggle {
+        font-size: .67rem;
+      }
+
+      .brand-name {
+        font-size: 1.15rem;
+      }
+
+      .package-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .package-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        min-height: 74px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
+        padding: 18px 5% 25px;
+        background: #0c0c0c;
+        border-bottom: 1px solid var(--border);
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links > li {
+        padding: 12px 0;
+        border-bottom: 1px solid #242424;
+      }
+
+      .nav-links > li > a,
+      .dropdown-toggle {
+        font-size: .8rem;
+      }
+
+      .dropdown-menu {
+        position: static;
+        border: none;
+        border-left: 1px solid var(--gold);
+        box-shadow: none;
+        margin: 12px 0 0 10px;
+        padding: 0;
+      }
+
+      .dropdown-menu a {
+        padding: 10px 14px;
+      }
+
+      .hero {
+        min-height: 600px;
+        background-position: 58% center;
+      }
+
+      .hero-content {
+        padding: 80px 0;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-image {
+        min-height: 350px;
+        margin-right: 12px;
+      }
+
+      .services-grid,
+      .extras-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .package-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .package-card:last-child:nth-child(odd) {
+        grid-column: auto;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand-name {
+        font-size: 1.08rem;
+      }
+
+      .brand-tagline {
+        font-size: .48rem;
+        letter-spacing: 1px;
+      }
+
+      .hero h1 {
+        font-size: 3.4rem;
+      }
+
+      .hero-description {
+        font-size: .86rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .services-grid,
+      .extras-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 22px 17px;
+      }
+
+      .contact-details strong {
+        display: block;
+      }
+
+      .whatsapp-float {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Mshibe Wedding Film home">
+        <div class="brand-mark">MWF</div>
+        <div>
+          <div class="brand-name">Mshibe Wedding Film</div>
+          <span class="brand-tagline">Your Story, Beautifully Told</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation" aria-expanded="false">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+
+        <li class="dropdown" id="packagesDropdown">
+          <button class="dropdown-toggle" id="packagesToggle"
+            aria-expanded="false">Packages ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#wedding-packages">Wedding Packages</a></li>
+            <li><a href="#traditional-packages">Traditional Packages</a></li>
+            <li><a href="#graduation-packages">Graduation Packages</a></li>
+            <li><a href="#extras">Additional Services</a></li>
+            <li><a href="#rules">Rules &amp; Regulations</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-gold" href="https://wa.me/27711970286" target="_blank" rel="noopener">Book Now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <p class="eyebrow">Photography · Videography · Memories</p>
+          <h1>Every Love Story <span>Deserves a Film.</span></h1>
+          <p class="hero-description">
+            From beautiful traditional ceremonies to elegant white weddings,
+            we capture the people, emotions and moments that make your story
+            unforgettable.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#wedding-packages">Explore Packages</a>
+            <a class="btn btn-outline" href="#contact">Let's Plan Your Event</a>
+          </div>
+          <p class="hero-note">Established in 2019 · KwaZulu-Natal, South Africa</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div>
+          <strong>Since 2019</strong>
+          <span>Our Creative Journey</span>
+        </div>
+        <div>
+          <strong>Photo &amp; Film</strong>
+          <span>Stories Captured Beautifully</span>
+        </div>
+        <div>
+          <strong>Made for You</strong>
+          <span>Personalised Event Coverage</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-image" role="img"
+          aria-label="Wedding couple celebrating their special day"></div>
+
+        <div class="about-copy">
+          <p class="eyebrow">Welcome to Mshibe Wedding Film</p>
+          <h2>More Than Pictures.<br><span class="gold">Memories for Life.</span></h2>
+          <p>
+            Established in 2019 as Abafowethu Production, Mshibe Wedding Film
+            is dedicated to preserving life's most meaningful occasions through
+            photography and cinematic storytelling.
+          </p>
+          <p>
+            We cover traditional ceremonies, white weddings, graduations,
+            parties and special events. Our aim is to capture the atmosphere,
+            details and emotions that make every celebration unique.
+          </p>
+          <p>
+            Whether you need timeless photographs, a complete event film,
+            a highlight video or aerial drone footage, we work to tell your
+            story with care and creativity.
+          </p>
+          <p class="signature">Your story, beautifully told.</p>
+          <a href="#services" class="btn btn-outline">Discover Our Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What We Do</p>
+          <h2>Our <span class="gold">Services</span></h2>
+          <p class="section-intro">
+            Creative media services designed to capture your celebration
+            and preserve it for years to come.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">◈</div>
+            <h3>Photography</h3>
+            <p>Professional event photography, family portraits, formal
+              photographs and carefully selected retouched images.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">▶</div>
+            <h3>Videography</h3>
+            <p>Full event videos, cinematic highlights and memorable
+              moments edited into a story you can revisit.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⌁</div>
+            <h3>Drone Coverage</h3>
+            <p>Aerial perspectives that add scale and atmosphere to
+              eligible events and venues, subject to safety and permissions.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✉</div>
+            <h3>Digital Invitations</h3>
+            <p>Custom digital invitations for your event. Interactive
+              features such as maps and WhatsApp RSVP can be discussed.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">♫</div>
+            <h3>Sound System</h3>
+            <p>Sound system hire for selected occasions, with transport
+              included in the listed add-on price.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Special Events</h3>
+            <p>Coverage for traditional ceremonies, white weddings,
+              graduations, parties and family celebrations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEDDING PACKAGES -->
+    <section class="section package-section" id="wedding-packages">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Celebrate Your Love</p>
+          <h2>Wedding <span class="gold">Packages</span></h2>
+          <p class="section-intro">
+            Photography and videography options for traditional weddings
+            and white weddings. Confirm the exact inclusions with us before booking.
+          </p>
+        </div>
+
+        <div class="package-grid">
+          <article class="package-card">
+            <span class="package-label">Package 01</span>
+            <h3>Essential</h3>
+            <div class="package-price">R12,500<small>Package price</small></div>
+            <ul>
+              <li>Traditional wedding or white wedding</li>
+              <li>Photography and videography plan to be confirmed</li>
+              <li>Coverage schedule agreed before the event</li>
+              <li>Final inclusions confirmed in your quotation</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20am%20interested%20in%20the%20R12%2C500%20wedding%20package." target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+
+          <article class="package-card featured">
+            <span class="package-label">Package 02 · Popular Choice</span>
+            <h3>Signature</h3>
+            <div class="package-price">R15,000<small>Package price</small></div>
+            <ul>
+              <li>Traditional wedding or white wedding</li>
+              <li>Photography and videography plan to be confirmed</li>
+              <li>Coverage schedule agreed before the event</li>
+              <li>Final inclusions confirmed in your quotation</li>
+            </ul>
+            <a class="btn btn-gold" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20am%20interested%20in%20the%20R15%2C000%20wedding%20package." target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+
+          <article class="package-card">
+            <span class="package-label">Package 03</span>
+            <h3>Premium</h3>
+            <div class="package-price">R18,000<small>Package price</small></div>
+            <ul>
+              <li>Traditional wedding or white wedding</li>
+              <li>Photography and videography plan to be confirmed</li>
+              <li>Coverage schedule agreed before the event</li>
+              <li>Final inclusions confirmed in your quotation</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20am%20interested%20in%20the%20R18%2C000%20wedding%20package." target="_blank" rel="noopener">Enquire Now</a>
+          </article>
+        </div>
+
+        <p class="note">
+          Wedding package inclusions must be confirmed with Mshibe Wedding Film
+          before payment. Drone coverage is an additional service unless stated
+          in your written quotation.
+        </p>
+      </div>
+    </section>
+
+    <!-- TRADITIONAL PACKAGES -->
+    <section class="section package-section" id="traditional-packages">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Celebrate Your Heritage</p>
+          <h2>Traditional Ceremony <span class="gold">Packages</span></h2>
+          <p class="section-intro">
+            Designed for Umemulo, Umembeso, Ukhekhe and graduation parties.
+            Choose the coverage that suits your celebration.
+          </p>
+        </div>
+
+        <div class="package-grid">
+          <article class="package-card">
+            <span class="package-label">Package 01</span>
+            <h3>Traditional Essential</h3>
+            <div class="package-price">R9,500<small>Package price</small></div>
+            <ul>
+              <li>Digital images</li>
+              <li>Highlight video</li>
+              <li>Full video</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%2C%20I%20would%20like%20to%20book%20the%20R9%2C500%20traditional%20ceremony%20package." target="_blank" rel="noopener">Book This Package</a>
+          </article>
+
+          <article class="package-card featured">
+            <span class="package-label">Package 02</span>
+            <h3>Traditional Signature</h3>
+            <div class="package-price">R12,000<small>Package price</small></div>
+            <ul>
+              <li>A4 photobook</li>
+              <li>A3 canvas</li>
+              <li>Full video</li>
+              <li>Highlight video</li>
+            </ul>
+            <a class="btn btn-gold" href="https://wa.me/27711970286?text=Hello%2C%20I%20would%20like%20to%20book%20the%20R12%2C000%20traditional%20ceremony%20package." target="_blank" rel="noopener">Book This Package</a>
+          </article>
+
+          <article class="package-card">
+            <span class="package-label">Package 03</span>
+            <h3>Traditional Premium</h3>
+            <div class="package-price">R16,000<small>Package price</small></div>
+            <ul>
+              <li>A3 photobook</li>
+              <li>A3 canvas</li>
+              <li>Full video</li>
+              <li>Highlight video</li>
+              <li>Drone coverage, subject to approval and conditions</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%2C%20I%20would%20like%20to%20book%20the%20R16%2C000%20traditional%20ceremony%20package." target="_blank" rel="noopener">Book This Package</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRADUATION PACKAGES -->
+    <section class="section package-section" id="graduation-packages">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Celebrate Your Achievement</p>
+          <h2>Graduation Photography <span class="gold">Packages</span></h2>
+          <p class="section-intro">
+            Celebrate the hard work, the family support and the moment
+            you have been working towards.
+          </p>
+        </div>
+
+        <div class="package-grid">
+          <article class="package-card">
+            <span class="package-label">Package 01</span>
+            <h3>Starter</h3>
+            <div class="package-price">R450</div>
+            <ul>
+              <li>10 unedited pictures</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/27711970286?text=I%20am%20interested%20in%20the%20R450%20graduation%20package." target="_blank" rel="noopener">Book Now</a>
+          </article>
+
+          <article class="package-card">
+            <span class="package-label">Package 02</span>
+            <h3>Family Celebration</h3>
+            <div class="package-price">R850</div>
+            <ul>
+              <li>15 edited pictures</li>
+              <li>Family photographs included</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/27711970286?text=I%20am%20interested%20in%20the%20R850%20graduation%20package." target="_blank" rel="noopener">Book Now</a>
+          </article>
+
+          <article class="package-card featured">
+            <span class="package-label">Package 03</span>
+            <h3>Achievement</h3>
+            <div class="package-price">R1,200</div>
+            <ul>
+              <li>20 edited pictures</li>
+              <li>Family photographs included</li>
+            </ul>
+            <a class="btn btn-gold" href="https://wa.me/27711970286?text=I%20am%20interested%20in%20the%20R1%2C200%20graduation%20package." target="_blank" rel="noopener">Book Now</a>
+          </article>
+
+          <article class="package-card">
+            <span class="package-label">Package 04</span>
+            <h3>Premium Portraits</h3>
+            <div class="package-price">R1,500</div>
+            <ul>
+              <li>20 edited pictures</li>
+              <li>10 retouched pictures</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/27711970286?text=I%20am%20interested%20in%20the%20R1%2C500%20graduation%20package." target="_blank" rel="noopener">Book Now</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRAS -->
+    <section class="section extras-section" id="extras">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Customise Your Experience</p>
+          <h2>Additional <span class="gold">Services</span></h2>
+          <p class="section-intro">
+            Add extra coverage and services to your booking.
+            Confirm availability, travel requirements and final costs with us.
+          </p>
+        </div>
+
+        <div class="extras-grid">
+          <article class="extra-item">
+            <h3>Additional Hours</h3>
+            <p>Extend your event coverage beyond the agreed schedule.</p>
+            <span class="extra-price">R1,500 per hour</span>
+          </article>
+
+          <article class="extra-item">
+            <h3>Drone Coverage</h3>
+            <p>Aerial filming for eligible events, subject to permissions,
+              weather and safe operating conditions.</p>
+            <span class="extra-price">R1,500 per day</span>
+          </article>
+
+          <article class="extra-item">
+            <h3>Photography Add-on</h3>
+            <p>Additional photography service for your event.</p>
+            <span class="extra-price">R2,500</span>
+          </article>
+
+          <article class="extra-item">
+            <h3>Sound System</h3>
+            <p>Sound system hire with transport included.</p>
+            <span class="extra-price">R4,500</span>
+          </article>
+
+          <article class="extra-item">
+            <h3>Full Video + Highlight</h3>
+            <p>Event film with a separate highlight video.</p>
+            <span class="extra-price">R3,500</span>
+          </article>
+
+          <article class="extra-item">
+            <h3>Full Video Only</h3>
+            <p>Full event video coverage.</p>
+            <span class="extra-price">R3,000</span>
+          </article>
+
+          <article class="extra-item">
+            <h3>Highlights Only</h3>
+            <p>A highlight video featuring selected event moments.</p>
+            <span class="extra-price">R3,000</span>
+          </article>
+
+          <article class="extra-item">
+            <h3>Video Without Editing</h3>
+            <p>Video coverage without editing.</p>
+            <span class="extra-price">R2,500</span>
+          </article>
+
+          <article class="extra-item">
+            <h3>Full Video + Highlight + Drone</h3>
+            <p>Combined coverage option. Confirm drone availability and
+              the scope of coverage before booking.</p>
+            <span class="extra-price">R4,500 — confirm scope</span>
+          </article>
+
+          <article class="extra-item">
+            <h3>Ukukhipha uMakoti</h3>
+            <p>Coverage of the bride's departure ceremony.</p>
+            <span class="extra-price">R3,000</span>
+          </article>
+
+          <article class="extra-item">
+            <h3>One-Hour Reel</h3>
+            <p>A one-hour reel filming service.</p>
+            <span class="extra-price">R1,500</span>
+          </article>
+
+          <article class="extra-item">
+            <h3>Digital Invitation</h3>
+            <p>Custom invitation design and optional interactive features.</p>
+            <span class="extra-price">Request a quote</span>
+          </article>
+        </div>
+
+        <p class="note">
+          Add-on prices and package inclusions should be confirmed in writing.
+          The R4,500 combined video and drone option requires confirmation
+          of its exact scope before booking.
+        </p>
+      </div>
+    </section>
+
+    <!-- RULES -->
+    <section class="section" id="rules">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Please Read Before Booking</p>
+          <h2>Rules &amp; <span class="gold">Regulations</span></h2>
+          <p class="section-intro">
+            These booking guidelines help us plan your event professionally
+            and make expectations clear for everyone.
+          </p>
+        </div>
+
+        <div class="rules-layout">
+          <article class="rule">
+            <h3>1. Booking Confirmation</h3>
+            <p>A booking is confirmed only after the agreed booking fee or
+              deposit has been received and the details have been confirmed
+              with Mshibe Wedding Film. Availability is not guaranteed until
+              confirmation.</p>
+          </article>
+
+          <article class="rule">
+            <h3>2. Payments</h3>
+            <p>Payment amounts, due dates and the outstanding balance must
+              be agreed in writing before the event. Please retain proof of
+              payment and confirm receipt with us.</p>
+          </article>
+
+          <article class="rule">
+            <h3>3. Cancellations and Rescheduling</h3>
+            <p>Notify us as soon as possible if you need to cancel or change
+              your date. Any deposit refund, cancellation fee or rescheduling
+              arrangement will be handled according to the terms agreed in
+              your booking and applicable law.</p>
+          </article>
+
+          <article class="rule">
+            <h3>4. Event Schedule and Overtime</h3>
+            <p>Provide the correct venue, event date and schedule before the
+              event. Additional coverage hours cost R1,500 per hour and
+              should be approved before extra work is undertaken.</p>
+          </article>
+
+          <article class="rule">
+            <h3>5. Drone Coverage</h3>
+            <p>Drone coverage is R1,500 per day as an additional service,
+              unless a written package quotation states otherwise. Flights
+              depend on weather, venue restrictions, airspace permissions,
+              legal requirements and safe operating conditions. A flight
+              cannot be guaranteed where conditions are unsafe or prohibited.</p>
+          </article>
+
+          <article class="rule">
+            <h3>6. Images and Video Editing</h3>
+            <p>The images, video format, editing scope and other deliverables
+              will be agreed in your package or quotation. Unedited images
+              are supplied only where included in the selected service.</p>
+          </article>
+
+          <article class="rule">
+            <h3>7. Delivery and Collection</h3>
+            <p>Delivery method and estimated completion dates will be agreed
+              with the client. Please confirm the delivery arrangements before
+              booking. Keep a backup of your supplied digital files.</p>
+          </article>
+
+          <article class="rule">
+            <h3>8. Client Responsibilities</h3>
+            <p>The client must provide accurate event information, venue
+              access and any permissions that are their responsibility.
+              Please tell us in advance about important moments, family
+              photographs and any restrictions at the venue.</p>
+          </article>
+
+          <article class="rule">
+            <h3>9. Digital Invitations</h3>
+            <p>Clients should carefully check names, dates, times, addresses
+              and other event information before approving an invitation.
+              Changes requested after final approval may require an additional
+              fee.</p>
+          </article>
+
+          <article class="rule">
+            <h3>10. Sound System</h3>
+            <p>Sound system arrangements, venue access, setup times and
+              power availability should be confirmed before the event.</p>
+          </article>
+
+          <article class="rule">
+            <h3>11. Unforeseen Circumstances</h3>
+            <p>We will communicate as promptly as possible if unexpected
+              circumstances affect the service. Any alternative arrangements
+              or remedies will be discussed in accordance with the booking
+              agreement and applicable law.</p>
+          </article>
+
+          <article class="rule">
+            <h3>12. Agreement</h3>
+            <p>Confirm the final package, costs, coverage hours and all
+              additional services in writing before making payment. These
+              guidelines do not remove any rights provided by applicable law.</p>
+          </article>
+        </div>
+
+        <div style="text-align:center; margin-top:35px;">
+          <a class="btn btn-gold" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20have%20read%20the%20booking%20rules%20and%20would%20like%20to%20discuss%20a%20booking." target="_blank" rel="noopener">Discuss Your Booking</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <p class="eyebrow">Let's Create Something Special</p>
+            <h2>Let's Tell Your <span class="gold">Story.</span></h2>
+            <p>
+              Tell us about your wedding, traditional ceremony, graduation
+              or special event. Contact us to check availability and receive
+              a quotation tailored to your needs.
+            </p>
+
+            <ul class="contact-details">
+              <li><strong>WhatsApp</strong> <a href="https://wa.me/27711970286" target="_blank" rel="noopener">071 197 0286</a></li>
+              <li><strong>Email</strong> <a href="mailto:sipholuthuli105@gmail.com">sipholuthuli105@gmail.com</a></li>
+              <li><strong>Socials</strong> <a href="mshibe-qr.html/qrcode.html">View all social links</a></li>
+              <li><strong>Location</strong> KwaZulu-Natal, South Africa</li>
+            </ul>
+          </div>
+
+          <form class="contact-form" id="bookingForm">
+            <h3>Request a <span class="gold">Booking</span></h3>
+
+            <div class="form-row">
+              <label for="clientName">Your Full Name</label>
+              <input id="clientName" name="clientName" type="text"
+                placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-row">
+              <label for="clientPhone">Your Phone Number</label>
+              <input id="clientPhone" name="clientPhone" type="tel"
+                placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-row">
+              <label for="eventType">Type of Event</label>
+              <select id="eventType" name="eventType" required>
+                <option value="">Choose your event</option>
+                <option>Traditional Wedding</option>
+                <option>White Wedding</option>
+                <option>Umemulo</option>
+                <option>Umembeso</option>
+                <option>Ukhekhe</option>
+                <option>Graduation</option>
+                <option>Party or Special Event</option>
+                <option>Digital Invitation</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="eventDate">Event Date</label>
+              <input id="eventDate" name="eventDate" type="date" required>
+            </div>
+
+            <div class="form-row">
+              <label for="eventLocation">Event Venue / Location</label>
+              <input id="eventLocation" name="eventLocation" type="text"
+                placeholder="Enter your event venue" required>
+            </div>
+
+            <div class="form-row">
+              <label for="message">Tell Us More</label>
+              <textarea id="message" name="message"
+                placeholder="Which package or services are you interested in?"></textarea>
+            </div>
+
+            <button class="btn btn-gold" type="submit">Send Booking Request via WhatsApp</button>
+            <p class="form-note">
+              This form opens WhatsApp with your details for you to review
+              and send. Your booking is not confirmed until we confirm it.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <a class="brand" href="#home">
+          <div class="brand-mark">MWF</div>
+          <div>
+            <div class="brand-name">Mshibe Wedding Film</div>
+            <span class="brand-tagline">Your Story, Beautifully Told</span>
+          </div>
+        </a>
+        <p class="footer-copy" style="margin-top:15px;">
+          © <span id="year"></span> Mshibe Wedding Film. All rights reserved.
+        </p>
+      </div>
+
+      <div class="social-links">
+        <a href="mshibe-qr.html/qrcode.html">Social links</a>
+        <a href="https://wa.me/27711970286" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:sipholuthuli105@gmail.com">Email Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+     target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">✆</a>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const packagesDropdown = document.getElementById('packagesDropdown');
+    const packagesToggle = document.getElementById('packagesToggle');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    packagesToggle.addEventListener('click', () => {
+      const isOpen = packagesDropdown.classList.toggle('open');
+      packagesToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation');
+        menuToggle.textContent = '☰';
+        packagesDropdown.classList.remove('open');
+        packagesToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const eventType = document.getElementById('eventType').value;
+      const eventDate = document.getElementById('eventDate').value;
+      const location = document.getElementById('eventLocation').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const bookingMessage =
+        `Hello Mshibe Wedding Film!\n\n` +
+        `I would like to enquire about a booking.\n\n` +
+        `Name: ${name}\n` +
+        `My phone number: ${phone}\n` +
+        `Event: ${eventType}\n` +
+        `Event date: ${eventDate}\n` +
+        `Venue: ${location}\n` +
+        `Additional details: ${message || 'Not provided'}\n\n` +
+        `Please let me know your availability and quotation.`;
+
+      const whatsappURL =
+        'https://wa.me/27711970286?text=' + encodeURIComponent(bookingMessage);
+
+      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+    });
+  </script>
+
+</body>
+</html>
