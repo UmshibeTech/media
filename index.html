@@ -631,6 +631,32 @@
       color: var(--gold);
     }
 
+    .contact-socials {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      vertical-align: middle;
+    }
+
+    .contact-socials a,
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 13px;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: .75rem;
+      font-weight: 600;
+      transition: .25s ease;
+    }
+
+    .contact-socials a:hover,
+    .social-links a:hover {
+      background: var(--gold);
+      color: #111;
+    }
+
     .contact-form {
       padding: 30px;
       background: rgba(17,17,17,.92);
@@ -711,16 +737,7 @@
     .social-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 17px;
-    }
-
-    .social-links a {
-      color: var(--gold-light);
-      font-size: .75rem;
-    }
-
-    .social-links a:hover {
-      color: white;
+      gap: 8px;
     }
 
     .whatsapp-float {
@@ -1474,9 +1491,18 @@
             </p>
 
             <ul class="contact-details">
+              <li><strong>Call</strong> <a href="tel:+27711970286">071 197 0286</a></li>
               <li><strong>WhatsApp</strong> <a href="https://wa.me/27711970286" target="_blank" rel="noopener">071 197 0286</a></li>
               <li><strong>Email</strong> <a href="mailto:sipholuthuli105@gmail.com">sipholuthuli105@gmail.com</a></li>
-              <li><strong>Socials</strong> <a href="mshibe-qr.html/qrcode.html">View all social links</a></li>
+              <li>
+                <strong>Socials</strong>
+                <span class="contact-socials">
+                  <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+                  <a href="https://www.instagram.com/mshibe_wedding_film/" target="_blank" rel="noopener">Instagram</a>
+                  <a href="https://www.tiktok.com/@mshibe_wedding_shots" target="_blank" rel="noopener">TikTok</a>
+                  <a href="https://www.threads.com/@mshibe_wedding_film" target="_blank" rel="noopener">Threads</a>
+                </span>
+              </li>
               <li><strong>Location</strong> KwaZulu-Natal, South Africa</li>
             </ul>
           </div>
@@ -1557,7 +1583,10 @@
       </div>
 
       <div class="social-links">
-        <a href="mshibe-qr.html/qrcode.html">Social links</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/mshibe_wedding_film/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@mshibe_wedding_shots" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.threads.com/@mshibe_wedding_film" target="_blank" rel="noopener">Threads</a>
         <a href="https://wa.me/27711970286" target="_blank" rel="noopener">WhatsApp</a>
         <a href="mailto:sipholuthuli105@gmail.com">Email Us</a>
       </div>
