@@ -401,6 +401,24 @@
       padding: 26px 32px;
       border: 1px solid var(--border);
       background: rgba(17,17,17,.7);
+      animation: referral-enter .75s cubic-bezier(.2,.75,.3,1) .2s both;
+    }
+
+    @keyframes referral-enter {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .referral-card {
+        animation: none;
+      }
     }
 
     .referral-copy {
