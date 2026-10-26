@@ -15,14 +15,28 @@
 
   <style>
     :root {
-      --black: #090909;
-      --dark: #111111;
-      --card: #171717;
-      --gold: #c9a45c;
-      --gold-light: #ead39c;
+      --black: #111111;
+      --black-soft: #171717;
+      --dark: #1f1d1a;
+      --card: #1b1a18;
+      --panel: #221f1d;
+      --ink: #f8f3ee;
+      --gold: #b88952;
+      --gold-deep: #8f6c3c;
+      --gold-light: #d9ba86;
+      --soft-gold: #e7d3a4;
+      --rose: #d9b7b0;
+      --rose-deep: #b8847c;
+      --sage: #b8c4b0;
+      --sage-deep: #82957d;
+      --dusty-blue: #c8d5d8;
+      --linen: #f0e9e2;
+      --ivory: #f5efe8;
+      --stone: #d8d0c7;
       --white: #ffffff;
-      --muted: #b6b6b6;
-      --border: rgba(201,164,92,.25);
+      --muted: #c7bfb7;
+      --border: rgba(184,137,82,.22);
+      --shadow-soft: 0 22px 50px rgba(0,0,0,.18);
       --max-width: 1180px;
     }
 
@@ -38,10 +52,14 @@
     }
 
     body {
-      background: var(--black);
-      color: var(--white);
+      background:
+        radial-gradient(circle at top left, rgba(217,183,176,.12), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(184,196,176,.12), transparent 30%),
+        linear-gradient(180deg, #121212 0%, #0e0e0e 100%);
+      color: var(--ivory);
       font-family: 'Montserrat', sans-serif;
       line-height: 1.7;
+      letter-spacing: .01em;
     }
 
     a {
@@ -64,11 +82,11 @@
     }
 
     .gold {
-      color: var(--gold);
+      color: var(--gold-light);
     }
 
     .eyebrow {
-      color: var(--gold);
+      color: var(--rose);
       text-transform: uppercase;
       letter-spacing: 4px;
       font-size: .72rem;
@@ -118,24 +136,29 @@
     }
 
     .btn-gold {
-      color: #111;
-      background: var(--gold);
+      color: #111111;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      border-color: transparent;
+      box-shadow: 0 14px 28px rgba(184,137,82,.18);
     }
 
     .btn-gold:hover {
-      background: var(--gold-light);
-      border-color: var(--gold-light);
+      background: linear-gradient(135deg, var(--gold), var(--soft-gold));
+      border-color: transparent;
       transform: translateY(-2px);
+      box-shadow: 0 18px 32px rgba(184,137,82,.22);
     }
 
     .btn-outline {
-      color: var(--gold-light);
-      background: transparent;
+      color: var(--ivory);
+      background: rgba(255,255,255,.02);
+      border-color: rgba(217,183,176,.9);
     }
 
     .btn-outline:hover {
-      background: var(--gold);
-      color: #111;
+      background: linear-gradient(135deg, rgba(217,183,176,.18), rgba(184,196,176,.18));
+      color: var(--white);
+      border-color: rgba(217,183,176,.95);
     }
 
     /* Navigation */
@@ -144,9 +167,10 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(9,9,9,.96);
+      background: rgba(11,11,11,.88);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
     }
 
     .nav-inner {
@@ -167,14 +191,16 @@
     .brand-mark {
       width: 48px;
       height: 48px;
-      border: 1px solid var(--gold);
+      border: 1px solid rgba(217,183,176,.7);
+      background: linear-gradient(135deg, rgba(217,183,176,.12), rgba(184,196,176,.06));
       display: grid;
       place-items: center;
-      color: var(--gold);
+      color: var(--rose);
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem;
       font-weight: 700;
       letter-spacing: -2px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
     }
 
     .brand-name {
@@ -189,7 +215,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: .55rem;
       letter-spacing: 2px;
-      color: var(--gold);
+      color: var(--sage);
       text-transform: uppercase;
       margin-top: 5px;
     }
@@ -221,7 +247,7 @@
 
     .nav-links > li > a:hover,
     .dropdown-toggle:hover {
-      color: var(--gold);
+      color: var(--rose);
     }
 
     .dropdown {
@@ -281,7 +307,9 @@
       align-items: center;
       position: relative;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.91) 0%, rgba(0,0,0,.68) 48%, rgba(0,0,0,.25) 100%),
+        radial-gradient(circle at top left, rgba(217,183,176,.20), transparent 26%),
+        radial-gradient(circle at bottom right, rgba(184,196,176,.18), transparent 28%),
+        linear-gradient(90deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.72) 48%, rgba(10,10,10,.28) 100%),
         linear-gradient(0deg, rgba(0,0,0,.75), transparent 45%),
         url('IBM_1350.jpg')
         center 45% / cover no-repeat;
@@ -299,7 +327,7 @@
     }
 
     .hero h1 span {
-      color: var(--gold-light);
+      color: var(--rose);
       display: block;
       font-style: italic;
     }
@@ -348,7 +376,7 @@
     .trust-grid strong {
       display: block;
       font-family: 'Cormorant Garamond', serif;
-      color: var(--gold);
+      color: var(--sage);
       font-size: 1.5rem;
     }
 
@@ -382,7 +410,7 @@
       content: '';
       position: absolute;
       inset: 16px -16px -16px 16px;
-      border: 1px solid var(--gold);
+      border: 1px solid rgba(184,196,176,.9);
       z-index: -1;
     }
 
@@ -392,7 +420,7 @@
     }
 
     .about-copy .signature {
-      color: var(--gold-light);
+      color: var(--rose);
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.7rem;
       font-style: italic;
@@ -412,14 +440,16 @@
 
     .service-card {
       padding: 32px 26px;
-      background: var(--card);
-      border: 1px solid #292929;
+      background: linear-gradient(180deg, rgba(23,23,23,.98), rgba(16,16,16,.96));
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow-soft);
       transition: .25s ease;
     }
 
     .service-card:hover {
       transform: translateY(-5px);
-      border-color: var(--gold);
+      border-color: rgba(201,164,92,.9);
+      box-shadow: 0 28px 55px rgba(0,0,0,.2);
     }
 
     .service-icon {
@@ -427,8 +457,9 @@
       height: 46px;
       display: grid;
       place-items: center;
-      border: 1px solid var(--gold);
-      color: var(--gold);
+      border: 1px solid rgba(184,196,176,.8);
+      background: rgba(184,196,176,.08);
+      color: var(--sage);
       font-size: 1.3rem;
       margin-bottom: 22px;
     }
@@ -459,19 +490,20 @@
     .package-card {
       display: flex;
       flex-direction: column;
-      background: #141414;
-      border: 1px solid #303030;
+      background: linear-gradient(180deg, rgba(20,20,20,.95), rgba(12,12,12,.97));
+      border: 1px solid rgba(255,255,255,.08);
       padding: 32px 25px;
       position: relative;
+      box-shadow: var(--shadow-soft);
     }
 
     .package-card.featured {
-      border-color: var(--gold);
-      background: linear-gradient(160deg, #201b11, #131313 55%);
+      border-color: rgba(201,164,92,.9);
+      background: linear-gradient(160deg, rgba(216,165,164,.12), rgba(201,164,92,.12) 24%, rgba(19,19,19,.98) 65%);
     }
 
     .package-label {
-      color: var(--gold);
+      color: var(--rose);
       font-size: .68rem;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -486,7 +518,7 @@
     .package-price {
       font-size: 2rem;
       font-weight: 700;
-      color: var(--gold-light);
+      color: var(--dusty-blue);
       margin: 12px 0 20px;
     }
 
@@ -514,7 +546,7 @@
 
     .package-card li::before {
       content: '✦';
-      color: var(--gold);
+      color: var(--sage);
       margin-right: 10px;
     }
 
@@ -558,8 +590,9 @@
 
     .extra-item {
       padding: 22px;
-      background: #171717;
-      border: 1px solid #292929;
+      background: linear-gradient(180deg, rgba(23,23,23,.96), rgba(17,17,17,.98));
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 16px 38px rgba(0,0,0,.15);
     }
 
     .extra-item h3 {
@@ -574,7 +607,7 @@
 
     .extra-price {
       display: block;
-      color: var(--gold-light);
+      color: var(--rose);
       font-size: 1.05rem;
       font-weight: 700;
       margin-top: 12px;
@@ -594,7 +627,7 @@
 
     .rule h3 {
       font-size: 1.45rem;
-      color: var(--gold-light);
+      color: var(--sage);
       margin-bottom: 8px;
     }
 
@@ -607,9 +640,8 @@
 
     .contact-section {
       background:
-        linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.93)),
-        url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=85')
-        center / cover;
+        linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.78)),
+        url('contact-background.jpg') center 35% / cover;
       border-top: 1px solid var(--border);
     }
 
@@ -638,7 +670,7 @@
     .contact-details strong {
       display: inline-block;
       min-width: 100px;
-      color: var(--gold);
+      color: var(--rose);
     }
 
     .contact-socials {
@@ -669,8 +701,9 @@
 
     .contact-form {
       padding: 30px;
-      background: rgba(17,17,17,.92);
+      background: linear-gradient(180deg, rgba(17,17,17,.94), rgba(10,10,10,.98));
       border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
     }
 
     .contact-form h3 {
@@ -722,6 +755,33 @@
       font-size: .68rem;
       color: var(--muted);
       margin-top: 12px;
+    }
+
+    .form-status a {
+      display: inline-block;
+      color: var(--gold-light);
+      text-decoration: underline;
+      margin-top: 6px;
+    }
+
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin: 4px 0 16px;
+    }
+
+    .form-consent input {
+      width: auto;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      margin-top: 5px;
+      accent-color: var(--gold);
+    }
+
+    .form-consent label {
+      margin: 0;
     }
 
     /* Footer */
@@ -1561,13 +1621,14 @@
             <div class="form-row">
               <label for="clientName">Your Full Name</label>
               <input id="clientName" name="clientName" type="text"
-                placeholder="Enter your name" required>
+                placeholder="Enter your name" maxlength="120" autocomplete="name" required>
             </div>
 
             <div class="form-row">
               <label for="clientPhone">Your Phone Number</label>
               <input id="clientPhone" name="clientPhone" type="tel"
-                placeholder="Enter your phone number" required>
+                placeholder="Enter your phone number" maxlength="40"
+                autocomplete="tel" required>
             </div>
 
             <div class="form-row">
@@ -1594,20 +1655,32 @@
             <div class="form-row">
               <label for="eventLocation">Event Venue / Location</label>
               <input id="eventLocation" name="eventLocation" type="text"
-                placeholder="Enter your event venue" required>
+                placeholder="Enter your event venue" maxlength="200" required>
             </div>
 
             <div class="form-row">
               <label for="message">Tell Us More</label>
               <textarea id="message" name="message"
-                placeholder="Which package or services are you interested in?"></textarea>
+                placeholder="Which package or services are you interested in?"
+                maxlength="2000"></textarea>
             </div>
 
-            <button class="btn btn-gold" type="submit">Send Booking Request via WhatsApp</button>
+            <div class="form-consent">
+              <input id="bookingConsent" name="bookingConsent" type="checkbox" required>
+              <label for="bookingConsent">
+                I agree that Mshibe Wedding Film may store these details to respond
+                to my booking enquiry.
+              </label>
+            </div>
+
+            <button class="btn btn-gold" type="submit">Save Enquiry &amp; Continue to WhatsApp</button>
             <p class="form-note">
-              This form opens WhatsApp with your details for you to review
-              and send. Your booking is not confirmed until we confirm it.
+              Your enquiry is saved before WhatsApp opens. You can review and send
+              the WhatsApp message yourself. A booking is not confirmed until we
+              confirm it.
             </p>
+            <p class="form-note form-status" id="bookingStatus" role="status"
+              aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -1645,6 +1718,7 @@
      href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20would%20like%20to%20make%20an%20enquiry."
      target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">✆</a>
 
+  <script src="supabase-config.js"></script>
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
@@ -1718,8 +1792,26 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    const bookingForm = document.getElementById('bookingForm');
+    const bookingStatus = document.getElementById('bookingStatus');
+    const bookingSubmit = bookingForm.querySelector('button[type="submit"]');
+
+    function showBookingStatus(message, whatsappURL = '', isError = false) {
+      bookingStatus.replaceChildren(document.createTextNode(message));
+      bookingStatus.setAttribute('role', isError ? 'alert' : 'status');
+      if (whatsappURL) {
+        const link = document.createElement('a');
+        link.href = whatsappURL;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'Open WhatsApp to review and send your enquiry';
+        bookingStatus.append(document.createElement('br'), link);
+      }
+    }
+
+    bookingForm.addEventListener('submit', async function(event) {
       event.preventDefault();
+      if (!bookingForm.reportValidity()) return;
 
       const name = document.getElementById('clientName').value.trim();
       const phone = document.getElementById('clientPhone').value.trim();
@@ -1727,7 +1819,6 @@
       const eventDate = document.getElementById('eventDate').value;
       const location = document.getElementById('eventLocation').value.trim();
       const message = document.getElementById('message').value.trim();
-
       const bookingMessage =
         `Hello Mshibe Wedding Film!\n\n` +
         `I would like to enquire about a booking.\n\n` +
@@ -1738,11 +1829,70 @@
         `Venue: ${location}\n` +
         `Additional details: ${message || 'Not provided'}\n\n` +
         `Please let me know your availability and quotation.`;
-
       const whatsappURL =
         'https://wa.me/27711970286?text=' + encodeURIComponent(bookingMessage);
+      const config = window.SUPABASE_CONFIG || {};
+      const supabaseUrl = typeof config.url === 'string' ? config.url.trim().replace(/\/+$/, '') : '';
+      const supabasePublishableKey =
+        typeof config.publishableKey === 'string' ? config.publishableKey.trim() : '';
 
-      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+      if (!supabaseUrl || !supabasePublishableKey) {
+        showBookingStatus(
+          'The booking database is not connected yet. Your details were not saved; you can still send them using WhatsApp.',
+          whatsappURL,
+          true
+        );
+        return;
+      }
+
+      bookingSubmit.disabled = true;
+      bookingSubmit.textContent = 'Saving your enquiry...';
+      showBookingStatus('Saving your enquiry. Please wait.');
+
+      try {
+        const response = await fetch(`${supabaseUrl}/rest/v1/booking_enquiries`, {
+          method: 'POST',
+          headers: {
+            apikey: supabasePublishableKey,
+            'Content-Type': 'application/json',
+            Prefer: 'return=minimal'
+          },
+          body: JSON.stringify({
+            client_name: name,
+            client_phone: phone,
+            event_type: eventType,
+            event_date: eventDate,
+            event_location: location,
+            message
+          })
+        });
+
+        if (!response.ok) {
+          console.error('Booking enquiry could not be saved. Supabase returned status:', response.status);
+          showBookingStatus(
+            'Your enquiry was not saved. Please try again or use WhatsApp to send it instead.',
+            whatsappURL,
+            true
+          );
+          return;
+        }
+
+        bookingForm.reset();
+        showBookingStatus(
+          'Your enquiry has been saved. WhatsApp will not send anything until you choose the link below.',
+          whatsappURL
+        );
+      } catch (error) {
+        console.error('Unable to reach the booking enquiry API:', error);
+        showBookingStatus(
+          'We could not reach the booking database, so your enquiry was not saved. Please try again or use WhatsApp to send it instead.',
+          whatsappURL,
+          true
+        );
+      } finally {
+        bookingSubmit.disabled = false;
+        bookingSubmit.textContent = 'Save Enquiry & Continue to WhatsApp';
+      }
     });
   </script>
 
