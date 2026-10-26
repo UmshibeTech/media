@@ -387,6 +387,44 @@
       letter-spacing: 1px;
     }
 
+    .referral-section {
+      padding: 32px 0;
+      background: linear-gradient(135deg, rgba(184,137,82,.12), rgba(217,183,176,.06));
+      border-bottom: 1px solid var(--border);
+    }
+
+    .referral-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 26px 32px;
+      border: 1px solid var(--border);
+      background: rgba(17,17,17,.7);
+    }
+
+    .referral-copy {
+      max-width: 760px;
+    }
+
+    .referral-copy .eyebrow {
+      margin-bottom: 6px;
+    }
+
+    .referral-copy h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 6px;
+    }
+
+    .referral-copy p:last-child {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .referral-card .btn {
+      flex-shrink: 0;
+    }
+
     /* About */
 
     .about-grid {
@@ -918,6 +956,13 @@
         gap: 40px;
       }
 
+      .referral-card {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 24px;
+      }
+
       .about-image {
         min-height: 350px;
         margin-right: 12px;
@@ -1108,6 +1153,24 @@
         <div>
           <strong>Made for You</strong>
           <span>Personalised Event Coverage</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="referral-section" aria-labelledby="referral-title">
+      <div class="container">
+        <div class="referral-card">
+          <div class="referral-copy">
+            <p class="eyebrow">Share the Story. Earn a Reward.</p>
+            <h2 id="referral-title">Refer a Client. <span class="gold">Earn R500.</span></h2>
+            <p>
+              Know someone planning a wedding or special event? Refer them to
+              Mshibe Wedding Film and receive R500 when they book with us.
+            </p>
+          </div>
+          <a class="btn btn-gold"
+             href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%27d%20like%20to%20refer%20a%20client%20and%20learn%20more%20about%20the%20R500%20referral%20reward."
+             target="_blank" rel="noopener">Refer Someone</a>
         </div>
       </div>
     </section>
