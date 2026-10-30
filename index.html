@@ -887,6 +887,64 @@
       transform: translateY(-3px);
     }
 
+    .promo-dialog {
+      width: min(92vw, 520px);
+      max-width: none;
+      margin: auto;
+      padding: 38px;
+      color: var(--ivory);
+      background:
+        radial-gradient(circle at top right, rgba(217,183,176,.16), transparent 40%),
+        linear-gradient(180deg, #1b1a18, #101010);
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 80px rgba(0,0,0,.55);
+    }
+
+    .promo-dialog::backdrop {
+      background: rgba(0,0,0,.76);
+      backdrop-filter: blur(4px);
+    }
+
+    .promo-close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      padding: 4px 9px;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.2);
+      font: inherit;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .promo-dialog h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 6vw, 2.8rem);
+    }
+
+    .promo-dialog p:not(.eyebrow) {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .promo-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    @media (max-width: 560px) {
+      .promo-dialog {
+        padding: 34px 24px 26px;
+      }
+
+      .promo-actions .btn {
+        width: 100%;
+      }
+    }
+
     @media (max-width: 1000px) {
       .nav-inner {
         min-height: 74px;
@@ -1822,6 +1880,25 @@
      href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20would%20like%20to%20make%20an%20enquiry."
      target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">✆</a>
 
+  <dialog class="promo-dialog" id="promoDialog"
+    aria-labelledby="promoTitle" aria-describedby="promoDescription">
+    <form method="dialog">
+      <button class="promo-close" type="submit" aria-label="Close promotion">×</button>
+    </form>
+    <p class="eyebrow">Mshibe Wedding Film</p>
+    <h2 id="promoTitle">Your special moments, beautifully captured.</h2>
+    <p id="promoDescription">
+      Planning a wedding, traditional ceremony or graduation? Explore our
+      photography and film packages, and let’s plan your event together.
+    </p>
+    <div class="promo-actions">
+      <a class="btn btn-gold" href="#wedding-packages">Explore Packages</a>
+      <a class="btn btn-outline"
+        href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
+        target="_blank" rel="noopener">Enquire on WhatsApp</a>
+    </div>
+  </dialog>
+
   <script src="supabase-config.js"></script>
   <script>
     const menuToggle = document.getElementById('menuToggle');
@@ -1830,6 +1907,7 @@
     const packagesToggle = document.getElementById('packagesToggle');
     const navbar = document.querySelector('.navbar');
     const mobileNavigation = window.matchMedia('(max-width: 1000px)');
+    const promoDialog = document.getElementById('promoDialog');
 
     function closePackagesDropdown() {
       packagesDropdown.classList.remove('open');
@@ -1895,6 +1973,19 @@
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    if (!sessionStorage.getItem('promoDismissed')) {
+      window.setTimeout(() => {
+        sessionStorage.setItem('promoDismissed', 'true');
+        promoDialog.showModal();
+      }, 5000);
+    }
+
+    promoDialog.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        promoDialog.close();
+      });
+    });
 
     const bookingForm = document.getElementById('bookingForm');
     const bookingStatus = document.getElementById('bookingStatus');
