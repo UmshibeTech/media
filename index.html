@@ -8,6 +8,9 @@
 
   <title>Mshibe Wedding Film | Photography & Cinematic Films</title>
   <meta name="description" content="Mshibe Wedding Film offers professional wedding photography, videography, drone coverage, digital invitations and event production in KwaZulu-Natal, South Africa.">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" as="image" href="IBM_1350.webp" fetchpriority="high">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -343,7 +346,7 @@
         radial-gradient(circle at bottom right, rgba(184,196,176,.18), transparent 28%),
         linear-gradient(90deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.72) 48%, rgba(10,10,10,.28) 100%),
         linear-gradient(0deg, rgba(0,0,0,.75), transparent 45%),
-        url('IBM_1350.jpg')
+        url('IBM_1350.webp')
         center 45% / cover no-repeat;
     }
 
@@ -501,7 +504,7 @@
       min-height: 470px;
       background:
         linear-gradient(0deg, rgba(0,0,0,.15), rgba(0,0,0,.05)),
-        url('IBM_1343.jpg')
+        url('IBM_1343.webp')
         center / cover;
       border: 1px solid var(--border);
       position: relative;
@@ -1410,40 +1413,46 @@
 
         <div class="portfolio-grid">
           <figure class="portfolio-card">
-            <img src="IBM_1343.jpg"
+            <img src="IBM_1343.webp" width="1280" height="1920"
               alt="Couple celebrating in traditional attire outdoors"
               loading="lazy" decoding="async">
             <figcaption><span>Culture &amp; tradition</span>A celebration to remember</figcaption>
           </figure>
           <figure class="portfolio-card">
-            <img src="IBM_1382.jpg"
+            <img src="IBM_1382.webp" width="1280" height="1920"
               alt="Bride in traditional attire at an outdoor celebration"
               loading="lazy" decoding="async">
             <figcaption><span>Every detail matters</span>Honouring the moment</figcaption>
           </figure>
           <figure class="portfolio-card">
-            <img src="IBM_1345.jpg"
+            <img src="IBM_1345.webp" width="1280" height="1920"
               alt="Newlyweds sharing a portrait in traditional wedding attire"
               loading="lazy" decoding="async">
             <figcaption><span>Made to be remembered</span>A story of togetherness</figcaption>
           </figure>
           <figure class="portfolio-card">
-            <img src="IBM_5475.jpg"
+            <img src="IBM_5475.webp" width="1280" height="1920"
               alt="Graduate celebrating with a bouquet of red roses"
               loading="lazy" decoding="async">
             <figcaption><span>Graduation portraits</span>A milestone worth celebrating</figcaption>
           </figure>
           <figure class="portfolio-card">
-            <img src="IBM_5448.jpg"
+            <img src="IBM_5448.webp" width="1280" height="1920"
               alt="Graduate holding a diploma in cap and gown"
               loading="lazy" decoding="async">
             <figcaption><span>Hard work, beautifully honoured</span>On to the next chapter</figcaption>
           </figure>
           <figure class="portfolio-card">
-            <img src="graduation-bouquet.png"
-              alt="Graduate in a cap and gown holding a bouquet of roses"
+            <img src="traditional-wedding-portrait.webp" width="768" height="1160"
+              alt="Couple in traditional wedding attire sharing a portrait outdoors"
               loading="lazy" decoding="async">
-            <figcaption><span>Celebrate your achievement</span>A moment to treasure</figcaption>
+            <figcaption><span>Traditional wedding</span>Together in tradition</figcaption>
+          </figure>
+          <figure class="portfolio-card">
+            <img src="wedding-couple-portrait.webp" width="816" height="1232"
+              alt="Newlyweds in traditional attire sharing a portrait beneath a tree"
+              loading="lazy" decoding="async">
+            <figcaption><span>A celebration of love</span>Rooted in tradition</figcaption>
           </figure>
         </div>
       </div>
@@ -1935,7 +1944,7 @@
               <li>
                 <strong>Socials</strong>
                 <span class="contact-socials">
-                  <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+                  <a href="https://www.facebook.com/MshibeWeddingFilms/" target="_blank" rel="noopener noreferrer">Facebook</a>
                   <a href="https://www.instagram.com/mshibe_wedding_film/" target="_blank" rel="noopener">Instagram</a>
                   <a href="https://www.tiktok.com/@mshibe_wedding_shots" target="_blank" rel="noopener">TikTok</a>
                   <a href="https://www.threads.com/@mshibe_wedding_film" target="_blank" rel="noopener">Threads</a>
@@ -2003,11 +2012,10 @@
               </label>
             </div>
 
-            <button class="btn btn-gold" type="submit">Save Enquiry &amp; Continue to WhatsApp</button>
+            <button class="btn btn-gold" type="submit">Save Booking Enquiry</button>
             <p class="form-note">
-              Your enquiry is saved before WhatsApp opens. You can review and send
-              the WhatsApp message yourself. A booking is not confirmed until we
-              confirm it.
+              After saving, you can choose to review and send a pre-filled message
+              on WhatsApp. Your booking is not confirmed until we confirm it.
             </p>
             <p class="form-note form-status" id="bookingStatus" role="status"
               aria-live="polite"></p>
@@ -2034,7 +2042,7 @@
       </div>
 
       <div class="social-links">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.facebook.com/MshibeWeddingFilms/" target="_blank" rel="noopener noreferrer">Facebook</a>
         <a href="https://www.instagram.com/mshibe_wedding_film/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.tiktok.com/@mshibe_wedding_shots" target="_blank" rel="noopener">TikTok</a>
         <a href="https://www.threads.com/@mshibe_wedding_film" target="_blank" rel="noopener">Threads</a>
@@ -2254,7 +2262,7 @@
         );
       } finally {
         bookingSubmit.disabled = false;
-        bookingSubmit.textContent = 'Save Enquiry & Continue to WhatsApp';
+        bookingSubmit.textContent = 'Save Booking Enquiry';
       }
     });
   </script>
