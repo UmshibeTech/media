@@ -67,6 +67,15 @@
       text-decoration: none;
     }
 
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 4px;
+    }
+
     img {
       display: block;
       max-width: 100%;
@@ -79,6 +88,21 @@
     .container {
       width: min(92%, var(--max-width));
       margin: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1200;
+      padding: 10px 14px;
+      color: #111;
+      background: var(--gold-light);
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
     }
 
     .gold {
@@ -131,6 +155,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       border: 1px solid var(--gold);
+      border-radius: 2px;
       transition: .25s ease;
       cursor: pointer;
     }
@@ -243,6 +268,13 @@
       cursor: pointer;
       letter-spacing: .5px;
       white-space: nowrap;
+    }
+
+    .nav-links > li > a:not(.btn),
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
     }
 
     .nav-links > li > a:hover,
@@ -416,6 +448,19 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
       .referral-card {
         animation: none;
       }
@@ -480,6 +525,59 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.7rem;
       font-style: italic;
+    }
+
+    /* Portfolio */
+
+    .portfolio-section {
+      background: #101010;
+      border-top: 1px solid var(--border);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio-card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: var(--black-soft);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .portfolio-card:hover img {
+      transform: scale(1.035);
+    }
+
+    .portfolio-card figcaption {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 56px 22px 20px;
+      background: linear-gradient(transparent, rgba(0,0,0,.82));
+      color: var(--ivory);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+    }
+
+    .portfolio-card figcaption span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: .63rem;
+      font-weight: 600;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
     }
 
     /* Services */
@@ -1027,6 +1125,7 @@
       }
 
       .about-grid,
+      .portfolio-grid,
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1042,6 +1141,11 @@
       .about-image {
         min-height: 350px;
         margin-right: 12px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
       }
 
       .services-grid,
@@ -1101,6 +1205,14 @@
         grid-template-columns: 1fr;
       }
 
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-card {
+        aspect-ratio: 5 / 4;
+      }
+
       .contact-form {
         padding: 22px 17px;
       }
@@ -1156,6 +1268,8 @@
 
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
   <!-- NAVIGATION -->
   <header class="navbar">
     <div class="container nav-inner">
@@ -1174,6 +1288,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
+        <li><a href="#portfolio">Our Work</a></li>
         <li><a href="#services">Services</a></li>
 
         <li class="dropdown" id="packagesDropdown">
@@ -1195,7 +1310,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- HERO -->
     <section class="hero" id="home">
       <div class="container">
@@ -1277,6 +1392,59 @@
           </p>
           <p class="signature">Your story, beautifully told.</p>
           <a href="#services" class="btn btn-outline">Discover Our Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio-section" id="portfolio"
+      aria-labelledby="portfolio-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">A Glimpse of the Moments We Preserve</p>
+          <h2 id="portfolio-title">Stories in <span class="gold">Every Frame</span></h2>
+          <p class="section-intro">
+            From wedding traditions to graduation milestones, we preserve
+            the moments and people that make every celebration yours.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <figure class="portfolio-card">
+            <img src="IBM_1343.jpg"
+              alt="Couple celebrating in traditional attire outdoors"
+              loading="lazy" decoding="async">
+            <figcaption><span>Culture &amp; tradition</span>A celebration to remember</figcaption>
+          </figure>
+          <figure class="portfolio-card">
+            <img src="IBM_1382.jpg"
+              alt="Bride in traditional attire at an outdoor celebration"
+              loading="lazy" decoding="async">
+            <figcaption><span>Every detail matters</span>Honouring the moment</figcaption>
+          </figure>
+          <figure class="portfolio-card">
+            <img src="IBM_1345.jpg"
+              alt="Newlyweds sharing a portrait in traditional wedding attire"
+              loading="lazy" decoding="async">
+            <figcaption><span>Made to be remembered</span>A story of togetherness</figcaption>
+          </figure>
+          <figure class="portfolio-card">
+            <img src="IBM_5475.jpg"
+              alt="Graduate celebrating with a bouquet of red roses"
+              loading="lazy" decoding="async">
+            <figcaption><span>Graduation portraits</span>A milestone worth celebrating</figcaption>
+          </figure>
+          <figure class="portfolio-card">
+            <img src="IBM_5448.jpg"
+              alt="Graduate holding a diploma in cap and gown"
+              loading="lazy" decoding="async">
+            <figcaption><span>Hard work, beautifully honoured</span>On to the next chapter</figcaption>
+          </figure>
+          <figure class="portfolio-card">
+            <img src="graduation-bouquet.png"
+              alt="Graduate in a cap and gown holding a bouquet of roses"
+              loading="lazy" decoding="async">
+            <figcaption><span>Celebrate your achievement</span>A moment to treasure</figcaption>
+          </figure>
         </div>
       </div>
     </section>
