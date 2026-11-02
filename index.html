@@ -772,6 +772,30 @@
       border-top: 1px solid var(--border);
     }
 
+    .reviews-section {
+      padding: 68px 0;
+      background: linear-gradient(135deg, rgba(184,137,82,.12), rgba(217,183,176,.05));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .reviews-copy {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .reviews-copy h2 {
+      margin-bottom: 12px;
+    }
+
+    .reviews-copy > p:not(.eyebrow) {
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1612,6 +1636,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#portfolio">Our Work</a></li>
+        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#process">How It Works</a></li>
 
@@ -1842,6 +1867,22 @@
       </div>
     </section>
 
+    <section class="reviews-section" id="reviews" aria-labelledby="reviews-title">
+      <div class="container reviews-copy">
+        <p class="eyebrow">Client Reviews</p>
+        <h2 id="reviews-title">Your experience <span class="gold">matters.</span></h2>
+        <p>
+          We only share a couple’s words, names or photographs with their
+          permission. We’re gathering approval before featuring client reviews
+          here. If we’ve worked together, you can send feedback privately;
+          nothing will be published without your consent.
+        </p>
+        <a class="btn btn-gold"
+          href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20I%20would%20like%20to%20share%20private%20feedback%20about%20your%20service.%20Please%20let%20me%20know%20how."
+          target="_blank" rel="noopener noreferrer">Share Private Feedback</a>
+      </div>
+    </section>
+
     <!-- SERVICES -->
     <section class="section services-section" id="services">
       <div class="container">
@@ -1940,6 +1981,7 @@
             <div class="package-price">R12,500<small>Package price</small></div>
             <ul>
               <li>For traditional or white weddings</li>
+              <li>Up to 9 hours of coverage per booking day</li>
               <li>Coverage and deliverables confirmed in your written quotation</li>
             </ul>
             <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20please%20share%20the%20inclusions%20for%20the%20R12%2C500%20wedding%20package." target="_blank" rel="noopener noreferrer">Ask About Inclusions</a>
@@ -1951,6 +1993,7 @@
             <div class="package-price">R15,000<small>Package price</small></div>
             <ul>
               <li>For traditional or white weddings</li>
+              <li>Up to 9 hours of coverage per booking day</li>
               <li>Coverage and deliverables confirmed in your written quotation</li>
             </ul>
             <a class="btn btn-gold" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20please%20share%20the%20inclusions%20for%20the%20R15%2C000%20wedding%20package." target="_blank" rel="noopener noreferrer">Ask About Inclusions</a>
@@ -1962,6 +2005,7 @@
             <div class="package-price">R18,000<small>Package price</small></div>
             <ul>
               <li>For traditional or white weddings</li>
+              <li>Up to 9 hours of coverage per booking day</li>
               <li>Coverage and deliverables confirmed in your written quotation</li>
             </ul>
             <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20please%20share%20the%20inclusions%20for%20the%20R18%2C000%20wedding%20package." target="_blank" rel="noopener noreferrer">Ask About Inclusions</a>
@@ -2010,6 +2054,7 @@
             <h3>Traditional Essential</h3>
             <div class="package-price">R9,500<small>Package price</small></div>
             <ul>
+              <li>Up to 9 hours of coverage per booking day</li>
               <li>Digital images</li>
               <li>Highlight video</li>
               <li>Full video</li>
@@ -2022,6 +2067,7 @@
             <h3>Traditional Signature</h3>
             <div class="package-price">R12,000<small>Package price</small></div>
             <ul>
+              <li>Up to 9 hours of coverage per booking day</li>
               <li>A4 photobook</li>
               <li>A3 canvas</li>
               <li>Full video</li>
@@ -2035,6 +2081,7 @@
             <h3>Traditional Premium</h3>
             <div class="package-price">R16,000<small>Package price</small></div>
             <ul>
+              <li>Up to 9 hours of coverage per booking day</li>
               <li>A3 photobook</li>
               <li>A3 canvas</li>
               <li>Full video</li>
@@ -2521,7 +2568,7 @@
       <div class="footer-details">
         <div>
           <h2>Explore</h2>
-          <p><a href="#portfolio">Our work</a> · <a href="#services">Services</a></p>
+          <p><a href="#portfolio">Our work</a> · <a href="#reviews">Reviews</a> · <a href="#services">Services</a></p>
           <p><a href="#wedding-packages">Wedding packages</a> · <a href="#process">How it works</a></p>
           <p><a href="#faq">FAQs</a> · <a href="#contact">Enquire</a></p>
         </div>
