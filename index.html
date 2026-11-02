@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b0b0b">
+  <meta name="theme-color" content="#171512">
 
-  <title>Mshibe Wedding Film | Photography & Cinematic Films</title>
-  <meta name="description" content="Mshibe Wedding Film offers professional wedding photography, videography, drone coverage, digital invitations and event production in KwaZulu-Natal, South Africa.">
+  <title>Mshibe Wedding Films | Wedding Photography &amp; Cinematic Films</title>
+  <meta name="description" content="Mshibe Wedding Films captures traditional and white weddings through thoughtful photography and cinematic films in KwaZulu-Natal, South Africa. Explore packages and enquire about your date.">
   <meta name="color-scheme" content="dark">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preload" as="image" href="IBM_1350.webp" fetchpriority="high">
@@ -342,10 +342,8 @@
       align-items: center;
       position: relative;
       background:
-        radial-gradient(circle at top left, rgba(217,183,176,.20), transparent 26%),
-        radial-gradient(circle at bottom right, rgba(184,196,176,.18), transparent 28%),
-        linear-gradient(90deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.72) 48%, rgba(10,10,10,.28) 100%),
-        linear-gradient(0deg, rgba(0,0,0,.75), transparent 45%),
+        linear-gradient(90deg, rgba(10,10,10,.82) 0%, rgba(10,10,10,.52) 48%, rgba(10,10,10,.08) 100%),
+        linear-gradient(0deg, rgba(0,0,0,.62), transparent 56%),
         url('IBM_1350.webp')
         center 45% / cover no-repeat;
     }
@@ -388,6 +386,19 @@
       margin-top: 35px;
     }
 
+    .hero h1 {
+      max-width: 760px;
+      font-size: clamp(3.2rem, 8vw, 6.4rem);
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero-description {
+      font-size: clamp(.95rem, 1.6vw, 1.08rem);
+    }
+
     /* Intro strip */
 
     .trust-strip {
@@ -399,7 +410,7 @@
 
     .trust-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       text-align: center;
     }
@@ -411,8 +422,8 @@
     .trust-grid strong {
       display: block;
       font-family: 'Cormorant Garamond', serif;
-      color: var(--sage);
-      font-size: 1.5rem;
+      color: var(--gold-light);
+      font-size: 1.45rem;
     }
 
     .trust-grid span {
@@ -420,6 +431,245 @@
       font-size: .7rem;
       text-transform: uppercase;
       letter-spacing: 1px;
+    }
+
+    .story-section {
+      padding: 82px 0;
+      background: linear-gradient(180deg, #171512, #10100f);
+    }
+
+    .story-heading {
+      max-width: 680px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .story-heading h2 {
+      margin-bottom: 12px;
+    }
+
+    .story-heading p:last-child {
+      color: var(--muted);
+    }
+
+    .featured-film {
+      max-width: 1000px;
+      margin: 0 auto 30px;
+      overflow: hidden;
+      background: #080808;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .featured-film video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #080808;
+      object-fit: cover;
+    }
+
+    .featured-film figcaption {
+      padding: 14px 18px;
+      color: var(--muted);
+      font-size: .75rem;
+      letter-spacing: .5px;
+    }
+
+    .featured-film figcaption strong {
+      color: var(--ivory);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .film-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .film-card {
+      position: relative;
+      display: flex;
+      min-height: 380px;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #211e1a;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .film-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .film-card:hover img {
+      transform: scale(1.035);
+    }
+
+    .film-card::after {
+      position: absolute;
+      inset: 30% 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.82));
+      content: '';
+    }
+
+    .film-card-copy {
+      position: relative;
+      z-index: 1;
+      padding: 24px;
+    }
+
+    .film-card-copy span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--gold-light);
+      font-size: .66rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .film-card-copy h3 {
+      font-size: 1.8rem;
+    }
+
+    .story-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 24px;
+      margin-top: 26px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin: 18px 0;
+    }
+
+    .approach-section {
+      background: #151411;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    #process .approach-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .approach-card {
+      padding: 27px 24px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.025);
+    }
+
+    .approach-card > span {
+      color: var(--gold-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+    }
+
+    .approach-card h3 {
+      margin: 8px 0;
+      font-size: 1.45rem;
+    }
+
+    .approach-card p {
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .service-card ul {
+      margin: 15px 0 20px;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .service-card li {
+      padding: 3px 0;
+    }
+
+    .service-card .service-link {
+      display: inline-block;
+      color: var(--gold-light);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .couple-love {
+      padding: 72px 0;
+      background:
+        linear-gradient(90deg, rgba(12,12,12,.9), rgba(12,12,12,.65)),
+        url('IBM_1343.webp') center 38% / cover;
+      text-align: center;
+    }
+
+    .couple-love blockquote {
+      max-width: 790px;
+      margin: 0 auto 24px;
+      color: var(--ivory);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.3;
+    }
+
+    .couple-love p:last-child {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .faq-list {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-list details {
+      border-bottom: 1px solid #2b2925;
+    }
+
+    .faq-list summary {
+      padding: 20px 34px 20px 0;
+      color: var(--ivory);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      cursor: pointer;
+    }
+
+    .faq-list details p {
+      max-width: 720px;
+      padding: 0 0 20px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .final-cta {
+      padding: 74px 0;
+      background: linear-gradient(135deg, rgba(184,137,82,.14), rgba(217,183,176,.06));
+      text-align: center;
+    }
+
+    .final-cta p:not(.eyebrow) {
+      max-width: 640px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+    }
+
+    .final-cta .hero-actions {
+      justify-content: center;
     }
 
     .referral-section {
@@ -950,10 +1200,38 @@
     }
 
     .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+    }
+
+    .footer-details {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+      margin: 28px 0;
+      padding: 24px 0;
+      border-top: 1px solid #292929;
+      border-bottom: 1px solid #292929;
+    }
+
+    .footer-details h2 {
+      margin-bottom: 8px;
+      color: var(--gold-light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: .68rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer-details p,
+    .footer-details a {
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .footer-details a:hover {
+      color: var(--gold-light);
     }
 
     .footer-copy {
@@ -988,62 +1266,8 @@
       transform: translateY(-3px);
     }
 
-    .promo-dialog {
-      width: min(92vw, 520px);
-      max-width: none;
-      margin: auto;
-      padding: 38px;
-      color: var(--ivory);
-      background:
-        radial-gradient(circle at top right, rgba(217,183,176,.16), transparent 40%),
-        linear-gradient(180deg, #1b1a18, #101010);
-      border: 1px solid var(--border);
-      box-shadow: 0 24px 80px rgba(0,0,0,.55);
-    }
-
-    .promo-dialog::backdrop {
-      background: rgba(0,0,0,.76);
-      backdrop-filter: blur(4px);
-    }
-
-    .promo-close {
-      position: absolute;
-      top: 12px;
-      right: 14px;
-      padding: 4px 9px;
-      color: var(--muted);
-      background: transparent;
-      border: 1px solid rgba(255,255,255,.2);
-      font: inherit;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-
-    .promo-dialog h2 {
-      margin-bottom: 12px;
-      font-size: clamp(2rem, 6vw, 2.8rem);
-    }
-
-    .promo-dialog p:not(.eyebrow) {
-      margin-bottom: 24px;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .promo-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    @media (max-width: 560px) {
-      .promo-dialog {
-        padding: 34px 24px 26px;
-      }
-
-      .promo-actions .btn {
-        width: 100%;
-      }
+    .mobile-contact-bar {
+      display: none;
     }
 
     @media (max-width: 1000px) {
@@ -1108,6 +1332,14 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .film-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .film-card:last-child {
+        grid-column: 1 / -1;
+      }
+
       .package-card:last-child:nth-child(odd) {
         grid-column: 1 / -1;
       }
@@ -1132,6 +1364,18 @@
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+      }
+
+      .approach-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #process .approach-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .film-card {
+        min-height: 350px;
       }
 
       .referral-card {
@@ -1165,8 +1409,11 @@
       }
 
       .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
+        grid-template-columns: 1fr;
+      }
+
+      .footer-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -1199,8 +1446,33 @@
       }
 
       .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .trust-grid strong {
+        font-size: 1.2rem;
+      }
+
+      .trust-grid span {
+        font-size: .61rem;
+      }
+
+      .film-grid,
+      .approach-grid {
         grid-template-columns: 1fr;
-        gap: 8px;
+      }
+
+      #process .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .film-card:last-child {
+        grid-column: auto;
+      }
+
+      .story-section {
+        padding: 60px 0;
       }
 
       .services-grid,
@@ -1226,7 +1498,35 @@
 
       .whatsapp-float {
         right: 14px;
-        bottom: 14px;
+        bottom: 76px;
+      }
+
+      body {
+        padding-bottom: calc(64px + env(safe-area-inset-bottom));
+      }
+
+      .mobile-contact-bar {
+        position: fixed;
+        inset: auto 0 0;
+        z-index: 899;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 9px max(14px, env(safe-area-inset-left)) calc(9px + env(safe-area-inset-bottom));
+        background: rgba(12,12,12,.96);
+        border-top: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+      }
+
+      .mobile-contact-bar .btn {
+        min-height: 44px;
+        padding: 10px 12px;
+        font-size: .66rem;
+      }
+
+      .footer-details {
+        grid-template-columns: 1fr;
+        gap: 18px;
       }
     }
 
@@ -1276,10 +1576,10 @@
   <!-- NAVIGATION -->
   <header class="navbar">
     <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="Mshibe Wedding Film home">
+      <a class="brand" href="#home" aria-label="Mshibe Wedding Films home">
         <div class="brand-mark">MWF</div>
         <div>
-          <div class="brand-name">Mshibe Wedding Film</div>
+          <div class="brand-name">Mshibe Wedding Films</div>
           <span class="brand-tagline">Your Story, Beautifully Told</span>
         </div>
       </a>
@@ -1293,6 +1593,7 @@
         <li><a href="#about">About Us</a></li>
         <li><a href="#portfolio">Our Work</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#process">How It Works</a></li>
 
         <li class="dropdown" id="packagesDropdown">
           <button class="dropdown-toggle" id="packagesToggle" type="button"
@@ -1318,18 +1619,20 @@
     <section class="hero" id="home">
       <div class="container">
         <div class="hero-content">
-          <p class="eyebrow">Photography · Videography · Memories</p>
-          <h1>Every Love Story <span>Deserves a Film.</span></h1>
+          <p class="eyebrow">Wedding films, thoughtfully told · KwaZulu-Natal</p>
+          <h1>Wedding Films That <span>Capture Your Love Story.</span></h1>
           <p class="hero-description">
-            From beautiful traditional ceremonies to elegant white weddings,
-            we capture the people, emotions and moments that make your story
-            unforgettable.
+            Cinematic wedding photography and films for couples who want the
+            emotion, details and people they love to live on long after the day.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-gold" href="#wedding-packages">Explore Packages</a>
-            <a class="btn btn-outline" href="#contact">Let's Plan Your Event</a>
+            <a class="btn btn-gold" href="#portfolio">Explore Our Work</a>
+            <a class="btn btn-outline" href="#contact">Book a Consultation</a>
+            <a class="btn btn-outline"
+              href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20I%27d%20love%20to%20enquire%20about%20my%20wedding."
+              target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
           </div>
-          <p class="hero-note">Established in 2019 · KwaZulu-Natal, South Africa</p>
+          <p class="hero-note">Established in 2019 · Based in KwaZulu-Natal, South Africa</p>
         </div>
       </div>
     </section>
@@ -1338,33 +1641,71 @@
       <div class="container trust-grid">
         <div>
           <strong>Since 2019</strong>
-          <span>Our Creative Journey</span>
+          <span>Creating since 2019</span>
         </div>
         <div>
-          <strong>Photo &amp; Film</strong>
-          <span>Stories Captured Beautifully</span>
+          <strong>Photo + Film</strong>
+          <span>Photography &amp; videography</span>
+        </div>
+        <div>
+          <strong>KwaZulu-Natal</strong>
+          <span>Based in South Africa</span>
         </div>
         <div>
           <strong>Made for You</strong>
-          <span>Personalised Event Coverage</span>
+          <span>Personalised event coverage</span>
         </div>
       </div>
     </section>
 
-    <section class="referral-section" aria-labelledby="referral-title">
+    <section class="story-section" id="portfolio" aria-labelledby="story-title">
       <div class="container">
-        <div class="referral-card">
-          <div class="referral-copy">
-            <p class="eyebrow">Share the Story. Earn a Reward.</p>
-            <h2 id="referral-title">Refer a Client. <span class="gold">Earn R500.</span></h2>
-            <p>
-              Know someone planning a wedding or special event? Refer them to
-              Mshibe Wedding Film and receive R500 when they book with us.
-            </p>
-          </div>
-          <a class="btn btn-gold"
-             href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%27d%20like%20to%20refer%20a%20client%20and%20learn%20more%20about%20the%20R500%20referral%20reward."
-             target="_blank" rel="noopener">Refer Someone</a>
+        <div class="story-heading">
+          <p class="eyebrow">Real moments, beautifully remembered</p>
+          <h2 id="story-title">A first look at <span class="gold">your story.</span></h2>
+          <p>Every celebration is different. Here are a few moments from the people and events we have had the privilege to photograph.</p>
+        </div>
+        <figure class="featured-film">
+          <video controls playsinline preload="metadata" poster="IBM_1350.webp"
+            aria-label="Londi wedding highlight film">
+            <source src="londi-highlight.mp4" type="video/mp4">
+            Your browser does not support MP4 video. Please try another browser.
+          </video>
+          <figcaption><strong>Londi</strong> · Wedding highlight film</figcaption>
+        </figure>
+        <div class="film-grid">
+          <a class="film-card" href="#portfolio-gallery" aria-label="Explore wedding photography and traditional wedding stories">
+            <img src="IBM_1343.webp" width="1280" height="1920"
+              alt="Couple celebrating in traditional attire outdoors">
+            <span class="film-card-copy">
+              <span>Culture &amp; tradition</span>
+              <h3>Honouring every moment</h3>
+            </span>
+          </a>
+          <a class="film-card" href="#portfolio-gallery" aria-label="Explore wedding photography and portraits">
+            <img src="IBM_1345.webp" width="1280" height="1920"
+              alt="Newlyweds sharing a portrait in traditional wedding attire"
+              loading="lazy" decoding="async">
+            <span class="film-card-copy">
+              <span>Made to be remembered</span>
+              <h3>A story of togetherness</h3>
+            </span>
+          </a>
+          <a class="film-card" href="#portfolio-gallery" aria-label="Explore more Mshibe Wedding Films portfolio">
+            <img src="IBM_1350.webp" width="1920" height="1280"
+              alt="A wedding celebration captured by Mshibe Wedding Films"
+              loading="lazy" decoding="async">
+            <span class="film-card-copy">
+              <span>Every detail matters</span>
+              <h3>Moments worth reliving</h3>
+            </span>
+          </a>
+        </div>
+        <div class="story-actions">
+          <a class="service-link" href="#portfolio-gallery">Explore the full portfolio ↓</a>
+          <a class="service-link"
+            href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20could%20you%20share%20some%20full%20wedding%20film%20samples%3F"
+            target="_blank" rel="noopener noreferrer">Ask to see full film samples ↗</a>
         </div>
       </div>
     </section>
@@ -1376,38 +1717,65 @@
           aria-label="Wedding couple celebrating their special day"></div>
 
         <div class="about-copy">
-          <p class="eyebrow">Welcome to Mshibe Wedding Film</p>
-          <h2>More Than Pictures.<br><span class="gold">Memories for Life.</span></h2>
+          <p class="eyebrow">A little about us</p>
+          <h2>Films that feel like <span class="gold">memories.</span></h2>
           <p>
-            Established in 2019 as Abafowethu Production, Mshibe Wedding Film
-            is dedicated to preserving life's most meaningful occasions through
-            photography and cinematic storytelling.
+            At Mshibe Wedding Films, we believe your wedding day is more than
+            a celebration — it is a story worth preserving. Since 2019, we have
+            been documenting meaningful occasions through photography and film.
           </p>
           <p>
-            We cover traditional ceremonies, white weddings, graduations,
-            parties and special events. Our aim is to capture the atmosphere,
-            details and emotions that make every celebration unique.
+            We look for the moments that make the day yours: the emotion, the
+            details, the people you love and the traditions that bring everyone
+            together. Our approach is personal, considered and unobtrusive.
           </p>
           <p>
-            Whether you need timeless photographs, a complete event film,
-            a highlight video or aerial drone footage, we work to tell your
-            story with care and creativity.
+            From traditional ceremonies to white weddings, graduations and
+            family celebrations, we take the time to understand what matters to
+            you and shape your coverage around it.
           </p>
           <p class="signature">Your story, beautifully told.</p>
-          <a href="#services" class="btn btn-outline">Discover Our Services</a>
+          <a href="#services" class="btn btn-outline">Explore Our Services</a>
         </div>
       </div>
     </section>
 
-    <section class="section portfolio-section" id="portfolio"
+    <section class="section approach-section" aria-labelledby="approach-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">The Mshibe approach</p>
+          <h2 id="approach-title">Your day, told <span class="gold">with care.</span></h2>
+          <p class="section-intro">The best wedding films come from being present, paying attention and understanding what makes your celebration yours.</p>
+        </div>
+        <div class="approach-grid">
+          <article class="approach-card">
+            <span>01</span>
+            <h3>Emotion before posing</h3>
+            <p>We look for the real connections and fleeting moments that bring your day back to life.</p>
+          </article>
+          <article class="approach-card">
+            <span>02</span>
+            <h3>Traditions held with respect</h3>
+            <p>We take time to understand the people, customs and meaningful moments that shape your celebration.</p>
+          </article>
+          <article class="approach-card">
+            <span>03</span>
+            <h3>Thoughtful from start to finish</h3>
+            <p>We plan coverage around your priorities and agree on the details before the wedding day.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio-section" id="portfolio-gallery"
       aria-labelledby="portfolio-title">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">A Glimpse of the Moments We Preserve</p>
-          <h2 id="portfolio-title">Stories in <span class="gold">Every Frame</span></h2>
+          <h2 id="portfolio-title">Recent <span class="gold">Stories</span></h2>
           <p class="section-intro">
-            From wedding traditions to graduation milestones, we preserve
-            the moments and people that make every celebration yours.
+            A closer look at wedding celebrations, traditional ceremonies,
+            portraits and milestones photographed by our team.
           </p>
         </div>
 
@@ -1462,56 +1830,76 @@
     <section class="section services-section" id="services">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">What We Do</p>
-          <h2>Our <span class="gold">Services</span></h2>
+          <p class="eyebrow">Wedding storytelling, beautifully captured</p>
+          <h2>Choose how we tell <span class="gold">your story.</span></h2>
           <p class="section-intro">
-            Creative media services designed to capture your celebration
-            and preserve it for years to come.
+            Thoughtful coverage for the moments, people and traditions that matter most.
           </p>
         </div>
 
         <div class="services-grid">
           <article class="service-card">
-            <div class="service-icon">◈</div>
-            <h3>Photography</h3>
-            <p>Professional event photography, family portraits, formal
-              photographs and carefully selected retouched images.</p>
+            <div class="service-icon" aria-hidden="true">▶</div>
+            <h3>Wedding Film</h3>
+            <p>A cinematic keepsake shaped around the people and feeling of your day.</p>
+            <ul><li>Story-led highlight film</li><li>Carefully edited moments</li></ul>
+            <a class="service-link" href="#wedding-packages">Learn more →</a>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">▶</div>
-            <h3>Videography</h3>
-            <p>Full event videos, cinematic highlights and memorable
-              moments edited into a story you can revisit.</p>
+            <div class="service-icon" aria-hidden="true">◈</div>
+            <h3>Photography + Film</h3>
+            <p>Still images and motion together for a complete record of your celebration.</p>
+            <ul><li>Portraits and candid moments</li><li>Coverage planned together</li></ul>
+            <a class="service-link" href="#wedding-packages">Learn more →</a>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">⌁</div>
-            <h3>Drone Coverage</h3>
-            <p>Aerial perspectives that add scale and atmosphere to
-              eligible events and venues, subject to safety and permissions.</p>
+            <div class="service-icon" aria-hidden="true">✦</div>
+            <h3>Traditional Wedding Coverage</h3>
+            <p>Considered coverage that honours your customs, family and meaningful moments.</p>
+            <ul><li>Respectful, personal approach</li><li>Coverage tailored to your ceremony</li></ul>
+            <a class="service-link" href="#traditional-packages">Learn more →</a>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">✉</div>
-            <h3>Digital Invitations</h3>
-            <p>Custom digital invitations for your event. Interactive
-              features such as maps and WhatsApp RSVP can be discussed.</p>
+            <div class="service-icon" aria-hidden="true">♡</div>
+            <h3>Engagement Sessions</h3>
+            <p>A relaxed opportunity to celebrate your connection before the wedding.</p>
+            <ul><li>Comfortable, guided portraits</li><li>A story of the two of you</li></ul>
+            <a class="service-link" href="#contact">Ask about a session →</a>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">♫</div>
-            <h3>Sound System</h3>
-            <p>Sound system hire for selected occasions, with transport
-              included in the listed add-on price.</p>
+            <div class="service-icon" aria-hidden="true">⌁</div>
+            <h3>Couple Storytelling</h3>
+            <p>Intimate portraits and film moments that feel personal, natural and true to you.</p>
+            <ul><li>Personal to your story</li><li>Planned around your vision</li></ul>
+            <a class="service-link" href="#contact">Tell us your vision →</a>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">✦</div>
-            <h3>Special Events</h3>
-            <p>Coverage for traditional ceremonies, white weddings,
-              graduations, parties and family celebrations.</p>
+            <div class="service-icon" aria-hidden="true">◷</div>
+            <h3>Full-Day Coverage</h3>
+            <p>Coverage planned around the key parts of your wedding day, from preparations to celebration.</p>
+            <ul><li>Timeline planned with you</li><li>Up to 9 hours per booking day</li></ul>
+            <a class="service-link" href="#wedding-packages">Explore packages →</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section approach-section" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">A simple, thoughtful process</p>
+          <h2 id="process-title">From first hello to <span class="gold">forever.</span></h2>
+        </div>
+        <div class="approach-grid">
+          <article class="approach-card"><span>01</span><h3>Connect</h3><p>Tell us about your date, celebration and the moments that matter to you.</p></article>
+          <article class="approach-card"><span>02</span><h3>Plan</h3><p>We discuss your priorities, coverage, availability and a clear written quotation.</p></article>
+          <article class="approach-card"><span>03</span><h3>Capture</h3><p>We document your day with care, respect and a calm, considered approach.</p></article>
+          <article class="approach-card"><span>04</span><h3>Deliver</h3><p>Your deliverables and estimated delivery timeline are agreed with you before booking.</p></article>
         </div>
       </div>
     </section>
@@ -1570,10 +1958,25 @@
         </div>
 
         <p class="note">
-          Wedding package inclusions must be confirmed with Mshibe Wedding Film
+          Wedding package inclusions must be confirmed with Mshibe Wedding Films
           before payment. Drone coverage is an additional service unless stated
           in your written quotation.
         </p>
+      </div>
+    </section>
+
+    <section class="referral-section" aria-labelledby="referral-title">
+      <div class="container">
+        <div class="referral-card">
+          <div class="referral-copy">
+            <p class="eyebrow">Share the story. Earn a reward.</p>
+            <h2 id="referral-title">Refer a client. <span class="gold">Earn R500.</span></h2>
+            <p>Know someone planning a wedding or special event? Refer them to Mshibe Wedding Films and receive R500 when they book with us.</p>
+          </div>
+          <a class="btn btn-gold"
+            href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20I%27d%20like%20to%20refer%20a%20client%20and%20learn%20more%20about%20the%20R500%20referral%20reward."
+            target="_blank" rel="noopener noreferrer">Refer Someone</a>
+        </div>
       </div>
     </section>
 
@@ -1807,6 +2210,41 @@
       </div>
     </section>
 
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Good to know</p>
+          <h2 id="faq-title">Frequently asked <span class="gold">questions.</span></h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Do you travel outside KwaZulu-Natal?</summary>
+            <p>We are based in KwaZulu-Natal. Tell us your venue and we will confirm availability, travel arrangements and any related costs in your quotation.</p>
+          </details>
+          <details>
+            <summary>How far in advance should we book?</summary>
+            <p>Get in touch as soon as you have a date in mind. We will check availability and explain the steps to confirm your booking.</p>
+          </details>
+          <details>
+            <summary>Do you cover traditional weddings?</summary>
+            <p>Yes. We cover traditional ceremonies and take time to understand the customs, people and important moments you would like us to capture.</p>
+          </details>
+          <details>
+            <summary>When will we receive our photos and films?</summary>
+            <p>Delivery timing depends on the agreed coverage and editing. Your estimated delivery timeline and deliverables will be confirmed with you before booking.</p>
+          </details>
+          <details>
+            <summary>Do you offer engagement sessions?</summary>
+            <p>Ask us about engagement and couple sessions. Share your preferred date and the kind of portraits or film you have in mind so we can confirm options.</p>
+          </details>
+          <details>
+            <summary>Can we receive both a highlight and a full wedding film?</summary>
+            <p>Video and highlight options are available. The exact films, coverage and price depend on your package, so please confirm the inclusions in your written quotation.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- RULES -->
     <section class="section" id="rules">
       <div class="container">
@@ -1824,7 +2262,7 @@
             <h3>1. Booking Confirmation</h3>
             <p>A booking is confirmed only after the agreed booking fee or
               deposit has been received and the details have been confirmed
-              with Mshibe Wedding Film. Bank-transfer instructions are shared
+              with Mshibe Wedding Films. Bank-transfer instructions are shared
               privately after the event details and payment terms have been
               agreed in writing. Availability is not guaranteed until
               confirmation.</p>
@@ -1848,7 +2286,7 @@
 
           <article class="rule">
             <h3>4. Service Duration</h3>
-            <p>Mshibe Wedding Film provides a maximum of <strong>9 hours of
+            <p>Mshibe Wedding Films provides a maximum of <strong>9 hours of
               service per booking day</strong>, commencing at the agreed-upon
               start time. Any additional hours required beyond the allocated
               service period will be charged at <strong>R1,500 per
@@ -1919,7 +2357,31 @@
         </div>
 
         <div style="text-align:center; margin-top:35px;">
-          <a class="btn btn-gold" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20have%20read%20the%20booking%20rules%20and%20would%20like%20to%20discuss%20a%20booking." target="_blank" rel="noopener">Discuss Your Booking</a>
+          <a class="btn btn-gold" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20I%20have%20read%20the%20booking%20rules%20and%20would%20like%20to%20discuss%20a%20booking." target="_blank" rel="noopener">Discuss Your Booking</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="couple-love" aria-labelledby="couple-love-title">
+      <div class="container">
+        <p class="eyebrow">Your story deserves to be remembered</p>
+        <blockquote id="couple-love-title">“Let’s create a film that brings every memory back to life.”</blockquote>
+        <p>Follow along for real moments, celebrations and a closer look at our work.</p>
+        <a class="btn btn-outline" href="https://www.instagram.com/mshibe_wedding_film/"
+          target="_blank" rel="noopener noreferrer">Find us on Instagram</a>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="final-cta-title">
+      <div class="container">
+        <p class="eyebrow">The beginning of your story</p>
+        <h2 id="final-cta-title">Let’s tell your story <span class="gold">beautifully.</span></h2>
+        <p>Your wedding day deserves more than a few snapshots. Let’s create a film that brings every memory back to life.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#contact">Book a Consultation</a>
+          <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20I%27d%20like%20to%20talk%20about%20my%20wedding."
+            target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+          <a class="btn btn-outline" href="mailto:sipholuthuli105@gmail.com">Email Us</a>
         </div>
       </div>
     </section>
@@ -1929,12 +2391,12 @@
       <div class="container">
         <div class="contact-grid">
           <div class="contact-copy">
-            <p class="eyebrow">Let's Create Something Special</p>
-            <h2>Let's Tell Your <span class="gold">Story.</span></h2>
+            <p class="eyebrow">Tell us about your day</p>
+            <h2>Let’s tell your <span class="gold">story.</span></h2>
             <p>
-              Tell us about your wedding, traditional ceremony, graduation
-              or special event. Contact us to check availability and receive
-              a quotation tailored to your needs.
+              Share your date, venue and the moments that matter to you.
+              We’ll check availability and get back to you about a package
+              tailored to your celebration.
             </p>
 
             <ul class="contact-details">
@@ -2007,7 +2469,7 @@
             <div class="form-consent">
               <input id="bookingConsent" name="bookingConsent" type="checkbox" required>
               <label for="bookingConsent">
-                I agree that Mshibe Wedding Film may store these details to respond
+                I agree that Mshibe Wedding Films may store these details to respond
                 to my booking enquiry.
               </label>
             </div>
@@ -2032,13 +2494,34 @@
         <a class="brand" href="#home">
           <div class="brand-mark">MWF</div>
           <div>
-            <div class="brand-name">Mshibe Wedding Film</div>
+            <div class="brand-name">Mshibe Wedding Films</div>
             <span class="brand-tagline">Your Story, Beautifully Told</span>
           </div>
         </a>
         <p class="footer-copy" style="margin-top:15px;">
-          © <span id="year"></span> Mshibe Wedding Film. All rights reserved.
+          © <span id="year"></span> Mshibe Wedding Films. All rights reserved.
         </p>
+      </div>
+
+      <div class="footer-details">
+        <div>
+          <h2>Explore</h2>
+          <p><a href="#portfolio">Our work</a> · <a href="#services">Services</a></p>
+          <p><a href="#wedding-packages">Wedding packages</a> · <a href="#process">How it works</a></p>
+          <p><a href="#faq">FAQs</a> · <a href="#contact">Enquire</a></p>
+        </div>
+        <div>
+          <h2>Wedding services</h2>
+          <p>Cinematic wedding films and photography</p>
+          <p>Traditional wedding and full-day coverage</p>
+          <p>Engagement and couple storytelling sessions</p>
+        </div>
+        <div>
+          <h2>Get in touch</h2>
+          <p><a href="tel:+27711970286">071 197 0286</a></p>
+          <p><a href="mailto:sipholuthuli105@gmail.com">sipholuthuli105@gmail.com</a></p>
+          <p>KwaZulu-Natal, South Africa</p>
+        </div>
       </div>
 
       <div class="social-links">
@@ -2052,28 +2535,15 @@
     </div>
   </footer>
 
+  <nav class="mobile-contact-bar" aria-label="Quick contact">
+    <a class="btn btn-gold" href="#contact">Book a Consultation</a>
+    <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+      target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+  </nav>
+
   <a class="whatsapp-float"
      href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20would%20like%20to%20make%20an%20enquiry."
      target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">✆</a>
-
-  <dialog class="promo-dialog" id="promoDialog"
-    aria-labelledby="promoTitle" aria-describedby="promoDescription">
-    <form method="dialog">
-      <button class="promo-close" type="submit" aria-label="Close promotion">×</button>
-    </form>
-    <p class="eyebrow">Mshibe Wedding Film</p>
-    <h2 id="promoTitle">Your special moments, beautifully captured.</h2>
-    <p id="promoDescription">
-      Planning a wedding, traditional ceremony or graduation? Explore our
-      photography and film packages, and let’s plan your event together.
-    </p>
-    <div class="promo-actions">
-      <a class="btn btn-gold" href="#wedding-packages">Explore Packages</a>
-      <a class="btn btn-outline"
-        href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20would%20like%20to%20enquire%20about%20your%20services."
-        target="_blank" rel="noopener">Enquire on WhatsApp</a>
-    </div>
-  </dialog>
 
   <script src="supabase-config.js"></script>
   <script>
@@ -2083,7 +2553,6 @@
     const packagesToggle = document.getElementById('packagesToggle');
     const navbar = document.querySelector('.navbar');
     const mobileNavigation = window.matchMedia('(max-width: 1000px)');
-    const promoDialog = document.getElementById('promoDialog');
 
     function closePackagesDropdown() {
       packagesDropdown.classList.remove('open');
@@ -2150,19 +2619,6 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    if (!sessionStorage.getItem('promoDismissed')) {
-      window.setTimeout(() => {
-        sessionStorage.setItem('promoDismissed', 'true');
-        promoDialog.showModal();
-      }, 5000);
-    }
-
-    promoDialog.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        promoDialog.close();
-      });
-    });
-
     const bookingForm = document.getElementById('bookingForm');
     const bookingStatus = document.getElementById('bookingStatus');
     const bookingSubmit = bookingForm.querySelector('button[type="submit"]');
@@ -2191,7 +2647,7 @@
       const location = document.getElementById('eventLocation').value.trim();
       const message = document.getElementById('message').value.trim();
       const bookingMessage =
-        `Hello Mshibe Wedding Film!\n\n` +
+        `Hello Mshibe Wedding Films!\n\n` +
         `I would like to enquire about a booking.\n\n` +
         `Name: ${name}\n` +
         `My phone number: ${phone}\n` +
