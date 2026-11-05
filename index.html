@@ -1081,6 +1081,8 @@
       letter-spacing: .04em;
     }
 
+    .wedding-form-field[hidden] { display: none; }
+
     .wedding-form-field {
       display: grid;
       gap: 8px;
@@ -2393,6 +2395,11 @@
               <input id="weddingEventLocation" name="eventLocation" type="text"
                 autocomplete="street-address" maxlength="200">
             </div>
+            <div class="wedding-form-field" id="makotiLocationField" hidden>
+              <label for="weddingMakotiLocation">Location of uMakoti (Ukukhipha uMakoti)</label>
+              <input id="weddingMakotiLocation" name="makotiLocation" type="text"
+                maxlength="200" placeholder="Town, area or full address" autocomplete="off">
+            </div>
           </div>
 
           <div class="wedding-builder-section" aria-labelledby="wedding-services-title">
@@ -3112,6 +3119,8 @@
       const weddingClientEmail = document.getElementById('weddingClientEmail');
       const weddingEventDate = document.getElementById('weddingEventDate');
       const weddingEventLocation = document.getElementById('weddingEventLocation');
+      const weddingMakotiLocation = document.getElementById('weddingMakotiLocation');
+      const makotiLocationField = document.getElementById('makotiLocationField');
       let latestWeddingQuote = null;
       const currencyFormatter = new Intl.NumberFormat('en-ZA', {
         style: 'currency',
@@ -3121,6 +3130,9 @@
 
       function updateWeddingPackageQuote() {
         latestWeddingQuote = null;
+        const makotiSelected = weddingServiceInputs.some(input => input.value === 'ukukhipha-umakoti' && input.checked);
+        makotiLocationField.hidden = !makotiSelected;
+        weddingMakotiLocation.required = makotiSelected;
         const hours = Number(weddingAdditionalHours.value);
         const validHours = weddingAdditionalHours.validity.valid &&
           Number.isSafeInteger(hours) && hours >= 0 && hours <= 9;
@@ -3193,8 +3205,15 @@
           return;
         }
 
+        if (makotiSelected && !weddingMakotiLocation.value.trim()) {
+          weddingQuoteLink.setAttribute('aria-disabled', 'true');
+          weddingQuoteStatus.textContent = 'Enter the location of uMakoti for the Ukukhipha uMakoti Video.';
+          return;
+        }
+
         const quoteDetails = {
           clientName,
+          makotiLocation: makotiSelected ? weddingMakotiLocation.value.trim() : '',
           clientEmail: weddingClientEmail.value.trim(),
           eventDate: weddingEventDate.value,
           eventLocation: weddingEventLocation.value.trim(),
@@ -3212,6 +3231,7 @@
           ...(quoteDetails.clientEmail ? [`Email: ${quoteDetails.clientEmail}`] : []),
           ...(quoteDetails.eventDate ? [`Wedding date: ${quoteDetails.eventDate}`] : []),
           ...(quoteDetails.eventLocation ? [`Venue or location: ${quoteDetails.eventLocation}`] : []),
+          ...(quoteDetails.makotiLocation ? [`Location of uMakoti: ${quoteDetails.makotiLocation}`] : []),
           '',
           'Selected wedding services:',
           ...(quoteDetails.services.length
@@ -3320,6 +3340,7 @@
           row('Wedding date', dateFormatter.format(new Date(`${quote.eventDate}T00:00:00`)));
         }
         if (quote.eventLocation) row('Venue / location', quote.eventLocation);
+        if (quote.makotiLocation) row('Location of uMakoti', quote.makotiLocation);
 
         heading('Selected services and extras');
         quote.services.forEach(bullet);
@@ -3403,7 +3424,7 @@
         input.addEventListener('change', updateWeddingPackageQuote);
       });
       [weddingAdditionalHours, weddingClientName, weddingClientEmail,
-        weddingEventDate, weddingEventLocation].forEach(input => {
+        weddingEventDate, weddingEventLocation, weddingMakotiLocation].forEach(input => {
         input.addEventListener('input', updateWeddingPackageQuote);
         input.addEventListener('change', updateWeddingPackageQuote);
       });
@@ -3453,6 +3474,7 @@
                 to_name: quote.clientName,
                 event_date: quote.eventDate || 'To be confirmed',
                 event_location: quote.eventLocation || 'To be confirmed',
+                makoti_location: quote.makotiLocation || 'Not applicable',
                 quote_items: summary,
                 quote_total: quote.total
               }
