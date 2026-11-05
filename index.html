@@ -1035,6 +1035,375 @@
       width: 100%;
     }
 
+    .wedding-builder {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .wedding-client-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 42px;
+      padding: clamp(20px, 4vw, 32px);
+      border: 1px solid rgba(217,186,134,.24);
+      background: linear-gradient(145deg, rgba(32,29,25,.96), rgba(17,17,17,.96));
+      box-shadow: 0 18px 45px rgba(0,0,0,.18);
+    }
+
+    .wedding-client-details h3,
+    .wedding-builder-section h3 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .wedding-client-details h3 {
+      grid-column: 1 / -1;
+      margin: 0;
+      color: var(--ivory);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+    }
+
+    .wedding-client-details h3::before,
+    .wedding-builder-section h3::before {
+      content: attr(data-step);
+      display: inline-grid;
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      place-items: center;
+      border: 1px solid rgba(217,186,134,.52);
+      border-radius: 50%;
+      color: var(--gold-light);
+      font: 600 .68rem 'Montserrat', sans-serif;
+      letter-spacing: .04em;
+    }
+
+    .wedding-form-field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .wedding-form-field label {
+      color: var(--ivory);
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+
+    .wedding-form-field input {
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 13px;
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: 3px;
+      background: rgba(10,10,10,.72);
+      color: var(--ivory);
+      font: inherit;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .wedding-form-field input::placeholder {
+      color: #8f8982;
+    }
+
+    .wedding-form-field input:hover {
+      border-color: rgba(217,186,134,.48);
+    }
+
+    .wedding-form-field input:focus-visible {
+      border-color: var(--gold-light);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(217,186,134,.14);
+    }
+
+    .wedding-builder-section + .wedding-builder-section {
+      margin-top: 38px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(217,186,134,.2);
+    }
+
+    .wedding-builder-section h3 {
+      margin-bottom: 9px;
+      color: var(--ivory);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.95rem;
+    }
+
+    .wedding-builder-intro {
+      margin: 0 0 20px 46px;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.6;
+    }
+
+    .wedding-options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
+      gap: 13px;
+    }
+
+    .wedding-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      min-height: 82px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 3px;
+      background: linear-gradient(155deg, rgba(26,25,23,.94), rgba(13,13,13,.98));
+      cursor: pointer;
+      transition: border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+
+    .wedding-option:hover {
+      border-color: rgba(217,186,134,.58);
+      transform: translateY(-2px);
+    }
+
+    .wedding-option.is-selected {
+      border-color: rgba(217,186,134,.86);
+      background: linear-gradient(135deg, rgba(184,137,82,.17), rgba(20,20,20,.97));
+      box-shadow: inset 0 0 0 1px rgba(217,186,134,.12), 0 8px 22px rgba(0,0,0,.15);
+    }
+
+    .wedding-option:focus-within {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 3px;
+    }
+
+    .wedding-option input {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      margin-top: 1px;
+      accent-color: var(--gold-light);
+    }
+
+    .wedding-option input:focus-visible,
+    .wedding-hours-input:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 3px;
+    }
+
+    .wedding-option-copy {
+      display: grid;
+      gap: 4px;
+    }
+
+    .wedding-option-copy strong {
+      color: var(--ivory);
+      font-size: .86rem;
+    }
+
+    .wedding-option-copy span {
+      color: var(--muted);
+      font-size: .76rem;
+      line-height: 1.5;
+    }
+
+    .wedding-hours-option {
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      border-color: rgba(217,186,134,.28);
+    }
+
+    .wedding-hours-input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 190px;
+      min-height: 48px;
+      padding: 10px 42px 10px 16px;
+      border: 1px solid rgba(217,186,134,.45);
+      border-radius: 3px;
+      background-color: rgba(10,10,10,.85);
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1.5 7 7.5l6-6' fill='none' stroke='%23d9ba86' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      color: var(--ivory);
+      font: 600 .84rem 'Montserrat', sans-serif;
+      letter-spacing: .02em;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .wedding-hours-input:hover {
+      border-color: var(--gold-light);
+    }
+
+    .wedding-hours-input:focus-visible {
+      border-color: var(--gold-light);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(217,186,134,.2);
+    }
+
+    .wedding-hours-input option {
+      background: #151515;
+      color: var(--ivory);
+    }
+
+    .wedding-calculator-error {
+      margin-top: 10px;
+      color: #ffb7aa;
+      font-size: .82rem;
+    }
+
+    .wedding-calculator-error:empty {
+      display: none;
+    }
+
+    .wedding-quote-summary {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 40px;
+      padding: clamp(22px, 4vw, 30px);
+      border: 1px solid rgba(217,186,134,.46);
+      border-radius: 3px;
+      background: linear-gradient(125deg, rgba(184,137,82,.18), rgba(17,17,17,.97) 62%);
+      box-shadow: 0 18px 42px rgba(0,0,0,.2);
+    }
+
+    .wedding-quote-summary > div {
+      display: grid;
+      gap: 5px;
+    }
+
+    .wedding-quote-summary strong {
+      color: var(--ivory);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+    }
+
+    .wedding-total-note {
+      color: var(--muted);
+      font-size: .76rem;
+    }
+
+    .wedding-total {
+      color: var(--gold-light);
+      font-size: clamp(1.9rem, 5vw, 2.55rem);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .wedding-quote-actions {
+      display: grid;
+      justify-items: stretch;
+      gap: 12px;
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .wedding-quote-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 13px;
+    }
+
+    .wedding-quote-buttons .btn {
+      min-width: min(100%, 230px);
+      min-height: 50px;
+      padding: 13px 20px;
+      border-radius: 2px;
+      text-align: center;
+    }
+
+    .wedding-quote-buttons .btn:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 3px;
+    }
+
+    .wedding-quote-buttons [aria-disabled="true"],
+    .wedding-quote-buttons :disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .wedding-quote-actions [aria-disabled="true"] {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .wedding-quote-status {
+      min-height: 1.2em;
+      color: var(--muted);
+      font-size: .8rem;
+      line-height: 1.6;
+    }
+
+    .wedding-quote-status strong {
+      color: var(--ivory);
+    }
+
+    @media (max-width: 600px) {
+      .wedding-client-details {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 34px;
+      }
+
+      .wedding-client-details h3,
+      .wedding-builder-section h3 {
+        font-size: 1.75rem;
+      }
+
+      .wedding-builder-section + .wedding-builder-section {
+        margin-top: 30px;
+        padding-top: 26px;
+      }
+
+      .wedding-builder-intro {
+        margin-left: 0;
+      }
+
+      .wedding-options-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wedding-option {
+        min-height: 72px;
+        padding: 16px;
+      }
+
+      .wedding-hours-option {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .wedding-hours-input {
+        width: 100%;
+      }
+
+      .wedding-quote-summary {
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .wedding-quote-summary > div,
+      .wedding-total {
+        width: 100%;
+      }
+
+      .wedding-quote-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .wedding-quote-buttons .btn {
+        width: 100%;
+      }
+    }
+
     .note {
       color: var(--muted);
       font-size: .78rem;
@@ -1055,43 +1424,6 @@
       color: var(--muted);
       font-size: .85rem;
       margin-top: 8px;
-    }
-
-    /* Extras */
-
-    .extras-section {
-      background: #101010;
-    }
-
-    .extras-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .extra-item {
-      padding: 22px;
-      background: linear-gradient(180deg, rgba(23,23,23,.96), rgba(17,17,17,.98));
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: 0 16px 38px rgba(0,0,0,.15);
-    }
-
-    .extra-item h3 {
-      font-size: 1.3rem;
-      margin-bottom: 7px;
-    }
-
-    .extra-item p {
-      color: var(--muted);
-      font-size: .8rem;
-    }
-
-    .extra-price {
-      display: block;
-      color: var(--rose);
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-top: 12px;
     }
 
     /* Rules */
@@ -1508,8 +1840,7 @@
         gap: 14px;
       }
 
-      .services-grid,
-      .extras-grid {
+      .services-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -1608,8 +1939,7 @@
         padding: 60px 0;
       }
 
-      .services-grid,
-      .extras-grid {
+      .services-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1711,9 +2041,7 @@
             aria-controls="packagesMenu">Packages ▾</button>
           <ul class="dropdown-menu" id="packagesMenu">
             <li><a href="#wedding-packages">Wedding Packages</a></li>
-            <li><a href="#traditional-packages">Traditional Packages</a></li>
             <li><a href="#graduation-packages">Graduation Packages</a></li>
-            <li><a href="#extras">Additional Services</a></li>
             <li><a href="#rules">Rules &amp; Regulations</a></li>
           </ul>
         </li>
@@ -1768,8 +2096,8 @@
           <span>Wedding coverage across the province</span>
         </div>
         <div>
-          <strong>From R12,500</strong>
-          <span>Published wedding package prices</span>
+          <strong>Custom wedding packages</strong>
+          <span>Choose services for your day</span>
         </div>
       </div>
     </section>
@@ -1983,7 +2311,7 @@
             <h3>Traditional Wedding Coverage</h3>
             <p>Considered coverage that honours your customs, family and meaningful moments.</p>
             <ul><li>Respectful, personal approach</li><li>Coverage tailored to your ceremony</li></ul>
-            <a class="service-link" href="#traditional-packages">Learn more →</a>
+            <a class="service-link" href="#wedding-packages">Build your package →</a>
           </article>
 
           <article class="service-card">
@@ -2033,81 +2361,197 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Celebrate Your Love</p>
-          <h2>Wedding <span class="gold">Packages</span></h2>
+          <h2>Build Your Own Wedding <span class="gold">Package</span></h2>
           <p class="section-intro">
-            Four price options for traditional and white weddings, including
-            a small package. Confirm coverage hours, deliverables and any
-            travel costs in your written quotation before booking.
+            Choose the services that suit your celebration. Your estimated
+            total updates as you make or change your selections. Final details
+            and availability will be confirmed in your quotation.
           </p>
         </div>
 
-        <div class="package-grid">
-          <article class="package-card">
-            <span class="package-label">Small Package</span>
-            <h3>Wedding Essentials</h3>
-            <div class="package-price">R8,000<small>Package price</small></div>
-            <ul>
-              <li>For traditional or white weddings</li>
-              <li>8 hours of coverage</li>
-              <li>Full video</li>
-              <li>Digital pictures</li>
-            </ul>
-            <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20I%27m%20interested%20in%20the%20R8%2C000%20small%20wedding%20package%20with%20full%20video%20and%20digital%20pictures.%20Could%20you%20confirm%20coverage%20and%20availability%3F" target="_blank" rel="noopener noreferrer">Enquire About This Package</a>
-          </article>
+        <form class="wedding-builder" id="weddingPackageBuilder">
+          <div class="wedding-client-details" aria-labelledby="wedding-details-title">
+            <h3 id="wedding-details-title" data-step="01">Your Wedding Details</h3>
+            <div class="wedding-form-field">
+              <label for="weddingClientName">Full name</label>
+              <input id="weddingClientName" name="clientName" type="text"
+                autocomplete="name" maxlength="120" placeholder="Enter your full name" required>
+            </div>
+            <div class="wedding-form-field">
+              <label for="weddingClientEmail">Email address (optional)</label>
+              <input id="weddingClientEmail" name="clientEmail" type="email"
+                autocomplete="email" maxlength="254" placeholder="you@example.com">
+            </div>
+            <div class="wedding-form-field">
+              <label for="weddingEventDate">Wedding date (optional)</label>
+              <input id="weddingEventDate" name="eventDate" type="date">
+            </div>
+            <div class="wedding-form-field">
+              <label for="weddingEventLocation">Venue or location (optional)</label>
+              <input id="weddingEventLocation" name="eventLocation" type="text"
+                autocomplete="street-address" maxlength="200">
+            </div>
+          </div>
 
-          <article class="package-card">
-            <span class="package-label">Package 02</span>
-            <h3>Essential</h3>
-            <div class="package-price">R12,500<small>Package price</small></div>
-            <ul>
-              <li>For traditional or white weddings</li>
-              <li>Up to 9 hours of coverage per booking day</li>
-              <li>Digital images</li>
-              <li>Highlight video</li>
-              <li>Full wedding video</li>
-            </ul>
-            <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20please%20share%20the%20inclusions%20for%20the%20R12%2C500%20wedding%20package." target="_blank" rel="noopener noreferrer">Ask About Inclusions</a>
-          </article>
+          <div class="wedding-builder-section" aria-labelledby="wedding-services-title">
+            <h3 id="wedding-services-title" data-step="02">Our Services</h3>
+            <p class="wedding-builder-intro">Select as many services as you need.</p>
+            <div class="wedding-options-grid">
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="full-video">
+                <span class="wedding-option-copy"><strong>Full Wedding Video</strong><span>Video coverage of your full wedding event.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="digital-pictures">
+                <span class="wedding-option-copy"><strong>Digital Pictures</strong><span>A digital collection of wedding photographs.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="highlight-video">
+                <span class="wedding-option-copy"><strong>Highlight Video</strong><span>A short edit of key moments from your day.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="videographer">
+                <span class="wedding-option-copy"><strong>2nd Videography</strong><span>A second videographer capturing additional moments and angles from other parts of your wedding day.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="photography">
+                <span class="wedding-option-copy"><strong>2nd Photography</strong><span>A second photographer capturing additional moments and perspectives from other parts of your wedding day.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="portrait-highlight">
+                <span class="wedding-option-copy"><strong>Portrait Highlight</strong><span>A portrait-focused highlight from the day.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="drone-coverage">
+                <span class="wedding-option-copy"><strong>Drone Coverage (per day)</strong><span>Aerial footage, subject to permissions and conditions.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="ukukhipha-umakoti">
+                <span class="wedding-option-copy"><strong>Ukukhipha uMakoti Video</strong><span>Video coverage of the bride’s departure ceremony.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="event-reel">
+                <span class="wedding-option-copy"><strong>One-Hour Event Reel</strong><span>A one-hour event reel filming service.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="sound-system">
+                <span class="wedding-option-copy"><strong>Sound System</strong><span>Transport included</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="live-streaming">
+                <span class="wedding-option-copy"><strong>Live Streaming</strong><span>Stream your wedding live for friends and family joining remotely.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="online-editing">
+                <span class="wedding-option-copy"><strong>Online Editing</strong><span>Online editing service for your wedding footage.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="digital-invitation">
+                <span class="wedding-option-copy"><strong>Digital Invitation</strong><span>A custom digital invitation for your wedding.</span></span>
+              </label>
+            </div>
+            <div class="wedding-option wedding-hours-option">
+              <label class="wedding-option-copy" for="weddingAdditionalHours">
+                <strong>Additional Hours</strong>
+                <span>Extend your coverage by up to 9 extra hours.</span>
+              </label>
+              <select class="wedding-hours-input" id="weddingAdditionalHours"
+                name="weddingAdditionalHours" aria-describedby="weddingHoursError">
+                <option value="0" selected>No extra hours</option>
+                <option value="1">1 hour</option>
+                <option value="2">2 hours</option>
+                <option value="3">3 hours</option>
+                <option value="4">4 hours</option>
+                <option value="5">5 hours</option>
+                <option value="6">6 hours</option>
+                <option value="7">7 hours</option>
+                <option value="8">8 hours</option>
+                <option value="9">9 hours</option>
+              </select>
+            </div>
+            <p class="wedding-calculator-error" id="weddingHoursError"
+              aria-live="polite"></p>
+          </div>
 
-          <article class="package-card featured">
-            <span class="package-label">Package 03</span>
-            <h3>Signature</h3>
-            <div class="package-price">R15,000<small>Package price</small></div>
-            <ul>
-              <li>For traditional or white weddings</li>
-              <li>Up to 9 hours of coverage per booking day</li>
-              <li>A4 photobook</li>
-              <li>A3 canvas</li>
-              <li>Full wedding video</li>
-              <li>Highlight video</li>
-              <li>Drone coverage, subject to approval and conditions</li>
-            </ul>
-            <a class="btn btn-gold" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20please%20share%20the%20inclusions%20for%20the%20R15%2C000%20wedding%20package." target="_blank" rel="noopener noreferrer">Ask About Inclusions</a>
-          </article>
+          <div class="wedding-builder-section" aria-labelledby="wedding-photobooks-title">
+            <h3 id="wedding-photobooks-title" data-step="03">Photobook</h3>
+            <p class="wedding-builder-intro">Choose one photobook, or leave this section unselected.</p>
+            <div class="wedding-options-grid wedding-photobook-options">
+              <label class="wedding-option">
+                <input type="radio" name="weddingPhotobook" value="" checked>
+                <span class="wedding-option-copy"><strong>No photobook</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingPhotobook" value="a4-30">
+                <span class="wedding-option-copy"><strong>A4 Photobook – 30 pages</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingPhotobook" value="a4-40">
+                <span class="wedding-option-copy"><strong>A4 Photobook – 40 pages</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingPhotobook" value="a3-30">
+                <span class="wedding-option-copy"><strong>A3 Photobook – 30 pages</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingPhotobook" value="a3-40">
+                <span class="wedding-option-copy"><strong>A3 Photobook – 40 pages</strong></span>
+              </label>
+            </div>
+          </div>
 
-          <article class="package-card">
-            <span class="package-label">Package 04</span>
-            <h3>Premium</h3>
-            <div class="package-price">R18,000<small>Package price</small></div>
-            <ul>
-              <li>For traditional or white weddings</li>
-              <li>Up to 9 hours of coverage per booking day</li>
-              <li>A3 photobook</li>
-              <li>A3 canvas</li>
-              <li>Full wedding video</li>
-              <li>Highlight video</li>
-              <li>Drone coverage, subject to approval and conditions</li>
-            </ul>
-            <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20please%20share%20the%20inclusions%20for%20the%20R18%2C000%20wedding%20package." target="_blank" rel="noopener noreferrer">Ask About Inclusions</a>
-          </article>
-        </div>
+          <div class="wedding-builder-section" aria-labelledby="wedding-canvas-title">
+            <h3 id="wedding-canvas-title" data-step="04">Canvas</h3>
+            <p class="wedding-builder-intro">Choose one canvas size, or leave this section unselected.</p>
+            <div class="wedding-options-grid">
+              <label class="wedding-option">
+                <input type="radio" name="weddingCanvas" value="" checked>
+                <span class="wedding-option-copy"><strong>No canvas</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingCanvas" value="a4">
+                <span class="wedding-option-copy"><strong>A4 Canvas</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingCanvas" value="a3">
+                <span class="wedding-option-copy"><strong>A3 Canvas</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingCanvas" value="a2">
+                <span class="wedding-option-copy"><strong>A2 Canvas</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingCanvas" value="a1">
+                <span class="wedding-option-copy"><strong>A1 Canvas</strong></span>
+              </label>
+            </div>
+          </div>
 
-        <p class="note">
-          The R8,000 small package has limited coverage. Confirm coverage
-          hours, the number of digital pictures, delivery details and travel
-          costs in writing before booking. Drone coverage is subject to
-          approval and conditions.
-        </p>
+          <div class="wedding-quote-summary">
+            <div>
+              <strong>Your estimated total</strong>
+              <span class="wedding-total-note">Final details and availability will be confirmed by our team.</span>
+            </div>
+            <output class="wedding-total" id="weddingPackageTotal"
+              aria-live="polite" aria-atomic="true">Select options to view your estimate</output>
+          </div>
+          <div class="wedding-quote-actions">
+            <div class="wedding-quote-buttons">
+              <a class="btn btn-gold" id="weddingQuoteLink"
+              href="https://wa.me/27711970286"
+              target="_blank" rel="noopener noreferrer" aria-disabled="true">
+                Request Quote on WhatsApp
+              </a>
+              <button class="btn btn-outline" id="downloadWeddingQuote"
+                type="button">
+                Download PDF Quotation
+              </button>
+            </div>
+            <p class="wedding-quote-status" id="weddingQuoteStatus"
+              role="status" aria-live="polite">Enter your name and select a service, photobook or canvas to prepare your quote.</p>
+            <p class="wedding-quote-status">WhatsApp lets you review your request before sending. The PDF button downloads your quotation to your device.</p>
+          </div>
+        </form>
       </div>
     </section>
 
@@ -2123,83 +2567,6 @@
             href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20I%27d%20like%20to%20refer%20a%20client%20and%20learn%20more%20about%20the%20R500%20referral%20reward."
             target="_blank" rel="noopener noreferrer">Refer Someone</a>
         </div>
-      </div>
-    </section>
-
-    <!-- TRADITIONAL PACKAGES -->
-    <section class="section package-section" id="traditional-packages">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Celebrate Your Heritage</p>
-          <h2>Traditional Ceremony <span class="gold">Packages</span></h2>
-          <p class="section-intro">
-            Choose from four coverage options for your traditional ceremony.
-            Ask us to confirm the package details and availability for your date.
-          </p>
-        </div>
-
-        <div class="package-grid">
-          <article class="package-card">
-            <span class="package-label">Small Package</span>
-            <h3>Traditional Essentials</h3>
-            <div class="package-price">R8,000<small>Package price</small></div>
-            <ul>
-              <li>8 hours of coverage</li>
-              <li>Full video</li>
-              <li>Digital pictures</li>
-            </ul>
-            <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20I%27m%20interested%20in%20the%20R8%2C000%20small%20traditional%20package%20with%20full%20video%20and%20digital%20pictures.%20Could%20you%20confirm%20coverage%20and%20availability%3F" target="_blank" rel="noopener noreferrer">Enquire About This Package</a>
-          </article>
-
-          <article class="package-card">
-            <span class="package-label">Package 02</span>
-            <h3>Traditional Essential</h3>
-            <div class="package-price">R9,500<small>Package price</small></div>
-            <ul>
-              <li>Up to 9 hours of coverage per booking day</li>
-              <li>Digital images</li>
-              <li>Highlight video</li>
-              <li>Full video</li>
-            </ul>
-            <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%2C%20I%27m%20interested%20in%20the%20R9%2C500%20traditional%20ceremony%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
-          </article>
-
-          <article class="package-card featured">
-            <span class="package-label">Package 03</span>
-            <h3>Traditional Signature</h3>
-            <div class="package-price">R12,000<small>Package price</small></div>
-            <ul>
-              <li>Up to 9 hours of coverage per booking day</li>
-              <li>A4 photobook</li>
-              <li>A3 canvas</li>
-              <li>Full video</li>
-              <li>Highlight video</li>
-              <li>Drone coverage, subject to approval and conditions</li>
-            </ul>
-            <a class="btn btn-gold" href="https://wa.me/27711970286?text=Hello%2C%20I%27m%20interested%20in%20the%20R12%2C000%20traditional%20ceremony%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
-          </article>
-
-          <article class="package-card">
-            <span class="package-label">Package 04</span>
-            <h3>Traditional Premium</h3>
-            <div class="package-price">R16,000<small>Package price</small></div>
-            <ul>
-              <li>Up to 9 hours of coverage per booking day</li>
-              <li>A3 photobook</li>
-              <li>A3 canvas</li>
-              <li>Full video</li>
-              <li>Highlight video</li>
-              <li>Drone coverage, subject to approval and conditions</li>
-            </ul>
-            <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%2C%20I%27m%20interested%20in%20the%20R16%2C000%20traditional%20ceremony%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
-          </article>
-        </div>
-
-        <p class="note">
-          The R8,000 small package has limited coverage. Confirm coverage
-          hours, the number of digital pictures and delivery details in writing
-          before booking.
-        </p>
       </div>
     </section>
 
@@ -2259,124 +2626,6 @@
             <a class="btn btn-outline" href="https://wa.me/27711970286?text=I%27m%20interested%20in%20the%20R1%2C500%20graduation%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
           </article>
         </div>
-      </div>
-    </section>
-
-    <!-- EXTRAS -->
-    <section class="section extras-section" id="extras">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Customise Your Experience</p>
-          <h2>Additional <span class="gold">Services</span></h2>
-          <p class="section-intro">
-            Add extra coverage and services to your booking.
-            Confirm availability, travel requirements and final costs with us.
-          </p>
-        </div>
-
-        <div class="extras-grid">
-          <article class="extra-item">
-            <h3>Additional Hours</h3>
-            <p>Extend your event coverage beyond the agreed schedule.</p>
-            <span class="extra-price">R1,500 per hour</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Drone Coverage</h3>
-            <p>Aerial filming for eligible events, subject to permissions,
-              weather and safe operating conditions.</p>
-            <span class="extra-price">R1,500 per day</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Photography Add-on</h3>
-            <p>Additional photography service for your event.</p>
-            <span class="extra-price">R2,500</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Sound System</h3>
-            <p>Sound system hire with transport included.</p>
-            <span class="extra-price">R4,500</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Live Streaming</h3>
-            <p>Stream your event live so friends and family can join remotely.
-              Availability depends on venue internet connectivity.</p>
-            <span class="extra-price">Request a quote</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Online Editing</h3>
-            <p>Online editing service for your event footage.</p>
-            <span class="extra-price">Request a quote</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Screen Hire</h3>
-            <p>Event screen hire for displaying videos, slideshows or live
-              coverage. Confirm screen availability and setup requirements.</p>
-            <span class="extra-price">Request a quote</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Full Video + Highlight</h3>
-            <p>Event film with a separate highlight video.</p>
-            <span class="extra-price">R3,500</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Full Video Only</h3>
-            <p>Full event video coverage.</p>
-            <span class="extra-price">R3,000</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Highlights Only</h3>
-            <p>A highlight video featuring selected event moments.</p>
-            <span class="extra-price">R3,000</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Video Without Editing</h3>
-            <p>Video coverage without editing.</p>
-            <span class="extra-price">R2,500</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Full Video + Highlight + Drone</h3>
-            <p>Combined coverage option. Confirm drone availability and
-              the scope of coverage before booking.</p>
-            <span class="extra-price">R4,500 — confirm scope</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Ukukhipha uMakoti</h3>
-            <p>Coverage of the bride's departure ceremony.</p>
-            <span class="extra-price">R3,000</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>One-Hour Reel</h3>
-            <p>A one-hour reel filming service.</p>
-            <span class="extra-price">R1,500</span>
-          </article>
-
-          <article class="extra-item">
-            <h3>Digital Invitation</h3>
-            <p>Custom invitation design and optional interactive features.</p>
-            <span class="extra-price">Request a quote</span>
-            <p><a class="service-link" href="https://umshibetech.github.io/invitation/"
-              target="_blank" rel="noopener noreferrer">View Invitation Example ↗</a></p>
-          </article>
-        </div>
-
-        <p class="note">
-          Add-on prices and package inclusions should be confirmed in writing.
-          The R4,500 combined video and drone option requires confirmation
-          of its exact scope before booking.
-        </p>
       </div>
     </section>
 
@@ -2805,6 +3054,363 @@
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const weddingPackageBuilder = document.getElementById('weddingPackageBuilder');
+    const weddingServicePrices = {
+      'full-video': { label: 'Full Wedding Event Video', price: 4000 },
+      'digital-pictures': { label: 'Digital Pictures', price: 4000 },
+      'highlight-video': { label: 'Highlight Video', price: 1500 },
+      videographer: { label: '2nd Videography', price: 2500 },
+      photography: { label: '2nd Photography', price: 3500 },
+      'portrait-highlight': { label: 'Portrait Highlight', price: 3000 },
+      'drone-coverage': { label: 'Drone Coverage (per day)', price: 1500 },
+      'ukukhipha-umakoti': { label: 'Ukukhipha uMakoti Video', price: 3000 },
+      'event-reel': { label: 'One-Hour Event Reel', price: 1500 },
+      'sound-system': { label: 'Sound System (transport included)', price: 4500 },
+      'live-streaming': { label: 'Live Streaming', price: 15000 },
+      'online-editing': { label: 'Online Editing', price: 3000 },
+      'digital-invitation': { label: 'Digital Invitation', price: 1000 }
+    };
+    const weddingPhotobookPrices = {
+      'a4-30': { label: 'A4 Photobook – 30 pages', price: 800 },
+      'a4-40': { label: 'A4 Photobook – 40 pages', price: 1000 },
+      'a3-30': { label: 'A3 Photobook – 30 pages', price: 1200 },
+      'a3-40': { label: 'A3 Photobook – 40 pages', price: 1500 }
+    };
+    const weddingCanvasPrices = {
+      a4: { label: 'A4 Canvas', price: 300 },
+      a3: { label: 'A3 Canvas', price: 400 },
+      a2: { label: 'A2 Canvas', price: 500 },
+      a1: { label: 'A1 Canvas', price: 600 }
+    };
+    const weddingAdditionalHourPrice = 1500;
+
+    if (weddingPackageBuilder) {
+      const weddingServiceInputs = [
+        ...weddingPackageBuilder.querySelectorAll('input[name="weddingService"]')
+      ];
+      const weddingPhotobookInputs = [
+        ...weddingPackageBuilder.querySelectorAll('input[name="weddingPhotobook"]')
+      ];
+      const weddingCanvasInputs = [
+        ...weddingPackageBuilder.querySelectorAll('input[name="weddingCanvas"]')
+      ];
+      const weddingAdditionalHours = document.getElementById('weddingAdditionalHours');
+      const weddingHoursError = document.getElementById('weddingHoursError');
+      const weddingPackageTotal = document.getElementById('weddingPackageTotal');
+      const weddingQuoteLink = document.getElementById('weddingQuoteLink');
+      const weddingQuoteStatus = document.getElementById('weddingQuoteStatus');
+      const weddingQuoteForm = document.getElementById('weddingPackageBuilder');
+      const downloadWeddingQuote = document.getElementById('downloadWeddingQuote');
+      const weddingClientName = document.getElementById('weddingClientName');
+      const weddingClientEmail = document.getElementById('weddingClientEmail');
+      const weddingEventDate = document.getElementById('weddingEventDate');
+      const weddingEventLocation = document.getElementById('weddingEventLocation');
+      let latestWeddingQuote = null;
+      const currencyFormatter = new Intl.NumberFormat('en-ZA', {
+        style: 'currency',
+        currency: 'ZAR',
+        maximumFractionDigits: 0
+      });
+
+      function updateWeddingPackageQuote() {
+        latestWeddingQuote = null;
+        const hours = Number(weddingAdditionalHours.value);
+        const validHours = weddingAdditionalHours.validity.valid &&
+          Number.isSafeInteger(hours) && hours >= 0 && hours <= 9;
+        const selectedServices = weddingServiceInputs
+          .filter(input => input.checked)
+          .map(input => weddingServicePrices[input.value])
+          .filter(Boolean);
+        const selectedPhotobookInput = weddingPhotobookInputs.find(input => input.checked);
+        const selectedPhotobook = selectedPhotobookInput
+          ? weddingPhotobookPrices[selectedPhotobookInput.value]
+          : null;
+        const selectedCanvasInput = weddingCanvasInputs.find(input => input.checked);
+        const selectedCanvas = selectedCanvasInput
+          ? weddingCanvasPrices[selectedCanvasInput.value]
+          : null;
+        const hasSelection = selectedServices.length > 0 ||
+          Boolean(selectedPhotobook) || Boolean(selectedCanvas) ||
+          (validHours && hours > 0);
+
+        weddingServiceInputs.forEach(input => {
+          input.closest('.wedding-option').classList.toggle('is-selected', input.checked);
+        });
+        weddingPhotobookInputs.forEach(input => {
+          input.closest('.wedding-option').classList.toggle('is-selected', input.checked);
+        });
+        weddingCanvasInputs.forEach(input => {
+          input.closest('.wedding-option').classList.toggle('is-selected', input.checked);
+        });
+
+        if (!validHours) {
+          weddingAdditionalHours.setAttribute('aria-invalid', 'true');
+          weddingHoursError.textContent = 'Enter a whole number of additional hours, starting from 0.';
+          weddingPackageTotal.textContent = 'Check additional hours';
+          weddingQuoteLink.setAttribute('aria-disabled', 'true');
+          weddingQuoteStatus.textContent = 'Correct the additional hours to calculate your quote.';
+          return;
+        }
+
+        weddingAdditionalHours.removeAttribute('aria-invalid');
+        weddingHoursError.textContent = '';
+        const total = selectedServices.reduce((sum, service) => sum + service.price, 0) +
+          (selectedPhotobook ? selectedPhotobook.price : 0) +
+          (selectedCanvas ? selectedCanvas.price : 0) +
+          hours * weddingAdditionalHourPrice;
+
+        if (!Number.isSafeInteger(total)) {
+          weddingAdditionalHours.setAttribute('aria-invalid', 'true');
+          weddingHoursError.textContent = 'The number of additional hours is too large.';
+          weddingPackageTotal.textContent = 'Check additional hours';
+          weddingQuoteLink.setAttribute('aria-disabled', 'true');
+          weddingQuoteStatus.textContent = 'Reduce the additional hours to calculate your quote.';
+          return;
+        }
+
+        if (!hasSelection) {
+          weddingPackageTotal.textContent = 'Select options to view your estimate';
+          weddingQuoteLink.setAttribute('aria-disabled', 'true');
+          weddingQuoteStatus.textContent = 'Select a service, photobook, canvas, or add extra hours to see your estimate.';
+          return;
+        }
+
+        const formattedTotal = currencyFormatter.format(total);
+        weddingPackageTotal.textContent = formattedTotal;
+        const clientName = weddingClientName.value.trim();
+        if (!clientName || !weddingClientEmail.validity.valid) {
+          weddingQuoteLink.setAttribute('aria-disabled', 'true');
+          weddingQuoteStatus.textContent = !clientName
+            ? 'Enter your full name to prepare your quotation.'
+            : 'Check your email address or leave the field blank.';
+          return;
+        }
+
+        const quoteDetails = {
+          clientName,
+          clientEmail: weddingClientEmail.value.trim(),
+          eventDate: weddingEventDate.value,
+          eventLocation: weddingEventLocation.value.trim(),
+          services: selectedServices.map(service => service.label),
+          photobook: selectedPhotobook ? selectedPhotobook.label : '',
+          canvas: selectedCanvas ? selectedCanvas.label : '',
+          additionalHours: hours,
+          total: formattedTotal
+        };
+        const quoteLines = [
+          'Hello Mshibe Wedding Film,',
+          '',
+          'I would like to request a quotation for my wedding.',
+          `Name: ${quoteDetails.clientName}`,
+          ...(quoteDetails.clientEmail ? [`Email: ${quoteDetails.clientEmail}`] : []),
+          ...(quoteDetails.eventDate ? [`Wedding date: ${quoteDetails.eventDate}`] : []),
+          ...(quoteDetails.eventLocation ? [`Venue or location: ${quoteDetails.eventLocation}`] : []),
+          '',
+          'Selected wedding services:',
+          ...(quoteDetails.services.length
+            ? quoteDetails.services.map(service => `- ${service}`)
+            : ['- No additional services selected']),
+          ...(quoteDetails.photobook ? [`Photobook: ${quoteDetails.photobook}`] : []),
+          ...(quoteDetails.canvas ? [`Canvas: ${quoteDetails.canvas}`] : []),
+          ...(quoteDetails.additionalHours > 0 ? [`Additional hours: ${quoteDetails.additionalHours}`] : []),
+          `Estimated total: ${formattedTotal}`,
+          '',
+          'Please confirm availability and the final quotation.'
+        ];
+        weddingQuoteLink.href = `https://wa.me/27711970286?text=${encodeURIComponent(quoteLines.join('\n'))}`;
+        weddingQuoteLink.setAttribute('aria-disabled', 'false');
+        latestWeddingQuote = quoteDetails;
+        weddingQuoteStatus.textContent = 'Your quote request is ready to review and send in WhatsApp.';
+      }
+
+      const pdfCharMap = {
+        '–': '\x96', '—': '\x97', '‘': '\x91', '’': '\x92',
+        '“': '\x93', '”': '\x94', '•': '\x95', '€': '\x80'
+      };
+
+      function pdfEscape(value) {
+        return String(value).replace(/\s/g, ' ').replace(/[^]/g, character => {
+          if (pdfCharMap[character]) return pdfCharMap[character];
+          const code = character.charCodeAt(0);
+          return code >= 32 && code <= 255 && !(code >= 127 && code <= 159) ? character : '?';
+        }).replace(/[\\()]/g, '\\$&');
+      }
+
+      function wrapPdfText(value, maxCharacters) {
+        const lines = [];
+        let line = '';
+        String(value).split(/\s+/).filter(Boolean).forEach(word => {
+          if (word.length > maxCharacters) {
+            if (line) lines.push(line);
+            line = '';
+            for (let start = 0; start < word.length; start += maxCharacters) {
+              lines.push(word.slice(start, start + maxCharacters));
+            }
+            return;
+          }
+          const next = line ? `${line} ${word}` : word;
+          if (next.length > maxCharacters) {
+            lines.push(line);
+            line = word;
+          } else {
+            line = next;
+          }
+        });
+        if (line) lines.push(line);
+        return lines.length ? lines : [''];
+      }
+
+      function buildWeddingQuotePdf(quote) {
+        const gold = '0.72 0.54 0.32';
+        const goldLight = '0.85 0.73 0.53';
+        const dark = '0.13 0.13 0.13';
+        const grey = '0.40 0.40 0.40';
+        const operations = [];
+        let y = 0;
+
+        const text = (x, textY, value, size, bold, color) => {
+          operations.push(`BT /${bold ? 'F2' : 'F1'} ${size} Tf ${color} rg ${x} ${textY} Td (${pdfEscape(value)}) Tj ET`);
+        };
+        const rectangle = (x, rectY, width, height, color) => {
+          operations.push(`${color} rg ${x} ${rectY} ${width} ${height} re f`);
+        };
+        const heading = value => {
+          y -= 14;
+          text(50, y, value.toUpperCase(), 10, true, gold);
+          rectangle(50, y - 7, 495, 0.8, gold);
+          y -= 26;
+        };
+        const row = (label, value) => {
+          const lines = wrapPdfText(value, 62);
+          text(50, y, label, 10.5, true, dark);
+          lines.forEach((line, index) => {
+            text(165, y - index * 15, line, 10.5, false, dark);
+          });
+          y -= 15 * lines.length + 5;
+        };
+        const bullet = value => {
+          const lines = wrapPdfText(value, 80);
+          text(55, y, '•', 10.5, true, gold);
+          lines.forEach((line, index) => {
+            text(70, y - index * 15, line, 10.5, false, dark);
+          });
+          y -= 15 * lines.length + 4;
+        };
+
+        rectangle(0, 722, 595, 120, '0.07 0.07 0.07');
+        rectangle(0, 718, 595, 4, gold);
+        text(50, 800, 'MSHIBE WEDDING FILMS', 11, true, goldLight);
+        text(50, 768, 'Wedding Quotation', 28, true, '1 1 1');
+        text(50, 740, 'Your story, beautifully told', 10, false, goldLight);
+        const dateFormatter = new Intl.DateTimeFormat('en-ZA', { dateStyle: 'long' });
+        text(395, 800, `Prepared: ${dateFormatter.format(new Date())}`, 10, false, goldLight);
+
+        y = 700;
+        heading('Client details');
+        row('Name', quote.clientName);
+        if (quote.clientEmail) row('Email', quote.clientEmail);
+        if (quote.eventDate) {
+          row('Wedding date', dateFormatter.format(new Date(`${quote.eventDate}T00:00:00`)));
+        }
+        if (quote.eventLocation) row('Venue / location', quote.eventLocation);
+
+        heading('Selected services and extras');
+        quote.services.forEach(bullet);
+        if (quote.photobook) bullet(`Photobook: ${quote.photobook}`);
+        if (quote.canvas) bullet(`Canvas: ${quote.canvas}`);
+        if (quote.additionalHours > 0) {
+          bullet(`Additional hours: ${quote.additionalHours}`);
+        }
+
+        y -= 18;
+        rectangle(50, y - 34, 495, 52, '0.96 0.93 0.88');
+        rectangle(50, y - 34, 4, 52, gold);
+        text(68, y - 12, 'ESTIMATED TOTAL', 10, true, grey);
+        text(68, y - 29, 'Subject to confirmation of availability', 9, false, grey);
+        text(530 - 12.5 * quote.total.length, y - 20, quote.total, 22, true, dark);
+        y -= 66;
+
+        wrapPdfText('This quotation is an estimate based on your selections. Availability, travel requirements and final details are confirmed by Mshibe Wedding Films in writing before booking.', 100)
+          .forEach(line => {
+            text(50, y, line, 9, false, grey);
+            y -= 13;
+          });
+
+        heading('Contact');
+        row('WhatsApp', '071 197 0286');
+        row('Email', 'sipholuthuli105@gmail.com');
+        row('Website', 'www.mshibeweddingfilms.co.za');
+
+        const content = operations.join('\n');
+        const objects = [
+          '<< /Type /Catalog /Pages 2 0 R >>',
+          '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
+          '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>',
+          '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>',
+          '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>',
+          `<< /Length ${content.length} >>\nstream\n${content}\nendstream`
+        ];
+        let pdf = '%PDF-1.4\n';
+        const offsets = [];
+        objects.forEach((body, index) => {
+          offsets.push(pdf.length);
+          pdf += `${index + 1} 0 obj\n${body}\nendobj\n`;
+        });
+        const xrefStart = pdf.length;
+        pdf += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
+        offsets.forEach(offset => {
+          pdf += `${String(offset).padStart(10, '0')} 00000 n \n`;
+        });
+        pdf += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xrefStart}\n%%EOF`;
+
+        const bytes = new Uint8Array(pdf.length);
+        for (let index = 0; index < pdf.length; index += 1) {
+          bytes[index] = pdf.charCodeAt(index) & 255;
+        }
+        return new Blob([bytes], { type: 'application/pdf' });
+      }
+
+      function downloadWeddingQuotePdf() {
+        if (!weddingQuoteForm.reportValidity()) {
+          return;
+        }
+        if (!latestWeddingQuote) {
+          weddingQuoteStatus.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          return;
+        }
+
+        const fileName = `Mshibe-Wedding-Quotation-${latestWeddingQuote.clientName
+          .replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'Client'}.pdf`;
+        const url = URL.createObjectURL(buildWeddingQuotePdf(latestWeddingQuote));
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = fileName;
+        document.body.append(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        weddingQuoteStatus.textContent = `Your quotation (${fileName}) has been downloaded.`;
+      }
+
+      [...weddingServiceInputs, ...weddingPhotobookInputs, ...weddingCanvasInputs].forEach(input => {
+        input.addEventListener('change', updateWeddingPackageQuote);
+      });
+      [weddingAdditionalHours, weddingClientName, weddingClientEmail,
+        weddingEventDate, weddingEventLocation].forEach(input => {
+        input.addEventListener('input', updateWeddingPackageQuote);
+        input.addEventListener('change', updateWeddingPackageQuote);
+      });
+      weddingQuoteForm.addEventListener('submit', event => event.preventDefault());
+      weddingQuoteLink.addEventListener('click', event => {
+        if (weddingQuoteLink.getAttribute('aria-disabled') === 'true' ||
+          !weddingQuoteForm.reportValidity()) {
+          event.preventDefault();
+        }
+      });
+      downloadWeddingQuote.addEventListener('click', downloadWeddingQuotePdf);
+      updateWeddingPackageQuote();
+    }
 
     const bookingForm = document.getElementById('bookingForm');
     const bookingStatus = document.getElementById('bookingStatus');
