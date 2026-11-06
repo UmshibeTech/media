@@ -8,7 +8,7 @@ const servicePrices: Record<string, { label: string; price: number }> = {
   'drone-coverage': { label: 'Drone Coverage (per day)', price: 1500 },
   'ukukhipha-umakoti': { label: 'Ukukhipha uMakoti Video', price: 3000 },
   'event-reel': { label: 'One-Hour Event Reel', price: 1500 },
-  'sound-system': { label: 'Sound System (transport included)', price: 4500 },
+  'sound-system': { label: 'Sound System', price: 4500 },
   'live-streaming': { label: 'Live Streaming', price: 15000 },
   'online-editing': { label: 'Online Editing', price: 3000 },
   'digital-invitation': { label: 'Digital Invitation', price: 1000 }
@@ -218,14 +218,15 @@ Deno.serve(async request => {
       ...selectedServices.map(service => service.label),
       ...(photobook ? [photobook.label] : []),
       ...(canvas ? [canvas.label] : []),
-      ...(additionalHours ? [`Additional hours: ${additionalHours}`] : [])
+      ...(additionalHours ? [`Additional hours: ${additionalHours}`] : []),
+      'Transport for all services is charged separately at R2.50/km based on the venue.'
     ].join(', ').slice(0, 900);
     const parameters = [
       clientName,
       eventDate || 'To be confirmed',
       eventLocation || 'To be confirmed',
       servicesText,
-      formatter.format(total),
+      `${formatter.format(total)} (service subtotal; transport excluded)`,
       clientEmail || 'Not provided'
     ];
     const graphResponse = await fetch(
