@@ -1,0 +1,2 @@
+[functions.send-wedding-quote]
+verify_jwt = false

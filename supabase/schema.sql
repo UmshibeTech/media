@@ -44,3 +44,19 @@ grant insert (
   event_location,
   message
 ) on table public.booking_enquiries to anon;
+
+create table if not exists public.whatsapp_quote_notification_attempts (
+  id bigint generated always as identity primary key,
+  ip_hash text not null,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists whatsapp_quote_notification_attempts_ip_created_idx
+  on public.whatsapp_quote_notification_attempts (ip_hash, created_at);
+create index if not exists whatsapp_quote_notification_attempts_created_idx
+  on public.whatsapp_quote_notification_attempts (created_at);
+
+alter table public.whatsapp_quote_notification_attempts enable row level security;
+revoke all on table public.whatsapp_quote_notification_attempts from anon, authenticated;
+grant all on table public.whatsapp_quote_notification_attempts to service_role;
+grant usage, select on sequence public.whatsapp_quote_notification_attempts_id_seq to service_role;

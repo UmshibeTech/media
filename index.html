@@ -1289,6 +1289,15 @@
       font-weight: 600;
     }
 
+    .wedding-selected-items {
+      display: grid;
+      gap: 4px;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
     .wedding-total-note {
       color: var(--muted);
       font-size: .76rem;
@@ -2293,7 +2302,9 @@
           <p class="eyebrow">Wedding storytelling, beautifully captured</p>
           <h2>Choose how we tell <span class="gold">your story.</span></h2>
           <p class="section-intro">
-            Thoughtful coverage for the moments, people and traditions that matter most.
+            Browse the services below, then choose the coverage and add-ons
+            you want to include in a personalised quote. If you are not sure
+            what suits your day, you can ask us for guidance.
           </p>
         </div>
 
@@ -2303,7 +2314,7 @@
             <h3>Wedding Film</h3>
             <p>A cinematic keepsake shaped around the people and feeling of your day.</p>
             <ul><li>Story-led highlight film</li><li>Carefully edited moments</li></ul>
-            <a class="service-link" href="#wedding-packages">Learn more →</a>
+            <a class="service-link" href="#wedding-packages">View video options →</a>
           </article>
 
           <article class="service-card">
@@ -2311,7 +2322,7 @@
             <h3>Photography + Film</h3>
             <p>Still images and motion together for a complete record of your celebration.</p>
             <ul><li>Portraits and candid moments</li><li>Coverage planned together</li></ul>
-            <a class="service-link" href="#wedding-packages">Learn more →</a>
+            <a class="service-link" href="#wedding-packages">View photo + film options →</a>
           </article>
 
           <article class="service-card">
@@ -2319,7 +2330,7 @@
             <h3>Traditional Wedding Coverage</h3>
             <p>Considered coverage that honours your customs, family and meaningful moments.</p>
             <ul><li>Respectful, personal approach</li><li>Coverage tailored to your ceremony</li></ul>
-            <a class="service-link" href="#wedding-packages">Build your package →</a>
+            <a class="service-link" href="#wedding-packages">Build your traditional package →</a>
           </article>
 
           <article class="service-card">
@@ -2343,7 +2354,7 @@
             <h3>Full-Day Coverage</h3>
             <p>Coverage planned around the key parts of your wedding day, from preparations to celebration.</p>
             <ul><li>Timeline planned with you</li><li>Up to 9 hours per booking day</li></ul>
-            <a class="service-link" href="#wedding-packages">Explore packages →</a>
+            <a class="service-link" href="#wedding-packages">Choose your coverage →</a>
           </article>
         </div>
       </div>
@@ -2369,46 +2380,18 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Celebrate Your Love</p>
-          <h2>Build Your Own Wedding <span class="gold">Package</span></h2>
+          <h2>Build Your Wedding <span class="gold">Package</span></h2>
           <p class="section-intro">
-            Choose the services that suit your celebration. Your estimated
-            total updates as you make or change your selections. Final details
-            and availability will be confirmed in your quotation.
+            1. Choose your services. 2. Add any keepsakes. 3. Enter your name
+            and request a personalised quote on WhatsApp. Our team will confirm
+            your quote and availability with you. No payment is taken on this page.
           </p>
         </div>
 
         <form class="wedding-builder" id="weddingPackageBuilder">
-          <div class="wedding-client-details" aria-labelledby="wedding-details-title">
-            <h3 id="wedding-details-title" data-step="01">Your Wedding Details</h3>
-            <div class="wedding-form-field">
-              <label for="weddingClientName">Full name</label>
-              <input id="weddingClientName" name="clientName" type="text"
-                autocomplete="name" maxlength="120" placeholder="Enter your full name" required>
-            </div>
-            <div class="wedding-form-field">
-              <label for="weddingClientEmail">Email address (optional)</label>
-              <input id="weddingClientEmail" name="clientEmail" type="email"
-                autocomplete="email" maxlength="254" placeholder="you@example.com">
-            </div>
-            <div class="wedding-form-field">
-              <label for="weddingEventDate">Wedding date (optional)</label>
-              <input id="weddingEventDate" name="eventDate" type="date">
-            </div>
-            <div class="wedding-form-field">
-              <label for="weddingEventLocation">Venue or location (optional)</label>
-              <input id="weddingEventLocation" name="eventLocation" type="text"
-                autocomplete="street-address" maxlength="200">
-            </div>
-            <div class="wedding-form-field" id="makotiLocationField" hidden>
-              <label for="weddingMakotiLocation">Location of uMakoti (Ukukhipha uMakoti)</label>
-              <input id="weddingMakotiLocation" name="makotiLocation" type="text"
-                maxlength="200" placeholder="Town, area or full address" autocomplete="off">
-            </div>
-          </div>
-
           <div class="wedding-builder-section" aria-labelledby="wedding-services-title">
-            <h3 id="wedding-services-title" data-step="02">Our Services</h3>
-            <p class="wedding-builder-intro">Select as many services as you need.</p>
+            <h3 id="wedding-services-title" data-step="01">Choose Your Services</h3>
+            <p class="wedding-builder-intro">Select all the services you would like to include.</p>
             <div class="wedding-options-grid">
               <label class="wedding-option">
                 <input type="checkbox" name="weddingService" value="full-video">
@@ -2487,7 +2470,7 @@
           </div>
 
           <div class="wedding-builder-section" aria-labelledby="wedding-photobooks-title">
-            <h3 id="wedding-photobooks-title" data-step="03">Photobook</h3>
+            <h3 id="wedding-photobooks-title" data-step="02">Add a Photobook</h3>
             <p class="wedding-builder-intro">Choose one photobook, or leave this section unselected.</p>
             <div class="wedding-options-grid wedding-photobook-options">
               <label class="wedding-option">
@@ -2514,7 +2497,7 @@
           </div>
 
           <div class="wedding-builder-section" aria-labelledby="wedding-canvas-title">
-            <h3 id="wedding-canvas-title" data-step="04">Canvas</h3>
+            <h3 id="wedding-canvas-title" data-step="03">Add a Canvas</h3>
             <p class="wedding-builder-intro">Choose one canvas size, or leave this section unselected.</p>
             <div class="wedding-options-grid">
               <label class="wedding-option">
@@ -2540,13 +2523,44 @@
             </div>
           </div>
 
+          <div class="wedding-client-details" aria-labelledby="wedding-details-title">
+            <h3 id="wedding-details-title" data-step="04">Your Wedding Details</h3>
+            <div class="wedding-form-field">
+              <label for="weddingClientName">Full name</label>
+              <input id="weddingClientName" name="clientName" type="text"
+                autocomplete="name" maxlength="120" placeholder="Enter your full name" required>
+            </div>
+            <div class="wedding-form-field">
+              <label for="weddingClientEmail">Email address (optional)</label>
+              <input id="weddingClientEmail" name="clientEmail" type="email"
+                autocomplete="email" maxlength="254" placeholder="you@example.com">
+            </div>
+            <div class="wedding-form-field">
+              <label for="weddingEventDate">Wedding date (optional)</label>
+              <input id="weddingEventDate" name="eventDate" type="date">
+            </div>
+            <div class="wedding-form-field">
+              <label for="weddingEventLocation">Venue or location (optional)</label>
+              <input id="weddingEventLocation" name="eventLocation" type="text"
+                autocomplete="street-address" maxlength="200">
+            </div>
+            <div class="wedding-form-field" id="makotiLocationField" hidden>
+              <label for="weddingMakotiLocation">Location of uMakoti (Ukukhipha uMakoti)</label>
+              <input id="weddingMakotiLocation" name="makotiLocation" type="text"
+                maxlength="200" placeholder="Town, area or full address" autocomplete="off">
+            </div>
+          </div>
+
           <div class="wedding-quote-summary">
             <div>
-              <strong>Your estimated total</strong>
+              <strong>Your Quotation Total</strong>
+              <ul class="wedding-selected-items" id="weddingSelectedItems" aria-live="polite">
+                <li>Your selected services and add-ons will appear here.</li>
+              </ul>
               <span class="wedding-total-note">Final details and availability will be confirmed by our team.</span>
             </div>
             <output class="wedding-total" id="weddingPackageTotal"
-              aria-live="polite" aria-atomic="true">Select options to view your estimate</output>
+              aria-live="polite" aria-atomic="true">Select options to see your total</output>
           </div>
           <div class="wedding-quote-actions">
             <div class="wedding-quote-buttons">
@@ -2557,7 +2571,7 @@
               </a>
               <button class="btn btn-outline" id="downloadWeddingQuote"
                 type="button">
-                Download PDF Quotation
+                Download Wedding Quotation
               </button>
               <button class="btn btn-outline" id="emailWeddingQuote"
                 type="button" hidden>
@@ -2565,8 +2579,8 @@
               </button>
             </div>
             <p class="wedding-quote-status" id="weddingQuoteStatus"
-              role="status" aria-live="polite">Enter your name and select a service, photobook or canvas to prepare your quote.</p>
-            <p class="wedding-quote-status">WhatsApp lets you review your request before sending. The PDF button downloads your quotation to your device.</p>
+              role="status" aria-live="polite">Choose at least one service or add-on, then enter your name to prepare your quote.</p>
+            <p class="wedding-quote-status">WhatsApp lets you review your request before sending. The PDF includes your selected services and calculated quotation total.</p>
           </div>
         </form>
       </div>
@@ -3073,7 +3087,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const weddingPackageBuilder = document.getElementById('weddingPackageBuilder');
-    const weddingServicePrices = {
+    const weddingServices = {
       'full-video': { label: 'Full Wedding Event Video', price: 4000 },
       'digital-pictures': { label: 'Digital Pictures', price: 4000 },
       'highlight-video': { label: 'Highlight Video', price: 1500 },
@@ -3088,19 +3102,19 @@
       'online-editing': { label: 'Online Editing', price: 3000 },
       'digital-invitation': { label: 'Digital Invitation', price: 1000 }
     };
-    const weddingPhotobookPrices = {
+    const weddingPhotobooks = {
       'a4-30': { label: 'A4 Photobook – 30 pages', price: 800 },
       'a4-40': { label: 'A4 Photobook – 40 pages', price: 1000 },
       'a3-30': { label: 'A3 Photobook – 30 pages', price: 1200 },
       'a3-40': { label: 'A3 Photobook – 40 pages', price: 1500 }
     };
-    const weddingCanvasPrices = {
+    const weddingCanvases = {
       a4: { label: 'A4 Canvas', price: 300 },
       a3: { label: 'A3 Canvas', price: 400 },
       a2: { label: 'A2 Canvas', price: 500 },
       a1: { label: 'A1 Canvas', price: 600 }
     };
-    const weddingAdditionalHourPrice = 1500;
+    const weddingAdditionalHourPrice = 1000;
 
     if (weddingPackageBuilder) {
       const weddingServiceInputs = [
@@ -3114,9 +3128,10 @@
       ];
       const weddingAdditionalHours = document.getElementById('weddingAdditionalHours');
       const weddingHoursError = document.getElementById('weddingHoursError');
-      const weddingPackageTotal = document.getElementById('weddingPackageTotal');
+      const weddingSelectedItems = document.getElementById('weddingSelectedItems');
       const weddingQuoteLink = document.getElementById('weddingQuoteLink');
       const weddingQuoteStatus = document.getElementById('weddingQuoteStatus');
+      const weddingPackageTotal = document.getElementById('weddingPackageTotal');
       const weddingQuoteForm = document.getElementById('weddingPackageBuilder');
       const downloadWeddingQuote = document.getElementById('downloadWeddingQuote');
       const weddingClientName = document.getElementById('weddingClientName');
@@ -3142,19 +3157,36 @@
           Number.isSafeInteger(hours) && hours >= 0 && hours <= 9;
         const selectedServices = weddingServiceInputs
           .filter(input => input.checked)
-          .map(input => weddingServicePrices[input.value])
+          .map(input => weddingServices[input.value])
           .filter(Boolean);
         const selectedPhotobookInput = weddingPhotobookInputs.find(input => input.checked);
         const selectedPhotobook = selectedPhotobookInput
-          ? weddingPhotobookPrices[selectedPhotobookInput.value]
+          ? weddingPhotobooks[selectedPhotobookInput.value]
           : null;
         const selectedCanvasInput = weddingCanvasInputs.find(input => input.checked);
         const selectedCanvas = selectedCanvasInput
-          ? weddingCanvasPrices[selectedCanvasInput.value]
+          ? weddingCanvases[selectedCanvasInput.value]
           : null;
         const hasSelection = selectedServices.length > 0 ||
           Boolean(selectedPhotobook) || Boolean(selectedCanvas) ||
           (validHours && hours > 0);
+        const selectedItems = [
+          ...selectedServices.map(service => service.label),
+          ...(selectedPhotobook ? [selectedPhotobook.label] : []),
+          ...(selectedCanvas ? [selectedCanvas.label] : []),
+          ...(validHours && hours > 0
+            ? [`Additional Hours (${hours})`]
+            : [])
+        ];
+        weddingSelectedItems.replaceChildren();
+        (selectedItems.length
+          ? selectedItems
+          : ['Your selected services and add-ons will appear here.']
+        ).forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.textContent = item;
+          weddingSelectedItems.append(listItem);
+        });
 
         weddingServiceInputs.forEach(input => {
           input.closest('.wedding-option').classList.toggle('is-selected', input.checked);
@@ -3177,29 +3209,29 @@
 
         weddingAdditionalHours.removeAttribute('aria-invalid');
         weddingHoursError.textContent = '';
+
+        if (!hasSelection) {
+          weddingPackageTotal.textContent = 'Select options to see your total';
+          weddingQuoteLink.setAttribute('aria-disabled', 'true');
+          weddingQuoteStatus.textContent = 'Select a service, photobook, canvas, or extra hours to prepare your quote.';
+          return;
+        }
+
         const total = selectedServices.reduce((sum, service) => sum + service.price, 0) +
           (selectedPhotobook ? selectedPhotobook.price : 0) +
           (selectedCanvas ? selectedCanvas.price : 0) +
           hours * weddingAdditionalHourPrice;
-
         if (!Number.isSafeInteger(total)) {
           weddingAdditionalHours.setAttribute('aria-invalid', 'true');
-          weddingHoursError.textContent = 'The number of additional hours is too large.';
-          weddingPackageTotal.textContent = 'Check additional hours';
+          weddingHoursError.textContent = 'The quotation total is too large to calculate.';
+          weddingPackageTotal.textContent = 'Check your selections';
           weddingQuoteLink.setAttribute('aria-disabled', 'true');
-          weddingQuoteStatus.textContent = 'Reduce the additional hours to calculate your quote.';
+          weddingQuoteStatus.textContent = 'Review your selections and additional hours.';
           return;
         }
-
-        if (!hasSelection) {
-          weddingPackageTotal.textContent = 'Select options to view your estimate';
-          weddingQuoteLink.setAttribute('aria-disabled', 'true');
-          weddingQuoteStatus.textContent = 'Select a service, photobook, canvas, or add extra hours to see your estimate.';
-          return;
-        }
-
         const formattedTotal = currencyFormatter.format(total);
         weddingPackageTotal.textContent = formattedTotal;
+
         const clientName = weddingClientName.value.trim();
         if (!clientName || !weddingClientEmail.validity.valid) {
           weddingQuoteLink.setAttribute('aria-disabled', 'true');
@@ -3221,6 +3253,13 @@
           clientEmail: weddingClientEmail.value.trim(),
           eventDate: weddingEventDate.value,
           eventLocation: weddingEventLocation.value.trim(),
+          serviceIds: weddingServiceInputs.filter(input => input.checked).map(input => input.value),
+          photobookId: selectedPhotobookInput && selectedPhotobookInput.value
+            ? selectedPhotobookInput.value
+            : '',
+          canvasId: selectedCanvasInput && selectedCanvasInput.value
+            ? selectedCanvasInput.value
+            : '',
           services: selectedServices.map(service => service.label),
           photobook: selectedPhotobook ? selectedPhotobook.label : '',
           canvas: selectedCanvas ? selectedCanvas.label : '',
@@ -3244,9 +3283,10 @@
           ...(quoteDetails.photobook ? [`Photobook: ${quoteDetails.photobook}`] : []),
           ...(quoteDetails.canvas ? [`Canvas: ${quoteDetails.canvas}`] : []),
           ...(quoteDetails.additionalHours > 0 ? [`Additional hours: ${quoteDetails.additionalHours}`] : []),
-          `Estimated total: ${formattedTotal}`,
           '',
-          'Please confirm availability and the final quotation.'
+          `Quotation total: ${quoteDetails.total}`,
+          '',
+          'Please confirm availability and final details.'
         ];
         weddingQuoteLink.href = `https://wa.me/27711970286?text=${encodeURIComponent(quoteLines.join('\n'))}`;
         weddingQuoteLink.setAttribute('aria-disabled', 'false');
@@ -3357,12 +3397,12 @@
         y -= 18;
         rectangle(50, y - 34, 495, 52, '0.96 0.93 0.88');
         rectangle(50, y - 34, 4, 52, gold);
-        text(68, y - 12, 'ESTIMATED TOTAL', 10, true, grey);
-        text(68, y - 29, 'Subject to confirmation of availability', 9, false, grey);
-        text(530 - 12.5 * quote.total.length, y - 20, quote.total, 22, true, dark);
+        text(68, y - 12, 'QUOTATION TOTAL', 10, true, grey);
+        text(68, y - 29, 'Final details and availability subject to confirmation.', 9, false, grey);
+        text(530 - 12.5 * quote.total.length, y - 21, quote.total, 20, true, dark);
         y -= 66;
 
-        wrapPdfText('This quotation is an estimate based on your selections. Availability, travel requirements and final details are confirmed by Mshibe Wedding Films in writing before booking.', 100)
+        wrapPdfText('This quotation is calculated from your selected services. Availability, travel requirements and final details will be confirmed by Mshibe Wedding Films before booking.', 100)
           .forEach(line => {
             text(50, y, line, 9, false, grey);
             y -= 13;
@@ -3433,11 +3473,65 @@
         input.addEventListener('change', updateWeddingPackageQuote);
       });
       weddingQuoteForm.addEventListener('submit', event => event.preventDefault());
+      let notificationInProgress = false;
+      let lastNotifiedQuote = '';
+
+      async function notifyBusinessOnWhatsApp(quote) {
+        const config = window.SUPABASE_CONFIG || {};
+        const supabaseUrl = typeof config.url === 'string'
+          ? config.url.trim().replace(/\/+$/, '')
+          : '';
+        const publishableKey = typeof config.publishableKey === 'string'
+          ? config.publishableKey.trim()
+          : '';
+        if (!supabaseUrl || !publishableKey) {
+          throw new Error('Automatic notification is not configured. Please contact us directly.');
+        }
+
+        const response = await fetch(`${supabaseUrl}/functions/v1/send-wedding-quote`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            apikey: publishableKey
+          },
+          body: JSON.stringify(quote)
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          throw new Error(typeof result.error === 'string'
+            ? result.error
+            : 'We could not notify Mshibe automatically. Please contact us directly.');
+        }
+      }
+
       weddingQuoteLink.addEventListener('click', event => {
         if (weddingQuoteLink.getAttribute('aria-disabled') === 'true' ||
           !weddingQuoteForm.reportValidity()) {
           event.preventDefault();
+          return;
         }
+        if (!latestWeddingQuote) return;
+
+        const quoteKey = JSON.stringify(latestWeddingQuote);
+        if (quoteKey === lastNotifiedQuote) {
+          weddingQuoteStatus.textContent = 'Mshibe has already been notified about this quotation. WhatsApp is ready for you to send your request.';
+          return;
+        }
+        if (notificationInProgress) return;
+
+        notificationInProgress = true;
+        weddingQuoteStatus.textContent = 'Opening WhatsApp and sending your quotation to Mshibe...';
+        notifyBusinessOnWhatsApp(latestWeddingQuote)
+          .then(() => {
+            lastNotifiedQuote = quoteKey;
+            weddingQuoteStatus.textContent = 'Mshibe has been notified. WhatsApp is open for you to review and send your request.';
+          })
+          .catch(error => {
+            weddingQuoteStatus.textContent = `Your WhatsApp message is ready, but automatic notification failed: ${error.message}`;
+          })
+          .finally(() => {
+            notificationInProgress = false;
+          });
       });
       downloadWeddingQuote.addEventListener('click', downloadWeddingQuotePdf);
 
@@ -3461,7 +3555,8 @@
           ...quote.services,
           ...(quote.photobook ? [`Photobook: ${quote.photobook}`] : []),
           ...(quote.canvas ? [`Canvas: ${quote.canvas}`] : []),
-          ...(quote.additionalHours > 0 ? [`Additional hours: ${quote.additionalHours}`] : [])
+          ...(quote.additionalHours > 0 ? [`Additional hours: ${quote.additionalHours}`] : []),
+          `Quotation total: ${quote.total}`
         ].map(item => `- ${item}`).join('\n');
         emailWeddingQuote.disabled = true;
         weddingQuoteStatus.textContent = 'Sending your quotation...';
