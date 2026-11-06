@@ -2391,7 +2391,7 @@
         <form class="wedding-builder" id="weddingPackageBuilder">
           <div class="wedding-builder-section" aria-labelledby="wedding-services-title">
             <h3 id="wedding-services-title" data-step="01">Choose Your Services</h3>
-            <p class="wedding-builder-intro">Select all the services you would like to include.</p>
+            <p class="wedding-builder-intro">Select all the services you would like to include. Travel for all services is charged separately at R2.50 per kilometre, based on your venue, and is not included in the service subtotal.</p>
             <div class="wedding-options-grid">
               <label class="wedding-option">
                 <input type="checkbox" name="weddingService" value="full-video">
@@ -2431,7 +2431,7 @@
               </label>
               <label class="wedding-option">
                 <input type="checkbox" name="weddingService" value="sound-system">
-                <span class="wedding-option-copy"><strong>Sound System</strong><span>Transport included</span></span>
+                <span class="wedding-option-copy"><strong>Sound System</strong><span>Travel is charged separately at R2.50 per kilometre.</span></span>
               </label>
               <label class="wedding-option">
                 <input type="checkbox" name="weddingService" value="live-streaming">
@@ -2553,11 +2553,11 @@
 
           <div class="wedding-quote-summary">
             <div>
-              <strong>Your Quotation Total</strong>
+              <strong>Your Service Subtotal</strong>
               <ul class="wedding-selected-items" id="weddingSelectedItems" aria-live="polite">
                 <li>Your selected services and add-ons will appear here.</li>
               </ul>
-              <span class="wedding-total-note">Final details and availability will be confirmed by our team.</span>
+              <span class="wedding-total-note">Excludes transport, charged separately at R2.50 per kilometre based on your venue. Final details and availability will be confirmed by our team.</span>
             </div>
             <output class="wedding-total" id="weddingPackageTotal"
               aria-live="polite" aria-atomic="true">Select options to see your total</output>
@@ -2580,7 +2580,7 @@
             </div>
             <p class="wedding-quote-status" id="weddingQuoteStatus"
               role="status" aria-live="polite">Choose at least one service or add-on, then enter your name to prepare your quote.</p>
-            <p class="wedding-quote-status">WhatsApp lets you review your request before sending. The PDF includes your selected services and calculated quotation total.</p>
+            <p class="wedding-quote-status">WhatsApp lets you review your request before sending. The PDF includes your selected services and service subtotal; transport is charged separately.</p>
           </div>
         </form>
       </div>
@@ -2669,11 +2669,11 @@
         <div class="faq-list">
           <details>
             <summary>Do you offer wedding photography in Durban?</summary>
-            <p>Yes. We offer wedding photography and cinematic film coverage in Durban, KwaZulu-Natal and across the province. Share your venue and date so we can confirm availability and any travel arrangements.</p>
+            <p>Yes. We offer wedding photography and cinematic film coverage in Durban, KwaZulu-Natal and across the province. Travel for all services is charged separately at R2.50 per kilometre. Share your venue and date so we can confirm availability and the transport charge.</p>
           </details>
           <details>
             <summary>Do you travel outside KwaZulu-Natal?</summary>
-            <p>We are based in KwaZulu-Natal. Tell us your venue and we will confirm availability, travel arrangements and any related costs in your quotation.</p>
+            <p>We are based in KwaZulu-Natal. Travel for all services is charged separately at R2.50 per kilometre and is not included in the service subtotal. Tell us your venue so we can confirm the transport charge with your quotation.</p>
           </details>
           <details>
             <summary>How far in advance should we book?</summary>
@@ -3097,7 +3097,7 @@
       'drone-coverage': { label: 'Drone Coverage (per day)', price: 1500 },
       'ukukhipha-umakoti': { label: 'Ukukhipha uMakoti Video', price: 3000 },
       'event-reel': { label: 'One-Hour Event Reel', price: 1500 },
-      'sound-system': { label: 'Sound System (transport included)', price: 4500 },
+      'sound-system': { label: 'Sound System', price: 4500 },
       'live-streaming': { label: 'Live Streaming', price: 15000 },
       'online-editing': { label: 'Online Editing', price: 3000 },
       'digital-invitation': { label: 'Digital Invitation', price: 1000 }
@@ -3284,7 +3284,8 @@
           ...(quoteDetails.canvas ? [`Canvas: ${quoteDetails.canvas}`] : []),
           ...(quoteDetails.additionalHours > 0 ? [`Additional hours: ${quoteDetails.additionalHours}`] : []),
           '',
-          `Quotation total: ${quoteDetails.total}`,
+          `Service subtotal (excludes transport): ${quoteDetails.total}`,
+          'Transport for all services is charged separately at R2.50 per kilometre, based on the venue.',
           '',
           'Please confirm availability and final details.'
         ];
@@ -3397,12 +3398,12 @@
         y -= 18;
         rectangle(50, y - 34, 495, 52, '0.96 0.93 0.88');
         rectangle(50, y - 34, 4, 52, gold);
-        text(68, y - 12, 'QUOTATION TOTAL', 10, true, grey);
+        text(68, y - 12, 'SERVICE SUBTOTAL', 10, true, grey);
         text(68, y - 29, 'Final details and availability subject to confirmation.', 9, false, grey);
         text(530 - 12.5 * quote.total.length, y - 21, quote.total, 20, true, dark);
         y -= 66;
 
-        wrapPdfText('This quotation is calculated from your selected services. Availability, travel requirements and final details will be confirmed by Mshibe Wedding Films before booking.', 100)
+        wrapPdfText('This service subtotal is calculated from your selected services and excludes transport. Travel for all services is charged separately at R2.50 per kilometre, based on the venue. Availability and final details will be confirmed by Mshibe Wedding Films before booking.', 100)
           .forEach(line => {
             text(50, y, line, 9, false, grey);
             y -= 13;
@@ -3556,7 +3557,8 @@
           ...(quote.photobook ? [`Photobook: ${quote.photobook}`] : []),
           ...(quote.canvas ? [`Canvas: ${quote.canvas}`] : []),
           ...(quote.additionalHours > 0 ? [`Additional hours: ${quote.additionalHours}`] : []),
-          `Quotation total: ${quote.total}`
+          `Service subtotal (excludes transport): ${quote.total}`,
+          'Transport for all services is charged separately at R2.50 per kilometre, based on the venue.'
         ].map(item => `- ${item}`).join('\n');
         emailWeddingQuote.disabled = true;
         weddingQuoteStatus.textContent = 'Sending your quotation...';
