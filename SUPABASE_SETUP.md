@@ -34,11 +34,11 @@ server-side submission function before expanding its access.
 
 ## Automatically notify the business about wedding quotations
 
-The wedding quote builder opens a WhatsApp draft for the client and can also
-send a separate notification to the business WhatsApp number through Meta's
-WhatsApp Cloud API. The client must still review and send their own WhatsApp
-message. Automatic business notifications are unavailable until the steps
-below are completed.
+The wedding quote builder opens a WhatsApp draft for the client to review and
+send to the business. It does not send an automatic notification. The repository
+also contains an optional Edge Function for Meta's WhatsApp Cloud API, but the
+website does not currently call it. Enabling automatic notifications requires
+both the setup below and a deliberate frontend integration.
 
 1. In Meta for Developers, connect a WhatsApp Business account and sending
    number to an app. Save the **Phone Number ID** and create a long-lived

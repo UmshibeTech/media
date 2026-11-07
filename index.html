@@ -1044,6 +1044,31 @@
       margin: 0 auto;
     }
 
+    .wedding-ready-packages {
+      margin-bottom: 42px;
+    }
+
+    .wedding-ready-packages h3 {
+      color: var(--ivory);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.95rem;
+    }
+
+    .wedding-ready-packages .wedding-builder-intro {
+      margin-left: 0;
+    }
+
+    .wedding-ready-packages .package-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      margin: 12px 0 7px;
+    }
+
+    .wedding-ready-packages .btn[aria-pressed="true"] {
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+    }
+
     .wedding-client-details {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -2382,13 +2407,50 @@
           <p class="eyebrow">Celebrate Your Love</p>
           <h2>Build Your Wedding <span class="gold">Package</span></h2>
           <p class="section-intro">
-            1. Choose your services. 2. Add any keepsakes. 3. Enter your name
-            and request a personalised quote on WhatsApp. Our team will confirm
-            your quote and availability with you. No payment is taken on this page.
+            Start with a ready-made package or choose your own services. Add any
+            keepsakes, enter your name and request your quote on WhatsApp. Our
+            team will confirm your quote and availability. No payment is taken on this page.
           </p>
         </div>
 
         <form class="wedding-builder" id="weddingPackageBuilder">
+          <div class="wedding-ready-packages" aria-labelledby="wedding-ready-packages-title">
+            <h3 id="wedding-ready-packages-title">Ready-made packages</h3>
+            <p class="wedding-builder-intro">Choose a package and we'll select its services below. You can still customise them. Choosing another package replaces your service selections but keeps your extras and details.</p>
+            <div class="package-grid">
+              <article class="package-card">
+                <span class="package-label">Package 01</span>
+                <h4>Essential</h4>
+                <ul>
+                  <li>Full Wedding Video</li>
+                  <li>Digital Pictures</li>
+                </ul>
+                <button class="btn btn-outline" type="button" data-wedding-package="full-video digital-pictures" aria-pressed="false">Choose Essential</button>
+              </article>
+              <article class="package-card featured">
+                <span class="package-label">Package 02</span>
+                <h4>Highlights</h4>
+                <ul>
+                  <li>Full Wedding Video</li>
+                  <li>Digital Pictures</li>
+                  <li>Highlight Video</li>
+                </ul>
+                <button class="btn btn-outline" type="button" data-wedding-package="full-video digital-pictures highlight-video" aria-pressed="false">Choose Highlights</button>
+              </article>
+              <article class="package-card">
+                <span class="package-label">Package 03</span>
+                <h4>Complete</h4>
+                <ul>
+                  <li>Full Wedding Video</li>
+                  <li>Digital Pictures</li>
+                  <li>Highlight Video</li>
+                  <li>Drone Coverage (one day, subject to permissions and conditions)</li>
+                </ul>
+                <button class="btn btn-outline" type="button" data-wedding-package="full-video digital-pictures highlight-video drone-coverage" aria-pressed="false">Choose Complete</button>
+              </article>
+            </div>
+            <p class="wedding-quote-status" id="weddingPackageSelectionStatus" role="status" aria-live="polite"></p>
+          </div>
           <div class="wedding-builder-section" aria-labelledby="wedding-services-title">
             <h3 id="wedding-services-title" data-step="01">Choose Your Services</h3>
             <p class="wedding-builder-intro">Select all the services you would like to include. Travel for all services is charged separately at R2.50 per kilometre, based on your venue, and is not included in the service subtotal.</p>
@@ -3120,6 +3182,10 @@
       const weddingServiceInputs = [
         ...weddingPackageBuilder.querySelectorAll('input[name="weddingService"]')
       ];
+      const weddingPackageButtons = [
+        ...weddingPackageBuilder.querySelectorAll('[data-wedding-package]')
+      ];
+      const weddingPackageSelectionStatus = document.getElementById('weddingPackageSelectionStatus');
       const weddingPhotobookInputs = [
         ...weddingPackageBuilder.querySelectorAll('input[name="weddingPhotobook"]')
       ];
@@ -3159,6 +3225,13 @@
           .filter(input => input.checked)
           .map(input => weddingServices[input.value])
           .filter(Boolean);
+        const selectedServiceIds = weddingServiceInputs.filter(input => input.checked).map(input => input.value);
+        weddingPackageButtons.forEach(button => {
+          const packageServiceIds = button.dataset.weddingPackage.split(' ');
+          const matches = selectedServiceIds.length === packageServiceIds.length &&
+            packageServiceIds.every(id => selectedServiceIds.includes(id));
+          button.setAttribute('aria-pressed', String(matches));
+        });
         const selectedPhotobookInput = weddingPhotobookInputs.find(input => input.checked);
         const selectedPhotobook = selectedPhotobookInput
           ? weddingPhotobooks[selectedPhotobookInput.value]
@@ -3465,6 +3538,21 @@
         weddingQuoteStatus.textContent = `Your quotation (${fileName}) has been downloaded.`;
       }
 
+      weddingPackageButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const packageServiceIds = button.dataset.weddingPackage.split(' ');
+          weddingServiceInputs.forEach(input => {
+            input.checked = packageServiceIds.includes(input.value);
+          });
+          updateWeddingPackageQuote();
+          weddingPackageSelectionStatus.textContent = `${button.textContent.replace('Choose ', '')} services selected below. You can customise them before requesting your quote.`;
+        });
+      });
+      weddingServiceInputs.forEach(input => {
+        input.addEventListener('change', () => {
+          weddingPackageSelectionStatus.textContent = '';
+        });
+      });
       [...weddingServiceInputs, ...weddingPhotobookInputs, ...weddingCanvasInputs].forEach(input => {
         input.addEventListener('change', updateWeddingPackageQuote);
       });
@@ -3474,65 +3562,13 @@
         input.addEventListener('change', updateWeddingPackageQuote);
       });
       weddingQuoteForm.addEventListener('submit', event => event.preventDefault());
-      let notificationInProgress = false;
-      let lastNotifiedQuote = '';
-
-      async function notifyBusinessOnWhatsApp(quote) {
-        const config = window.SUPABASE_CONFIG || {};
-        const supabaseUrl = typeof config.url === 'string'
-          ? config.url.trim().replace(/\/+$/, '')
-          : '';
-        const publishableKey = typeof config.publishableKey === 'string'
-          ? config.publishableKey.trim()
-          : '';
-        if (!supabaseUrl || !publishableKey) {
-          throw new Error('Automatic notification is not configured. Please contact us directly.');
-        }
-
-        const response = await fetch(`${supabaseUrl}/functions/v1/send-wedding-quote`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            apikey: publishableKey
-          },
-          body: JSON.stringify(quote)
-        });
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok) {
-          throw new Error(typeof result.error === 'string'
-            ? result.error
-            : 'We could not notify Mshibe automatically. Please contact us directly.');
-        }
-      }
-
       weddingQuoteLink.addEventListener('click', event => {
         if (weddingQuoteLink.getAttribute('aria-disabled') === 'true' ||
-          !weddingQuoteForm.reportValidity()) {
+          !weddingQuoteForm.reportValidity() || !latestWeddingQuote) {
           event.preventDefault();
           return;
         }
-        if (!latestWeddingQuote) return;
-
-        const quoteKey = JSON.stringify(latestWeddingQuote);
-        if (quoteKey === lastNotifiedQuote) {
-          weddingQuoteStatus.textContent = 'Mshibe has already been notified about this quotation. WhatsApp is ready for you to send your request.';
-          return;
-        }
-        if (notificationInProgress) return;
-
-        notificationInProgress = true;
-        weddingQuoteStatus.textContent = 'Opening WhatsApp and sending your quotation to Mshibe...';
-        notifyBusinessOnWhatsApp(latestWeddingQuote)
-          .then(() => {
-            lastNotifiedQuote = quoteKey;
-            weddingQuoteStatus.textContent = 'Mshibe has been notified. WhatsApp is open for you to review and send your request.';
-          })
-          .catch(error => {
-            weddingQuoteStatus.textContent = `Your WhatsApp message is ready, but automatic notification failed: ${error.message}`;
-          })
-          .finally(() => {
-            notificationInProgress = false;
-          });
+        weddingQuoteStatus.textContent = 'WhatsApp is open. Please review and send your request to Mshibe.';
       });
       downloadWeddingQuote.addEventListener('click', downloadWeddingQuotePdf);
 
