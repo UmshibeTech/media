@@ -2679,44 +2679,44 @@
           <article class="package-card">
             <span class="package-label">Package 01</span>
             <h3>Starter</h3>
-            <div class="package-price">R450</div>
+            <div class="package-price">R1,450</div>
             <ul>
               <li>10 unedited pictures</li>
             </ul>
-            <a class="btn btn-outline" href="https://wa.me/27711970286?text=I%27m%20interested%20in%20the%20R450%20graduation%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
+            <a class="btn btn-outline" href="https://wa.me/27711970286?text=I%27m%20interested%20in%20the%20R1%2C450%20graduation%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
           </article>
 
           <article class="package-card">
             <span class="package-label">Package 02</span>
             <h3>Family Celebration</h3>
-            <div class="package-price">R850</div>
+            <div class="package-price">R1,850</div>
             <ul>
               <li>15 edited pictures</li>
               <li>Family photographs included</li>
             </ul>
-            <a class="btn btn-outline" href="https://wa.me/27711970286?text=I%27m%20interested%20in%20the%20R850%20graduation%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
+            <a class="btn btn-outline" href="https://wa.me/27711970286?text=I%27m%20interested%20in%20the%20R1%2C850%20graduation%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
           </article>
 
           <article class="package-card featured">
             <span class="package-label">Package 03</span>
             <h3>Achievement</h3>
-            <div class="package-price">R1,200</div>
+            <div class="package-price">R2,200</div>
             <ul>
               <li>20 edited pictures</li>
               <li>Family photographs included</li>
             </ul>
-            <a class="btn btn-gold" href="https://wa.me/27711970286?text=I%27m%20interested%20in%20the%20R1%2C200%20graduation%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
+            <a class="btn btn-gold" href="https://wa.me/27711970286?text=I%27m%20interested%20in%20the%20R2%2C200%20graduation%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
           </article>
 
           <article class="package-card">
             <span class="package-label">Package 04</span>
             <h3>Premium Portraits</h3>
-            <div class="package-price">R1,500</div>
+            <div class="package-price">R2,500</div>
             <ul>
               <li>20 edited pictures</li>
               <li>10 retouched pictures</li>
             </ul>
-            <a class="btn btn-outline" href="https://wa.me/27711970286?text=I%27m%20interested%20in%20the%20R1%2C500%20graduation%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
+            <a class="btn btn-outline" href="https://wa.me/27711970286?text=I%27m%20interested%20in%20the%20R2%2C500%20graduation%20package.%20Could%20you%20confirm%20availability%20and%20the%20details%3F" target="_blank" rel="noopener">Enquire About This Package</a>
           </article>
         </div>
       </div>
@@ -3149,6 +3149,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const weddingPackageBuilder = document.getElementById('weddingPackageBuilder');
+    const companyFee = 1000;
     const weddingServices = {
       'full-video': { label: 'Full Wedding Event Video', price: 4000 },
       'digital-pictures': { label: 'Digital Pictures', price: 4000 },
@@ -3293,7 +3294,8 @@
         const total = selectedServices.reduce((sum, service) => sum + service.price, 0) +
           (selectedPhotobook ? selectedPhotobook.price : 0) +
           (selectedCanvas ? selectedCanvas.price : 0) +
-          hours * weddingAdditionalHourPrice;
+          hours * weddingAdditionalHourPrice +
+          companyFee;
         if (!Number.isSafeInteger(total)) {
           weddingAdditionalHours.setAttribute('aria-invalid', 'true');
           weddingHoursError.textContent = 'The quotation total is too large to calculate.';

@@ -1,0 +1,21 @@
+GOOGLE SEARCH CONSOLE — QUICK START
+Mshibe Wedding Films
+https://www.mshibeweddingfilms.co.za/
+
+1. Open https://search.google.com/search-console
+2. Add the URL-prefix property:
+   https://www.mshibeweddingfilms.co.za/
+3. Verify ownership using one of Google's offered methods.
+   Deploy Google's verification file or meta tag before verifying,
+   or add the DNS record if using a Domain property.
+4. In Sitemaps, submit:
+   https://www.mshibeweddingfilms.co.za/sitemap.xml
+5. Use URL Inspection on the homepage to review its status and request
+   indexing if Google offers that option.
+6. Check Performance and Indexing reports over time.
+
+This is a one-page site, so the sitemap lists the homepage only; section
+anchors such as #services are not separate pages. Search Console helps
+measure search visibility but does not guarantee rankings or new clients.
+
+For detailed steps, see GOOGLE_SEARCH_CONSOLE_SETUP.md.
