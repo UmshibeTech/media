@@ -2096,6 +2096,9 @@
       }
     }
   </style>
+  <style>
+    .page-hidden { display: none !important; }
+  </style>
 </head>
 
 <body>
@@ -3886,6 +3889,26 @@
         bookingSubmit.textContent = 'Save & Get WhatsApp Link';
       }
     });
+
+    (function () {
+      const main = document.getElementById('main-content');
+      const homeIds = ['home'];
+      const pages = Array.from(main.children).filter(el => el.tagName === 'SECTION');
+      function showPage() {
+        const id = decodeURIComponent(location.hash.slice(1));
+        const target = id ? document.getElementById(id) : null;
+        const page = target && target.closest('#main-content > *');
+        const isHome = !page || page.id === 'home';
+        pages.forEach(el => {
+          const isHomePart = el.id === 'home' || el.classList.contains('trust-strip');
+          el.classList.toggle('page-hidden', isHome ? !isHomePart : el !== page);
+        });
+        if (target && !isHome) target.scrollIntoView();
+        else window.scrollTo(0, 0);
+      }
+      window.addEventListener('hashchange', showPage);
+      showPage();
+    })();
   </script>
 
 </body>
