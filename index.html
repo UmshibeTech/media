@@ -2547,6 +2547,20 @@
                 <button class="btn btn-outline" type="button" data-wedding-package="full-video white-wedding-video digital-pictures highlight-video drone-coverage second-day-coverage" aria-pressed="false">Choose Traditional + White Wedding Complete</button>
               </article>
             </div>
+            <div class="package-grid" style="margin-top:22px;grid-template-columns:minmax(0,1fr)" id="blackFridayPackage">
+              <article class="package-card featured">
+                <span class="package-label">Black Friday Special · Until 30 November 2026</span>
+                <h4>Black Friday Package</h4>
+                <ul>
+                  <li>Traditional Event Video</li>
+                  <li>Photography</li>
+                  <li>Highlight Video</li>
+                  <li>Drone Coverage (one day, subject to permissions and conditions)</li>
+                </ul>
+                <p class="package-price">R9 000</p>
+                <button class="btn btn-gold" type="button" data-wedding-package="full-video digital-pictures highlight-video drone-coverage" data-package-price="9000" aria-pressed="false">Choose Black Friday Package</button>
+              </article>
+            </div>
             <p class="wedding-quote-status" id="weddingPackageSelectionStatus" role="status" aria-live="polite"></p>
           </div>
           <div class="wedding-builder-section" aria-labelledby="wedding-services-title">
@@ -3428,6 +3442,11 @@
       const weddingServiceInputs = [
         ...weddingPackageBuilder.querySelectorAll('input[name="weddingService"]')
       ];
+      const blackFridayCard = document.getElementById('blackFridayPackage');
+      if (new Date() > new Date(2026, 10, 30, 23, 59, 59)) blackFridayCard.remove();
+      let blackFridayActive = false;
+      const blackFridayIds = ['full-video', 'digital-pictures', 'highlight-video', 'drone-coverage'];
+      const blackFridayPrice = 9000;
       const weddingPackageButtons = [
         ...weddingPackageBuilder.querySelectorAll('[data-wedding-package]')
       ];
@@ -3486,10 +3505,12 @@
           .map(input => weddingServices[input.value])
           .filter(Boolean);
         const selectedServiceIds = weddingServiceInputs.filter(input => input.checked).map(input => input.value);
+        if (!blackFridayIds.every(id => selectedServiceIds.includes(id))) blackFridayActive = false;
         weddingPackageButtons.forEach(button => {
           const packageServiceIds = button.dataset.weddingPackage.split(' ');
           const matches = selectedServiceIds.length === packageServiceIds.length &&
-            packageServiceIds.every(id => selectedServiceIds.includes(id));
+            packageServiceIds.every(id => selectedServiceIds.includes(id)) &&
+            Boolean(button.dataset.packagePrice) === blackFridayActive;
           button.setAttribute('aria-pressed', String(matches));
         });
         const selectedPhotobookInput = weddingPhotobookInputs.find(input => input.checked);
@@ -3509,6 +3530,7 @@
           Boolean(selectedFramedPhoto) ||
           (validHours && hours > 0);
         const selectedItems = [
+          ...(blackFridayActive ? ['Black Friday Package'] : []),
           ...selectedServices.map(service => service.label),
           ...(selectedPhotobook ? [selectedPhotobook.label] : []),
           ...(selectedCanvas ? [selectedCanvas.label] : []),
@@ -3565,7 +3587,10 @@
           (selectedCanvas ? selectedCanvas.price : 0) +
           (selectedFramedPhoto ? selectedFramedPhoto.price : 0) +
           (hours + day2Hours) * weddingAdditionalHourPrice +
-          (selectedServices.length * serviceMarkup);
+          (selectedServices.length * serviceMarkup) -
+          (blackFridayActive
+            ? blackFridayIds.reduce((sum, id) => sum + weddingServices[id].price + serviceMarkup, 0) - blackFridayPrice
+            : 0);
         if (!Number.isSafeInteger(total)) {
           weddingAdditionalHours.setAttribute('aria-invalid', 'true');
           weddingHoursError.textContent = 'The quotation total is too large to calculate.';
@@ -3608,7 +3633,7 @@
           framedPhotoId: selectedFramedPhotoInput && selectedFramedPhotoInput.value
             ? selectedFramedPhotoInput.value
             : '',
-          services: selectedServices.map(service => service.label),
+          services: [...(blackFridayActive ? ['Black Friday Package'] : []), ...selectedServices.map(service => service.label)],
           photobook: selectedPhotobook ? selectedPhotobook.label : '',
           canvas: selectedCanvas ? selectedCanvas.label : '',
           framedPhoto: selectedFramedPhoto ? selectedFramedPhoto.label : '',
@@ -3824,6 +3849,7 @@
       weddingPackageButtons.forEach(button => {
         button.addEventListener('click', () => {
           const packageServiceIds = button.dataset.weddingPackage.split(' ');
+          blackFridayActive = Boolean(button.dataset.packagePrice);
           weddingServiceInputs.forEach(input => {
             input.checked = packageServiceIds.includes(input.value);
           });
