@@ -1706,8 +1706,13 @@
       border-radius: 50%;
       background: #25D366;
       color: white;
-      font-size: 1.65rem;
       box-shadow: 0 5px 20px rgba(0,0,0,.4);
+    }
+
+    .whatsapp-float svg {
+      display: block;
+      width: 34px;
+      height: 34px;
     }
 
     .whatsapp-float:hover {
@@ -2422,8 +2427,8 @@
                 <span class="package-label">Package 01</span>
                 <h4>Essential</h4>
                 <ul>
-                  <li>Full Event Video in USB</li>
-                  <li>Digital Pictures</li>
+                  <li>Traditional Event Video</li>
+                  <li>Photography</li>
                 </ul>
                 <button class="btn btn-outline" type="button" data-wedding-package="full-video digital-pictures" aria-pressed="false">Choose Essential</button>
               </article>
@@ -2431,8 +2436,8 @@
                 <span class="package-label">Package 02</span>
                 <h4>Highlights</h4>
                 <ul>
-                  <li>Full Event Video in USB</li>
-                  <li>Digital Pictures</li>
+                  <li>Traditional Event Video</li>
+                  <li>Photography</li>
                   <li>Highlight Video</li>
                 </ul>
                 <button class="btn btn-outline" type="button" data-wedding-package="full-video digital-pictures highlight-video" aria-pressed="false">Choose Highlights</button>
@@ -2441,8 +2446,8 @@
                 <span class="package-label">Package 03</span>
                 <h4>Complete</h4>
                 <ul>
-                  <li>Full Event Video in USB</li>
-                  <li>Digital Pictures</li>
+                  <li>Traditional Event Video</li>
+                  <li>Photography</li>
                   <li>Highlight Video</li>
                   <li>Drone Coverage (one day, subject to permissions and conditions)</li>
                 </ul>
@@ -2457,11 +2462,15 @@
             <div class="wedding-options-grid">
               <label class="wedding-option">
                 <input type="checkbox" name="weddingService" value="full-video">
-                <span class="wedding-option-copy"><strong>Full Event Video in USB</strong><span>Video coverage of your full wedding event.</span></span>
+                <span class="wedding-option-copy"><strong>Traditional Event Video</strong><span>1 videography + full video.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="white-wedding-video">
+                <span class="wedding-option-copy"><strong>White Wedding Video</strong><span>1 videography + full video.</span></span>
               </label>
               <label class="wedding-option">
                 <input type="checkbox" name="weddingService" value="digital-pictures">
-                <span class="wedding-option-copy"><strong>Digital Pictures</strong><span>A digital collection of wedding photographs.</span></span>
+                <span class="wedding-option-copy"><strong>Photography</strong><span>One photographer captures your entire event and provides a collection of professionally edited images.</span></span>
               </label>
               <label class="wedding-option">
                 <input type="checkbox" name="weddingService" value="highlight-video">
@@ -2500,8 +2509,12 @@
                 <span class="wedding-option-copy"><strong>Live Streaming</strong><span>Stream your wedding live for friends and family joining remotely.</span></span>
               </label>
               <label class="wedding-option">
-                <input type="checkbox" name="weddingService" value="online-editing">
-                <span class="wedding-option-copy"><strong>Online Editing</strong><span>Online editing service for your wedding footage.</span></span>
+                <input type="checkbox" name="weddingService" value="live-photo-editing">
+                <span class="wedding-option-copy"><strong>Live Photo Editing</strong><span>Photos are edited live during your wedding and displayed on screens for your guests.</span></span>
+              </label>
+              <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="live-video-editing">
+                <span class="wedding-option-copy"><strong>Live Video Editing</strong><span>Videos are edited live during your wedding and displayed on screens for your guests.</span></span>
               </label>
               <label class="wedding-option">
                 <input type="checkbox" name="weddingService" value="digital-invitation">
@@ -2585,8 +2598,35 @@
             </div>
           </div>
 
+          <div class="wedding-builder-section" aria-labelledby="wedding-framed-photo-title">
+            <h3 id="wedding-framed-photo-title" data-step="04">Add a Framed Photo</h3>
+            <p class="wedding-builder-intro">Choose one framed photo size, or leave this section unselected. Transportation fee is excluded.</p>
+            <div class="wedding-options-grid">
+              <label class="wedding-option">
+                <input type="radio" name="weddingFramedPhoto" value="" checked>
+                <span class="wedding-option-copy"><strong>No framed photo</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingFramedPhoto" value="a4">
+                <span class="wedding-option-copy"><strong>A4 Framed Photo</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingFramedPhoto" value="a3">
+                <span class="wedding-option-copy"><strong>A3 Framed Photo</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingFramedPhoto" value="a2">
+                <span class="wedding-option-copy"><strong>A2 Framed Photo</strong></span>
+              </label>
+              <label class="wedding-option">
+                <input type="radio" name="weddingFramedPhoto" value="a1">
+                <span class="wedding-option-copy"><strong>A1 Framed Photo</strong></span>
+              </label>
+            </div>
+          </div>
+
           <div class="wedding-client-details" aria-labelledby="wedding-details-title">
-            <h3 id="wedding-details-title" data-step="04">Your Wedding Details</h3>
+            <h3 id="wedding-details-title" data-step="05">Your Wedding Details</h3>
             <div class="wedding-form-field">
               <label for="weddingClientName">Full name</label>
               <input id="weddingClientName" name="clientName" type="text"
@@ -3072,7 +3112,11 @@
 
   <a class="whatsapp-float"
      href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Film%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-     target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">✆</a>
+     target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.875 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.437-9.884 9.893-9.884 2.645.001 5.132 1.03 6.999 2.898a9.825 9.825 0 0 1 2.893 7.005c-.002 5.45-4.437 9.884-9.902 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.334.157 11.89c-.001 2.096.547 4.142 1.588 5.946L.057 24l6.304-1.654a11.87 11.87 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.334 11.893-11.893a11.82 11.82 0 0 0-3.478-8.413Z" />
+    </svg>
+  </a>
 
   <script src="supabase-config.js"></script>
   <script>
@@ -3151,8 +3195,9 @@
     const weddingPackageBuilder = document.getElementById('weddingPackageBuilder');
     const serviceMarkup = 200;
     const weddingServices = {
-      'full-video': { label: 'Full Event Video in USB', price: 4000 },
-      'digital-pictures': { label: 'Digital Pictures', price: 4000 },
+      'full-video': { label: 'Traditional Event Video', price: 4000 },
+      'white-wedding-video': { label: 'White Wedding Video', price: 5000 },
+      'digital-pictures': { label: 'Photography', price: 4000 },
       'highlight-video': { label: 'Highlight Video', price: 1500 },
       videographer: { label: '2nd Videography', price: 2500 },
       photography: { label: '2nd Photography', price: 3500 },
@@ -3162,7 +3207,8 @@
       'event-reel': { label: 'One-Hour Event Reel', price: 1500 },
       'sound-system': { label: 'Sound System', price: 4500 },
       'live-streaming': { label: 'Live Streaming', price: 15000 },
-      'online-editing': { label: 'Online Editing', price: 3000 },
+      'live-photo-editing': { label: 'Live Photo Editing', price: 3000 },
+      'live-video-editing': { label: 'Live Video Editing', price: 3000 },
       'digital-invitation': { label: 'Digital Invitation', price: 1000 }
     };
     const weddingPhotobooks = {
@@ -3176,6 +3222,12 @@
       a3: { label: 'A3 Canvas', price: 400 },
       a2: { label: 'A2 Canvas', price: 500 },
       a1: { label: 'A1 Canvas', price: 600 }
+    };
+    const weddingFramedPhotos = {
+      a4: { label: 'A4 Framed Photo', price: 350 },
+      a3: { label: 'A3 Framed Photo', price: 500 },
+      a2: { label: 'A2 Framed Photo', price: 700 },
+      a1: { label: 'A1 Framed Photo', price: 900 }
     };
     const weddingAdditionalHourPrice = 1000;
 
@@ -3192,6 +3244,9 @@
       ];
       const weddingCanvasInputs = [
         ...weddingPackageBuilder.querySelectorAll('input[name="weddingCanvas"]')
+      ];
+      const weddingFramedPhotoInputs = [
+        ...weddingPackageBuilder.querySelectorAll('input[name="weddingFramedPhoto"]')
       ];
       const weddingAdditionalHours = document.getElementById('weddingAdditionalHours');
       const weddingHoursError = document.getElementById('weddingHoursError');
@@ -3241,13 +3296,19 @@
         const selectedCanvas = selectedCanvasInput
           ? weddingCanvases[selectedCanvasInput.value]
           : null;
+        const selectedFramedPhotoInput = weddingFramedPhotoInputs.find(input => input.checked);
+        const selectedFramedPhoto = selectedFramedPhotoInput
+          ? weddingFramedPhotos[selectedFramedPhotoInput.value]
+          : null;
         const hasSelection = selectedServices.length > 0 ||
           Boolean(selectedPhotobook) || Boolean(selectedCanvas) ||
+          Boolean(selectedFramedPhoto) ||
           (validHours && hours > 0);
         const selectedItems = [
           ...selectedServices.map(service => service.label),
           ...(selectedPhotobook ? [selectedPhotobook.label] : []),
           ...(selectedCanvas ? [selectedCanvas.label] : []),
+          ...(selectedFramedPhoto ? [selectedFramedPhoto.label] : []),
           ...(validHours && hours > 0
             ? [`Additional Hours (${hours})`]
             : [])
@@ -3271,6 +3332,9 @@
         weddingCanvasInputs.forEach(input => {
           input.closest('.wedding-option').classList.toggle('is-selected', input.checked);
         });
+        weddingFramedPhotoInputs.forEach(input => {
+          input.closest('.wedding-option').classList.toggle('is-selected', input.checked);
+        });
 
         if (!validHours) {
           weddingAdditionalHours.setAttribute('aria-invalid', 'true');
@@ -3287,13 +3351,14 @@
         if (!hasSelection) {
           weddingPackageTotal.textContent = 'Select options to see your total';
           weddingQuoteLink.setAttribute('aria-disabled', 'true');
-          weddingQuoteStatus.textContent = 'Select a service, photobook, canvas, or extra hours to prepare your quote.';
+          weddingQuoteStatus.textContent = 'Select a service, photobook, canvas, framed photo, or extra hours to prepare your quote.';
           return;
         }
 
         const total = selectedServices.reduce((sum, service) => sum + service.price, 0) +
           (selectedPhotobook ? selectedPhotobook.price : 0) +
           (selectedCanvas ? selectedCanvas.price : 0) +
+          (selectedFramedPhoto ? selectedFramedPhoto.price : 0) +
           hours * weddingAdditionalHourPrice +
           (selectedServices.length * serviceMarkup);
         if (!Number.isSafeInteger(total)) {
@@ -3328,16 +3393,20 @@
           clientEmail: weddingClientEmail.value.trim(),
           eventDate: weddingEventDate.value,
           eventLocation: weddingEventLocation.value.trim(),
-          serviceIds: weddingServiceInputs.filter(input => input.checked).map(input => input.value),
+          serviceIds: selectedServiceIds,
           photobookId: selectedPhotobookInput && selectedPhotobookInput.value
             ? selectedPhotobookInput.value
             : '',
           canvasId: selectedCanvasInput && selectedCanvasInput.value
             ? selectedCanvasInput.value
             : '',
+          framedPhotoId: selectedFramedPhotoInput && selectedFramedPhotoInput.value
+            ? selectedFramedPhotoInput.value
+            : '',
           services: selectedServices.map(service => service.label),
           photobook: selectedPhotobook ? selectedPhotobook.label : '',
           canvas: selectedCanvas ? selectedCanvas.label : '',
+          framedPhoto: selectedFramedPhoto ? selectedFramedPhoto.label : '',
           additionalHours: hours,
           total: formattedTotal
         };
@@ -3357,6 +3426,7 @@
             : ['- No additional services selected']),
           ...(quoteDetails.photobook ? [`Photobook: ${quoteDetails.photobook}`] : []),
           ...(quoteDetails.canvas ? [`Canvas: ${quoteDetails.canvas}`] : []),
+          ...(quoteDetails.framedPhoto ? [`Framed photo: ${quoteDetails.framedPhoto}`] : []),
           ...(quoteDetails.additionalHours > 0 ? [`Additional hours: ${quoteDetails.additionalHours}`] : []),
           '',
           `Service subtotal (excludes transport): ${quoteDetails.total}`,
@@ -3466,6 +3536,7 @@
         quote.services.forEach(bullet);
         if (quote.photobook) bullet(`Photobook: ${quote.photobook}`);
         if (quote.canvas) bullet(`Canvas: ${quote.canvas}`);
+        if (quote.framedPhoto) bullet(`Framed photo: ${quote.framedPhoto}`);
         if (quote.additionalHours > 0) {
           bullet(`Additional hours: ${quote.additionalHours}`);
         }
@@ -3555,7 +3626,8 @@
           weddingPackageSelectionStatus.textContent = '';
         });
       });
-      [...weddingServiceInputs, ...weddingPhotobookInputs, ...weddingCanvasInputs].forEach(input => {
+      [...weddingServiceInputs, ...weddingPhotobookInputs, ...weddingCanvasInputs,
+        ...weddingFramedPhotoInputs].forEach(input => {
         input.addEventListener('change', updateWeddingPackageQuote);
       });
       [weddingAdditionalHours, weddingClientName, weddingClientEmail,
@@ -3594,6 +3666,7 @@
           ...quote.services,
           ...(quote.photobook ? [`Photobook: ${quote.photobook}`] : []),
           ...(quote.canvas ? [`Canvas: ${quote.canvas}`] : []),
+          ...(quote.framedPhoto ? [`Framed photo: ${quote.framedPhoto}`] : []),
           ...(quote.additionalHours > 0 ? [`Additional hours: ${quote.additionalHours}`] : []),
           `Service subtotal (excludes transport): ${quote.total}`,
           'Transport for all services is charged separately at R2.50 per kilometre, based on the venue.'
