@@ -265,6 +265,49 @@
       border-color: rgba(217,183,176,.95);
     }
 
+    .invitation-dialog {
+      width: min(440px, calc(100% - 32px));
+      max-width: 440px;
+      padding: clamp(24px, 5vw, 36px);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--card);
+      color: var(--ivory);
+      box-shadow: 0 24px 80px rgba(0,0,0,.6);
+    }
+
+    .invitation-dialog::backdrop {
+      background: rgba(0,0,0,.76);
+      backdrop-filter: blur(4px);
+    }
+
+    .invitation-dialog h2 {
+      margin-bottom: 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.7rem, 5vw, 2.2rem);
+    }
+
+    .invitation-dialog p:not(.eyebrow) {
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+
+    .invitation-dialog-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .invitation-dialog-options .btn,
+    .invitation-dialog-close {
+      width: 100%;
+      text-align: center;
+    }
+
+    .invitation-dialog-close {
+      margin-top: 16px;
+      cursor: pointer;
+    }
+
     /* Navigation */
 
     .navbar {
@@ -2118,8 +2161,8 @@
             <a class="btn btn-outline"
               href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20I%27d%20love%20to%20enquire%20about%20my%20wedding."
               target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
-            <a class="btn btn-outline" href="https://umshibetech.github.io/invitation/"
-              target="_blank" rel="noopener noreferrer">Digital Invitation</a>
+            <button class="btn btn-outline" id="digitalInvitationButton" type="button"
+              aria-haspopup="dialog" aria-controls="invitationChooser">Digital Invitation</button>
           </div>
           <div class="hero-proof" aria-label="About Mshibe Wedding Films">
             <span>Traditional &amp; white weddings · Established 2019 · Durban, KwaZulu-Natal</span>
@@ -3104,6 +3147,20 @@
     </div>
   </footer>
 
+  <dialog class="invitation-dialog" id="invitationChooser" aria-labelledby="invitationChooserTitle">
+    <p class="eyebrow">Digital Invitations</p>
+    <h2 id="invitationChooserTitle">Choose an invitation</h2>
+    <p>Select which invitation you would like to view.</p>
+    <div class="invitation-dialog-options">
+      <a class="btn btn-gold" href="https://umshibetech.github.io/invitation/"
+        target="_blank" rel="noopener noreferrer">Slondiwe &amp; Bafana</a>
+      <a class="btn btn-outline" href="https://umshibetech.github.io/Msawenkosi-Nosipho/#details"
+        target="_blank" rel="noopener noreferrer">Msawenkosi &amp; Nosipho</a>
+    </div>
+    <button class="btn btn-outline invitation-dialog-close" id="closeInvitationChooser"
+      type="button">Close</button>
+  </dialog>
+
   <nav class="mobile-contact-bar" aria-label="Quick contact">
     <a class="btn btn-gold" href="#contact">Book a Consultation</a>
     <a class="btn btn-outline" href="https://wa.me/27711970286?text=Hello%20Mshibe%20Wedding%20Films%2C%20I%27d%20like%20to%20make%20an%20enquiry."
@@ -3126,6 +3183,18 @@
     const packagesToggle = document.getElementById('packagesToggle');
     const navbar = document.querySelector('.navbar');
     const mobileNavigation = window.matchMedia('(max-width: 1000px)');
+    const digitalInvitationButton = document.getElementById('digitalInvitationButton');
+    const invitationChooser = document.getElementById('invitationChooser');
+    const closeInvitationChooser = document.getElementById('closeInvitationChooser');
+
+    digitalInvitationButton.addEventListener('click', () => invitationChooser.showModal());
+    closeInvitationChooser.addEventListener('click', () => invitationChooser.close());
+    invitationChooser.addEventListener('click', event => {
+      if (event.target === invitationChooser) {
+        invitationChooser.close();
+      }
+    });
+    invitationChooser.addEventListener('close', () => digitalInvitationButton.focus());
 
     function closePackagesDropdown() {
       packagesDropdown.classList.remove('open');
