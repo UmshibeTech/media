@@ -1213,6 +1213,9 @@
       line-height: 1.6;
     }
 
+    .day2-extras { margin: 24px 0; }
+    .day2-extras h4 { margin-bottom: 8px; }
+
     .wedding-options-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
@@ -2500,6 +2503,50 @@
                 <button class="btn btn-outline" type="button" data-wedding-package="full-video digital-pictures highlight-video drone-coverage" aria-pressed="false">Choose Complete</button>
               </article>
             </div>
+            <div class="package-grid" style="margin-top:22px">
+              <article class="package-card">
+                <span class="package-label">Package 04</span>
+                <h4>White Wedding Essential</h4>
+                <ul>
+                  <li>White Wedding Video</li>
+                  <li>Photography</li>
+                </ul>
+                <button class="btn btn-outline" type="button" data-wedding-package="white-wedding-video digital-pictures" aria-pressed="false">Choose White Wedding Essential</button>
+              </article>
+              <article class="package-card featured">
+                <span class="package-label">Package 05</span>
+                <h4>White Wedding Highlights</h4>
+                <ul>
+                  <li>White Wedding Video</li>
+                  <li>Photography</li>
+                  <li>Highlight Video</li>
+                </ul>
+                <button class="btn btn-outline" type="button" data-wedding-package="white-wedding-video digital-pictures highlight-video" aria-pressed="false">Choose White Wedding Highlights</button>
+              </article>
+              <article class="package-card">
+                <span class="package-label">Package 06</span>
+                <h4>White Wedding Complete</h4>
+                <ul>
+                  <li>White Wedding Video</li>
+                  <li>Photography</li>
+                  <li>Highlight Video</li>
+                  <li>Drone Coverage (one day, subject to permissions and conditions)</li>
+                </ul>
+                <button class="btn btn-outline" type="button" data-wedding-package="white-wedding-video digital-pictures highlight-video drone-coverage" aria-pressed="false">Choose White Wedding Complete</button>
+              </article>
+            </div>
+            <div class="package-grid" style="margin-top:22px;grid-template-columns:minmax(0,1fr)">
+              <article class="package-card featured">
+                <span class="package-label">Package 07</span>
+                <h4>Traditional + White Wedding Complete</h4>
+                <p>Two days of coverage: Package 03 plus Package 06.</p>
+                <ul>
+                  <li>Day 1 – Traditional Wedding: Traditional Event Video, Photography, Highlight Video and Drone Coverage</li>
+                  <li>Day 2 – White Wedding: White Wedding Video, Photography, Highlight Video and Drone Coverage</li>
+                </ul>
+                <button class="btn btn-outline" type="button" data-wedding-package="full-video white-wedding-video digital-pictures highlight-video drone-coverage second-day-coverage" aria-pressed="false">Choose Traditional + White Wedding Complete</button>
+              </article>
+            </div>
             <p class="wedding-quote-status" id="weddingPackageSelectionStatus" role="status" aria-live="polite"></p>
           </div>
           <div class="wedding-builder-section" aria-labelledby="wedding-services-title">
@@ -2563,9 +2610,69 @@
                 <span class="wedding-option-copy"><strong>Live Video Editing</strong><span>Video content is edited during your wedding and presented on screens for your guests.</span></span>
               </label>
               <label class="wedding-option">
+                <input type="checkbox" name="weddingService" value="second-day-coverage">
+                <span class="wedding-option-copy"><strong>Second-Day Coverage</strong><span>Photography, Highlight Video and Drone Coverage for a second wedding day.</span></span>
+              </label>
+              <label class="wedding-option">
                 <input type="checkbox" name="weddingService" value="digital-invitation">
                 <span class="wedding-option-copy"><strong>Digital Invitation</strong><span>A custom-designed digital invitation created for your wedding.</span></span>
               </label>
+            </div>
+            <div class="day2-extras" id="day2Extras" hidden>
+              <h4>Day 2 Extras</h4>
+              <p class="wedding-builder-intro">The extras selected above apply to Day 1. Add extras for your second day here.</p>
+              <div class="wedding-options-grid">
+                <label class="wedding-option">
+                  <input type="checkbox" name="weddingService" value="day2-videographer">
+                  <span class="wedding-option-copy"><strong>Day 2 – Additional Videographer</strong><span>An additional videographer for your second day.</span></span>
+                </label>
+                <label class="wedding-option">
+                  <input type="checkbox" name="weddingService" value="day2-photography">
+                  <span class="wedding-option-copy"><strong>Day 2 – Additional Photographer</strong><span>An additional photographer for your second day.</span></span>
+                </label>
+                <label class="wedding-option">
+                  <input type="checkbox" name="weddingService" value="day2-portrait-highlight">
+                  <span class="wedding-option-copy"><strong>Day 2 – Portrait Highlight</strong><span>A portrait-focused edit from your second day.</span></span>
+                </label>
+                <label class="wedding-option">
+                  <input type="checkbox" name="weddingService" value="day2-event-reel">
+                  <span class="wedding-option-copy"><strong>Day 2 – One-Hour Event Reel</strong><span>A professionally edited reel capturing one hour of your second day.</span></span>
+                </label>
+                <label class="wedding-option">
+                  <input type="checkbox" name="weddingService" value="day2-sound-system">
+                  <span class="wedding-option-copy"><strong>Day 2 – Sound System</strong><span>Sound system support for your second day.</span></span>
+                </label>
+                <label class="wedding-option">
+                  <input type="checkbox" name="weddingService" value="day2-live-streaming">
+                  <span class="wedding-option-copy"><strong>Day 2 – Live Streaming</strong><span>Live stream your second day for loved ones who cannot attend.</span></span>
+                </label>
+                <label class="wedding-option">
+                  <input type="checkbox" name="weddingService" value="day2-live-photo-editing">
+                  <span class="wedding-option-copy"><strong>Day 2 – Live Photo Editing</strong><span>Photos are edited during your second day and presented on screens.</span></span>
+                </label>
+                <label class="wedding-option">
+                  <input type="checkbox" name="weddingService" value="day2-live-video-editing">
+                  <span class="wedding-option-copy"><strong>Day 2 – Live Video Editing</strong><span>Video content is edited during your second day and presented on screens.</span></span>
+                </label>
+              </div>
+              <div class="wedding-option wedding-hours-option">
+                <label class="wedding-option-copy" for="weddingDay2Hours">
+                  <strong>Day 2 – Additional Hours</strong>
+                  <span>Extend your second day's coverage by up to 9 extra hours.</span>
+                </label>
+                <select class="wedding-hours-input" id="weddingDay2Hours" name="weddingDay2Hours">
+                  <option value="0" selected>No extra hours</option>
+                  <option value="1">1 hour</option>
+                  <option value="2">2 hours</option>
+                  <option value="3">3 hours</option>
+                  <option value="4">4 hours</option>
+                  <option value="5">5 hours</option>
+                  <option value="6">6 hours</option>
+                  <option value="7">7 hours</option>
+                  <option value="8">8 hours</option>
+                  <option value="9">9 hours</option>
+                </select>
+              </div>
             </div>
             <div class="wedding-option wedding-hours-option">
               <label class="wedding-option-copy" for="weddingAdditionalHours">
@@ -3281,6 +3388,15 @@
       'live-streaming': { label: 'Live Streaming', price: 15000 },
       'live-photo-editing': { label: 'Live Photo Editing', price: 3000 },
       'live-video-editing': { label: 'Live Video Editing', price: 3000 },
+      'day2-videographer': { label: 'Day 2 – Additional Videographer', price: 2500 },
+      'day2-photography': { label: 'Day 2 – Additional Photographer', price: 3500 },
+      'day2-portrait-highlight': { label: 'Day 2 – Portrait Highlight', price: 3000 },
+      'day2-event-reel': { label: 'Day 2 – One-Hour Event Reel', price: 1500 },
+      'day2-sound-system': { label: 'Day 2 – Sound System', price: 4500 },
+      'day2-live-streaming': { label: 'Day 2 – Live Streaming', price: 15000 },
+      'day2-live-photo-editing': { label: 'Day 2 – Live Photo Editing', price: 3000 },
+      'day2-live-video-editing': { label: 'Day 2 – Live Video Editing', price: 3000 },
+      'second-day-coverage': { label: 'Second-Day Coverage (Photography, Highlight Video and Drone)', price: 7500 },
       'digital-invitation': { label: 'Digital Invitation', price: 1000 }
     };
     const weddingPhotobooks = {
@@ -3322,6 +3438,7 @@
       ];
       const weddingAdditionalHours = document.getElementById('weddingAdditionalHours');
       const weddingHoursError = document.getElementById('weddingHoursError');
+      const weddingDay2Hours = document.getElementById('weddingDay2Hours');
       const weddingSelectedItems = document.getElementById('weddingSelectedItems');
       const weddingQuoteLink = document.getElementById('weddingQuoteLink');
       const weddingQuoteStatus = document.getElementById('weddingQuoteStatus');
@@ -3343,12 +3460,22 @@
 
       function updateWeddingPackageQuote() {
         latestWeddingQuote = null;
+        const secondDayInput = weddingServiceInputs.find(input => input.value === 'second-day-coverage');
+        const day2Extras = document.getElementById('day2Extras');
+        day2Extras.hidden = !secondDayInput.checked;
+        if (!secondDayInput.checked) {
+          weddingServiceInputs.forEach(input => {
+            if (input.value.startsWith('day2-')) input.checked = false;
+          });
+          weddingDay2Hours.value = '0';
+        }
         const makotiSelected = weddingServiceInputs.some(input => input.value === 'ukukhipha-umakoti' && input.checked);
         makotiLocationField.hidden = !makotiSelected;
         weddingMakotiLocation.required = makotiSelected;
         const hours = Number(weddingAdditionalHours.value);
         const validHours = weddingAdditionalHours.validity.valid &&
           Number.isSafeInteger(hours) && hours >= 0 && hours <= 9;
+        const day2Hours = Number(weddingDay2Hours.value) || 0;
         const selectedServices = weddingServiceInputs
           .filter(input => input.checked)
           .map(input => weddingServices[input.value])
@@ -3383,7 +3510,8 @@
           ...(selectedFramedPhoto ? [selectedFramedPhoto.label] : []),
           ...(validHours && hours > 0
             ? [`Additional Hours (${hours})`]
-            : [])
+            : []),
+          ...(day2Hours > 0 ? [`Day 2 – Additional Hours (${day2Hours})`] : [])
         ];
         weddingSelectedItems.replaceChildren();
         (selectedItems.length
@@ -3431,7 +3559,7 @@
           (selectedPhotobook ? selectedPhotobook.price : 0) +
           (selectedCanvas ? selectedCanvas.price : 0) +
           (selectedFramedPhoto ? selectedFramedPhoto.price : 0) +
-          hours * weddingAdditionalHourPrice +
+          (hours + day2Hours) * weddingAdditionalHourPrice +
           (selectedServices.length * serviceMarkup);
         if (!Number.isSafeInteger(total)) {
           weddingAdditionalHours.setAttribute('aria-invalid', 'true');
@@ -3480,6 +3608,7 @@
           canvas: selectedCanvas ? selectedCanvas.label : '',
           framedPhoto: selectedFramedPhoto ? selectedFramedPhoto.label : '',
           additionalHours: hours,
+          day2Hours,
           total: formattedTotal
         };
         const quoteLines = [
@@ -3500,6 +3629,7 @@
           ...(quoteDetails.canvas ? [`Canvas: ${quoteDetails.canvas}`] : []),
           ...(quoteDetails.framedPhoto ? [`Framed photo: ${quoteDetails.framedPhoto}`] : []),
           ...(quoteDetails.additionalHours > 0 ? [`Additional hours: ${quoteDetails.additionalHours}`] : []),
+          ...(quoteDetails.day2Hours > 0 ? [`Day 2 additional hours: ${quoteDetails.day2Hours}`] : []),
           '',
           `Service subtotal (excludes transport): ${quoteDetails.total}`,
           'Transport for all services is charged separately at R2.50 per kilometre, based on the venue.',
@@ -3612,6 +3742,9 @@
         if (quote.additionalHours > 0) {
           bullet(`Additional hours: ${quote.additionalHours}`);
         }
+        if (quote.day2Hours > 0) {
+          bullet(`Day 2 additional hours: ${quote.day2Hours}`);
+        }
 
         y -= 18;
         rectangle(50, y - 34, 495, 52, '0.96 0.93 0.88');
@@ -3702,7 +3835,7 @@
         ...weddingFramedPhotoInputs].forEach(input => {
         input.addEventListener('change', updateWeddingPackageQuote);
       });
-      [weddingAdditionalHours, weddingClientName, weddingClientEmail,
+      [weddingAdditionalHours, weddingDay2Hours, weddingClientName, weddingClientEmail,
         weddingEventDate, weddingEventLocation, weddingMakotiLocation].forEach(input => {
         input.addEventListener('input', updateWeddingPackageQuote);
         input.addEventListener('change', updateWeddingPackageQuote);
@@ -3740,6 +3873,7 @@
           ...(quote.canvas ? [`Canvas: ${quote.canvas}`] : []),
           ...(quote.framedPhoto ? [`Framed photo: ${quote.framedPhoto}`] : []),
           ...(quote.additionalHours > 0 ? [`Additional hours: ${quote.additionalHours}`] : []),
+          ...(quote.day2Hours > 0 ? [`Day 2 additional hours: ${quote.day2Hours}`] : []),
           `Service subtotal (excludes transport): ${quote.total}`,
           'Transport for all services is charged separately at R2.50 per kilometre, based on the venue.'
         ].map(item => `- ${item}`).join('\n');
